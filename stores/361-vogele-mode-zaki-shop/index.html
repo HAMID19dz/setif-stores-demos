@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vogele Mode (zaki shop) | 📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</title>
+  <title>Vogele Mode (zaki shop) | 🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-base: #0F0A1C;
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Cairo', 'Tajawal', sans-serif;
+      font-family: 'Amiri', 'Cairo', serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -33,224 +33,102 @@
       color: var(--primary-fg);
       text-align: center;
       padding: 8px 16px;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 800;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
     }
-    .demo-banner a {
-      background: rgba(0,0,0,0.28);
-      color: #fff;
-      padding: 3px 12px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-    }
-    header {
-      background: var(--bg-surface);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    .nav-container {
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
+    .demo-banner a { background: rgba(0,0,0,0.3); color: #fff; padding: 3px 12px; border-radius: 999px; }
+    header { background: var(--bg-surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 40; }
+    .nav-container { max-width: 1220px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
     .brand-box { display: flex; align-items: center; gap: 12px; }
-    .brand-monogram {
-      width: 46px; height: 46px; border-radius: 12px;
-      background: var(--primary); color: var(--primary-fg);
-      font-weight: 900; font-size: 1.15rem;
-      display: flex; align-items: center; justify-content: center;
-    }
+    .brand-monogram { width: 44px; height: 44px; border-radius: 12px; background: var(--primary); color: var(--primary-fg); font-weight: 900; display: flex; align-items: center; justify-content: center; }
     .brand-name { font-size: 1.25rem; font-weight: 900; }
     .brand-sub { font-size: 0.78rem; color: var(--text-muted); display: block; }
-    .nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .btn-nav {
-      padding: 8px 16px; border-radius: 999px; font-weight: 700; font-size: 0.85rem;
-      border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main);
-    }
+    .nav-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-nav { padding: 8px 14px; border-radius: 999px; font-weight: 700; font-size: 0.84rem; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main); }
     .btn-nav.primary { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
 
-    /* Hero Variants */
-    .hero {
-      max-width: 1220px; margin: 0 auto; padding: 42px 20px;
-      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 32px; align-items: center;
-    }
-    .hero.vip-frame {
-      border: 2px solid var(--primary); border-radius: 28px; margin-top: 24px; background: var(--bg-surface);
-    }
-    .hero-cinema {
-      min-height: 440px; background-size: cover; background-position: center;
-      display: flex; align-items: center; justify-content: center; text-align: center; padding: 60px 20px; color: #fff;
-    }
-    .hero-cinema-inner { max-width: 780px; }
-    .hero-cinema h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; margin-bottom: 14px; }
-    .hero-cinema p { font-size: 1.1rem; opacity: 0.92; margin-bottom: 24px; }
-
-    .hero-bento {
-      max-width: 1220px; margin: 28px auto; padding: 0 20px;
-      display: grid; grid-template-columns: 1.3fr 0.85fr 0.85fr; gap: 18px;
-    }
-    .bento-main {
-      background: var(--bg-surface); border: 1px solid var(--border); border-radius: 24px; padding: 36px;
-    }
-    .bento-side {
-      min-height: 320px; border-radius: 24px; background-size: cover; background-position: center;
-      display: flex; align-items: flex-end; padding: 20px; color: #fff; border: 1px solid var(--border);
-    }
-    .bento-caption span { background: var(--primary); color: var(--primary-fg); padding: 3px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; }
-    .bento-caption strong { display: block; font-size: 1.05rem; margin-top: 8px; }
-    .bento-caption em { font-style: normal; color: #FBBF24; font-weight: 800; }
-
-    .stories-bar {
-      max-width: 1220px; margin: 20px auto 0; padding: 14px 20px;
-      display: flex; gap: 18px; overflow-x: auto; background: var(--bg-surface); border-radius: 20px; border: 1px solid var(--border);
-    }
-    .story-bubble { text-align: center; cursor: pointer; flex-shrink: 0; width: 88px; }
-    .story-ring {
-      width: 72px; height: 72px; border-radius: 50%; padding: 3px;
-      background: linear-gradient(45deg, var(--primary), var(--accent)); margin: 0 auto 6px;
-    }
-    .story-ring img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid var(--bg-base); }
-    .story-bubble span { font-size: 0.74rem; font-weight: 700; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-    .flash-ticker {
-      background: var(--accent); color: #fff; text-align: center; padding: 10px; font-weight: 900; font-size: 0.95rem;
-    }
-
-    .hero-badge {
-      display: inline-block; padding: 5px 14px; border-radius: 999px;
-      background: var(--bg-card); border: 1px solid var(--primary); color: var(--primary);
-      font-size: 0.82rem; font-weight: 800; margin-bottom: 14px;
-    }
-    .hero h1, .bento-main h1 { font-size: clamp(1.8rem, 3.3vw, 2.7rem); font-weight: 900; line-height: 1.25; margin-bottom: 14px; }
-    .hero h1 span, .bento-main h1 span { color: var(--primary); }
-    .hero p, .bento-main p { color: var(--text-muted); font-size: 1rem; margin-bottom: 24px; }
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn-hero {
-      padding: 13px 24px; border-radius: 14px; font-weight: 800; font-size: 0.95rem; cursor: pointer;
-    }
+    .hero { max-width: 1220px; margin: 0 auto; padding: 38px 20px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; align-items: center; }
+    .hero-badge { display: inline-block; padding: 5px 14px; border-radius: 999px; background: var(--bg-card); border: 1px solid var(--primary); color: var(--primary); font-size: 0.8rem; font-weight: 800; margin-bottom: 12px; }
+    .hero h1 { font-size: clamp(1.8rem, 3.3vw, 2.7rem); font-weight: 900; line-height: 1.22; margin-bottom: 12px; }
+    .hero h1 span { color: var(--primary); }
+    .hero p { color: var(--text-muted); margin-bottom: 20px; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-hero { padding: 12px 22px; border-radius: 12px; font-weight: 800; cursor: pointer; }
     .btn-hero.main { background: var(--primary); color: var(--primary-fg); }
     .btn-hero.secondary { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border); }
-    .hero-visual { border-radius: 24px; overflow: hidden; border: 2px solid var(--border); height: 390px; }
+    .hero-visual { border-radius: 24px; overflow: hidden; border: 2px solid var(--border); height: 370px; }
     .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* Signature Interactive Feature Box */
-    .sig-section { max-width: 1220px; margin: 12px auto 24px; padding: 0 20px; }
-    .sig-widget {
-      background: var(--bg-surface); border: 2px solid var(--primary); border-radius: 24px;
-      padding: 28px; box-shadow: 0 16px 36px rgba(0,0,0,0.12);
-    }
-    .sig-badge {
-      display: inline-block; background: var(--primary); color: var(--primary-fg);
-      padding: 4px 12px; border-radius: 999px; font-size: 0.76rem; font-weight: 900; margin-bottom: 8px;
-    }
-    .sig-head h3 { font-size: 1.35rem; font-weight: 900; margin-bottom: 6px; }
-    .sig-head p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; }
-    .sig-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
-    .sig-input {
-      flex: 1; min-width: 210px; padding: 11px 14px; border-radius: 12px;
-      border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main);
-      font-family: inherit; font-size: 0.92rem;
-    }
-    .sig-check {
-      background: var(--bg-card); border: 1px solid var(--border); padding: 10px 14px;
-      border-radius: 12px; font-weight: 700; font-size: 0.88rem; cursor: pointer;
-    }
-    .sig-btn {
-      padding: 12px 22px; border-radius: 12px; border: none;
-      background: var(--primary); color: var(--primary-fg); font-weight: 900;
-      font-family: inherit; cursor: pointer; font-size: 0.92rem;
-    }
-    .sig-result {
-      background: var(--bg-card); border: 1px dashed var(--primary); padding: 12px 16px;
-      border-radius: 12px; font-size: 0.92rem;
-    }
+    .sig-section { max-width: 1220px; margin: 16px auto; padding: 0 20px; }
+    .sig-widget { background: var(--bg-surface); border: 2px solid var(--primary); border-radius: 22px; padding: 24px; }
+    .sig-badge { display: inline-block; background: var(--primary); color: var(--primary-fg); padding: 3px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 900; margin-bottom: 8px; }
+    .sig-head h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 6px; }
+    .sig-head p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 14px; }
+    .sig-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+    .sig-input { flex: 1; min-width: 200px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main); font-family: inherit; }
+    .sig-check { background: var(--bg-card); border: 1px solid var(--border); padding: 9px 14px; border-radius: 10px; font-weight: 700; cursor: pointer; }
+    .sig-btn { padding: 11px 20px; border-radius: 10px; border: none; background: var(--primary); color: var(--primary-fg); font-weight: 900; font-family: inherit; cursor: pointer; }
+    .sig-result { background: var(--bg-card); border: 1px dashed var(--primary); padding: 11px 14px; border-radius: 10px; font-size: 0.9rem; }
 
-    /* Products Grid */
-    .section { max-width: 1220px; margin: 0 auto; padding: 28px 20px 60px; }
+    .section { max-width: 1220px; margin: 0 auto; padding: 28px 20px 56px; }
     .section-title { font-size: 1.65rem; font-weight: 900; margin-bottom: 6px; }
     .section-sub { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 24px; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-    .product-card {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
-      overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s;
-    }
-    .product-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-    .product-img-wrap { position: relative; height: 270px; background: var(--bg-surface); }
+    .product-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
+    .product-img-wrap { position: relative; height: 260px; background: var(--bg-surface); overflow: hidden; }
     .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-    .product-tag {
-      position: absolute; top: 12px; right: 12px; background: var(--primary); color: var(--primary-fg);
-      padding: 4px 12px; border-radius: 999px; font-size: 0.76rem; font-weight: 800;
-    }
-    .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+    .product-tag { position: absolute; top: 12px; right: 12px; background: var(--primary); color: var(--primary-fg); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; }
+    .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; }
     .product-cat { font-size: 0.76rem; color: var(--text-muted); }
-    .product-title { font-size: 1.05rem; font-weight: 800; margin: 4px 0 10px; }
-    .product-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+    .product-title { font-size: 1.05rem; font-weight: 800; margin: 4px 0 8px; }
+    .product-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
     .price-current { font-size: 1.25rem; font-weight: 900; color: var(--primary); }
     .price-old { font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through; }
     .size-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 6px; }
     .size-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; }
     .size-chips { display: flex; gap: 5px; flex-wrap: wrap; }
-    .size-chip {
-      padding: 3px 9px; border-radius: 7px; border: 1px solid var(--border);
-      background: var(--bg-surface); color: var(--text-main); font-size: 0.76rem; font-weight: 700; cursor: pointer;
-    }
+    .size-chip { padding: 3px 9px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg-surface); color: var(--text-main); font-size: 0.75rem; font-weight: 700; cursor: pointer; }
     .size-chip.active { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
-    .btn-order {
-      margin-top: auto; width: 100%; padding: 12px; border-radius: 12px; border: none;
-      background: var(--primary); color: var(--primary-fg); font-weight: 800; cursor: pointer; font-family: inherit;
-    }
+    .btn-order { width: 100%; padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: var(--primary-fg); font-weight: 800; cursor: pointer; font-family: inherit; }
 
-    .info-box {
-      background: var(--bg-surface); border: 1px solid var(--border); border-radius: 22px;
-      padding: 28px; margin-top: 42px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; align-items: center;
-    }
-    .social-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
-    .social-pill {
-      padding: 7px 14px; border-radius: 999px; background: var(--bg-card); border: 1px solid var(--border); font-weight: 700; font-size: 0.85rem;
-    }
+    .info-box { max-width: 1180px; margin: 24px auto; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .social-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .social-pill { padding: 6px 14px; border-radius: 999px; background: var(--bg-card); border: 1px solid var(--border); font-weight: 700; font-size: 0.84rem; }
 
-    /* Modal */
-    .modal-backdrop {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.72); display: none;
-      align-items: center; justify-content: center; z-index: 100; padding: 16px;
-    }
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.72); display: none; align-items: center; justify-content: center; z-index: 100; padding: 16px; }
     .modal-backdrop.open { display: flex; }
-    .modal-card {
-      background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border);
-      border-radius: 22px; max-width: 480px; width: 100%; padding: 24px;
-    }
+    .modal-card { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border); border-radius: 22px; max-width: 460px; width: 100%; padding: 24px; }
     .form-group { margin-bottom: 12px; }
-    .form-group label { display: block; font-size: 0.84rem; font-weight: 700; margin-bottom: 5px; }
-    .form-control {
-      width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border);
-      background: var(--bg-surface); color: var(--text-main); font-family: inherit;
-    }
-    .summary-strip {
-      background: var(--bg-surface); padding: 12px; border-radius: 10px; margin: 12px 0;
-      display: flex; justify-content: space-between; font-weight: 800; border: 1px dashed var(--primary);
-    }
-    footer { text-align: center; padding: 24px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; }
-    @media (max-width: 860px) {
-      .hero, .hero-bento { grid-template-columns: 1fr; }
-    }
+    .form-group label { display: block; font-size: 0.84rem; font-weight: 700; margin-bottom: 4px; }
+    .form-control { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-surface); color: var(--text-main); font-family: inherit; }
+    .summary-strip { background: var(--bg-surface); padding: 12px; border-radius: 10px; margin: 12px 0; display: flex; justify-content: space-between; font-weight: 800; border: 1px dashed var(--primary); }
+    footer { text-align: center; padding: 24px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.84rem; }
+    @media (max-width: 860px) { .hero, .arch-dome-row { grid-template-columns: 1fr; } }
+
+    /* Archetype-Specific Structural Overrides */
+    
+        .arch-hero { max-width: 1180px; margin: 30px auto; padding: 20px; text-align: center; }
+        .arch-hero h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 900; letter-spacing: -0.02em; margin: 12px 0; }
+        .arch-dome-row { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 24px; align-items: end; margin-top: 28px; }
+        .arch-dome { border-radius: 220px 220px 16px 16px; overflow: hidden; border: 3px solid var(--primary); height: 420px; position: relative; box-shadow: 0 24px 48px rgba(0,0,0,0.2); }
+        .arch-dome.center { height: 500px; }
+        .arch-dome img { width: 100%; height: 100%; object-fit: cover; }
+        .product-card { border-radius: 180px 180px 18px 18px !important; border: 2px solid var(--primary) !important; text-align: center; }
+        .product-img-wrap { border-radius: 175px 175px 0 0; height: 310px !important; }
+        .size-row, .product-price-row { justify-content: center !important; }
+      
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>🎨 تصميم خاص لـ <strong>Vogele Mode (zaki shop)</strong> | الهوية: بنفسجي ملكي وفضي لامع (Amethyst Luxe) | الميزة: 📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</span>
-    <a href="../../index.html">🔙 كل مواقع سطيف 1 (372)</a>
+    <span>✨ شكل الموقع: <strong>🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)</strong> | الميزة: <strong>📏 حاسبة المقاس الذكية (AI Size Finder)</strong></span>
+    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
   <header>
@@ -263,61 +141,61 @@
         </div>
       </div>
       <div class="nav-actions">
-        <a href="#feature-sec" class="btn-nav">📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</a>
-        <a href="#catalog" class="btn-nav">🛍️ الموديلات</a>
+        <a href="#feature-sec" class="btn-nav">📏 حاسبة المقاس الذكية (AI Size Finder)</a>
+        <a href="#catalog" class="btn-nav">🛍️ الكتالوج</a>
         <a href="tel:0774200056" class="btn-nav primary">📞 0774 20 00 56</a>
       </div>
     </div>
   </header>
 
   
-  <section class="hero vip-frame">
-    <div>
-      <span class="hero-badge">✨ صالون عرض ملكي مع شريط جانبي (VIP Atelier)</span>
-      <h1><span>Vogele Mode (zaki shop)</span> — متجر ملابس</h1>
-      <p>أهلاً بكم في متجرنا الإلكتروني الرسمي بسطيف (18 نهج الاخوة هبّاش، سطيف‎ 19000). صممنا لكم تجربة تسوق فريدة مزودة بميزة <strong>📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</strong>.</p>
-      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تسوّق التشكيلة الآن</a> <a href="https://wa.me/213774200056?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Vogele%20Mode%20(zaki%20shop)%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85%20%D9%88%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%AF%D9%8A%D9%84%D8%A7%D8%AA" target="_blank" class="btn-hero secondary">💬 واتساب مباشر</a></div>
-    </div>
-    <div class="hero-visual"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="Vogele Mode (zaki shop)" /></div>
-  </section>
-
-  <section id="feature-sec" class="sig-section">
-    
+    <section class="arch-hero">
+      <span class="hero-badge">🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)</span>
+      <h1>Vogele Mode (zaki shop)</h1>
+      <p style="color:var(--text-muted);max-width:680px;margin:0 auto 20px">متجر ملابس في قلب سطيف (18 نهج الاخوة هبّاش، سطيف‎ 19000) — تصميم الأقواس المعمارية الفاخرة</p>
+      <div class="hero-ctas" style="justify-content:center"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213774200056?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Vogele%20Mode%20(zaki%20shop)%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+      <div class="arch-dome-row">
+        <div class="arch-dome"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="" /></div>
+        <div class="arch-dome center"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="Vogele Mode (zaki shop)" /></div>
+        <div class="arch-dome"><img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=600&q=80" alt="" /></div>
+      </div>
+    </section>
+    <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
-          <span class="sig-badge">شفافية وثقة 100%</span>
-          <h3>📹 اطلب تصوير فيديو مباشر للقطعة من داخل محلنا!</h3>
-          <p>نحن في <strong>Vogele Mode (zaki shop)</strong> نصوّر لك القطعة التي تختارها بالفيديو على الطبيعة في المحل ونرسلها لك على واتساب قبل شحنها:</p>
+          <span class="sig-badge">ميزة تفاعلية حصرية</span>
+          <h3>📏 حاسبة المقاس الذكية (AI Size Finder)</h3>
+          <p>أدخل طولك ووزنك ليحدد لك النظام المقاس المضبوط فوراً قبل الطلب:</p>
         </div>
         <div class="sig-controls">
-          <input type="text" id="vidItem" placeholder="اكتب اسم الموديل واللون الذي تريد رؤيته بالفيديو" value="معاينة فيديو للموديل الأول واللون المتوفر" class="sig-input" />
-          <button type="button" class="sig-btn" onclick="openOrderModal('طلب فيديو معاينة مباشر: ' + document.getElementById('vidItem').value, 0)">📹 اطلب الفيديو عبر واتساب الآن</button>
+          <input type="number" id="sfHeight" placeholder="الطول (سم)" value="174" class="sig-input" />
+          <input type="number" id="sfWeight" placeholder="الوزن (كغ)" value="72" class="sig-input" />
+          <button type="button" class="sig-btn" onclick="calcSmartSize()">✨ احسب مقاسي الآن</button>
         </div>
-        <div class="sig-result">✨ خدمة مجانية وفورية خلال أوقات عمل المحل من 09:00 صباحاً حتى 21:00 مساءً.</div>
-      </div>
-  </section>
-
-  <section id="catalog" class="section">
-    <h2 class="section-title">✨ كتالوج Vogele Mode (zaki shop) الحصري</h2>
-    <p class="section-sub">جميع الموديلات متوفرة مع خدمة الدفع عند الاستلام والتوصيل السريع لـ 58 ولاية</p>
-    <div class="products-grid">
-      
+        <div id="sfResult" class="sig-result">المقاس المقترح: <strong>L (مضبوط ومريح)</strong> — متوفر للتوصيل الفوري!</div>
+      </div></section>
+    <section id="catalog" class="section">
+      <h2 class="section-title" style="text-align:center">🏛️ أروقة الموديلات المختارة</h2>
+      <p class="section-sub" style="text-align:center">نوافذ عرض مقوّسة مستوحاة من دور الأزياء الإيطالية</p>
+      <div class="products-grid">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">الأكثر طلباً 💖</span>
         <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)" loading="lazy" />
       </div>
       <div class="product-body">
-        <div class="product-cat">متجر ملابس</div>
-        <h3 class="product-title">طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)</h3>
-        <div class="product-price-row">
-          <span class="price-current">8 000 د.ج</span>
-          <span class="price-old">9 400 د.ج</span>
-        </div>
-        <div class="size-row">
-          <span class="size-label">المقاس:</span>
-          <div class="size-chips">
-            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+        <div>
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)</h3>
+          <div class="product-price-row">
+            <span class="price-current">8 000 د.ج</span>
+            <span class="price-old">9 400 د.ج</span>
+          </div>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+            </div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)', 8000)">
@@ -333,16 +211,18 @@
         <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=600&q=80" alt="فستان ميدي تركي أنيق (Robe Midi Élégante)" loading="lazy" />
       </div>
       <div class="product-body">
-        <div class="product-cat">متجر ملابس</div>
-        <h3 class="product-title">فستان ميدي تركي أنيق (Robe Midi Élégante)</h3>
-        <div class="product-price-row">
-          <span class="price-current">6 100 د.ج</span>
-          <span class="price-old">7 200 د.ج</span>
-        </div>
-        <div class="size-row">
-          <span class="size-label">المقاس:</span>
-          <div class="size-chips">
-            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+        <div>
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">فستان ميدي تركي أنيق (Robe Midi Élégante)</h3>
+          <div class="product-price-row">
+            <span class="price-current">6 100 د.ج</span>
+            <span class="price-old">7 200 د.ج</span>
+          </div>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+            </div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('فستان ميدي تركي أنيق (Robe Midi Élégante)', 6100)">
@@ -358,16 +238,18 @@
         <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=600&q=80" alt="بلوزة حريرية ساتان فاخرة (Blouse Satinée)" loading="lazy" />
       </div>
       <div class="product-body">
-        <div class="product-cat">متجر ملابس</div>
-        <h3 class="product-title">بلوزة حريرية ساتان فاخرة (Blouse Satinée)</h3>
-        <div class="product-price-row">
-          <span class="price-current">3 800 د.ج</span>
-          <span class="price-old">4 600 د.ج</span>
-        </div>
-        <div class="size-row">
-          <span class="size-label">المقاس:</span>
-          <div class="size-chips">
-            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+        <div>
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">بلوزة حريرية ساتان فاخرة (Blouse Satinée)</h3>
+          <div class="product-price-row">
+            <span class="price-current">3 800 د.ج</span>
+            <span class="price-old">4 600 د.ج</span>
+          </div>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+            </div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('بلوزة حريرية ساتان فاخرة (Blouse Satinée)', 3800)">
@@ -383,16 +265,18 @@
         <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=600&q=80" alt="طقم كاجوال يومي أنيق (Set Casual Tendance)" loading="lazy" />
       </div>
       <div class="product-body">
-        <div class="product-cat">متجر ملابس</div>
-        <h3 class="product-title">طقم كاجوال يومي أنيق (Set Casual Tendance)</h3>
-        <div class="product-price-row">
-          <span class="price-current">5 400 د.ج</span>
-          <span class="price-old">6 500 د.ج</span>
-        </div>
-        <div class="size-row">
-          <span class="size-label">المقاس:</span>
-          <div class="size-chips">
-            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+        <div>
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">طقم كاجوال يومي أنيق (Set Casual Tendance)</h3>
+          <div class="product-price-row">
+            <span class="price-current">5 400 د.ج</span>
+            <span class="price-old">6 500 د.ج</span>
+          </div>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+            </div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('طقم كاجوال يومي أنيق (Set Casual Tendance)', 5400)">
@@ -408,16 +292,18 @@
         <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="معطف ترنش كلاسيكي (Trench Coat Parisien)" loading="lazy" />
       </div>
       <div class="product-body">
-        <div class="product-cat">متجر ملابس</div>
-        <h3 class="product-title">معطف ترنش كلاسيكي (Trench Coat Parisien)</h3>
-        <div class="product-price-row">
-          <span class="price-current">9 100 د.ج</span>
-          <span class="price-old">11 000 د.ج</span>
-        </div>
-        <div class="size-row">
-          <span class="size-label">المقاس:</span>
-          <div class="size-chips">
-            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+        <div>
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">معطف ترنش كلاسيكي (Trench Coat Parisien)</h3>
+          <div class="product-price-row">
+            <span class="price-current">9 100 د.ج</span>
+            <span class="price-old">11 000 د.ج</span>
+          </div>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+            </div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('معطف ترنش كلاسيكي (Trench Coat Parisien)', 9100)">
@@ -433,16 +319,18 @@
         <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة يد جلدية فاخرة (Sac à Main Couture)" loading="lazy" />
       </div>
       <div class="product-body">
-        <div class="product-cat">متجر ملابس</div>
-        <h3 class="product-title">حقيبة يد جلدية فاخرة (Sac à Main Couture)</h3>
-        <div class="product-price-row">
-          <span class="price-current">4 300 د.ج</span>
-          <span class="price-old">5 100 د.ج</span>
-        </div>
-        <div class="size-row">
-          <span class="size-label">المقاس:</span>
-          <div class="size-chips">
-            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+        <div>
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">حقيبة يد جلدية فاخرة (Sac à Main Couture)</h3>
+          <div class="product-price-row">
+            <span class="price-current">4 300 د.ج</span>
+            <span class="price-old">5 100 د.ج</span>
+          </div>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+            </div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('حقيبة يد جلدية فاخرة (Sac à Main Couture)', 4300)">
@@ -450,20 +338,17 @@
         </button>
       </div>
     </div>
-  
-    </div>
+  </div>
+    </section>
 
-    <div id="contact" class="info-box">
-      <div>
-        <h3 style="font-size:1.3rem;font-weight:900;margin-bottom:6px">📍 عنوان ووسائل تواصل Vogele Mode (zaki shop)</h3>
-        <p style="color:var(--text-muted)">18 نهج الاخوة هبّاش، سطيف‎ 19000، بلدية سطيف • الهاتف: <strong dir="ltr">0774 20 00 56</strong></p>
-        <div class="social-pills"><a href="https://www.google.com/maps/place/?q=place_id:ChIJPfwITOIV8xIR9_lKXJun5Do" target="_blank" rel="noopener" class="social-pill">📍 موقعنا على الخريطة</a></div>
-      </div>
-      <div>
-        <button type="button" class="sig-btn" onclick="openOrderModal('طلب خاص من متجر Vogele Mode (zaki shop)', 4500)">⚡ طلب سريع من المحل</button>
-      </div>
+  <div class="info-box">
+    <div>
+      <h3 style="font-size:1.2rem;font-weight:900">📍 Vogele Mode (zaki shop) — بلدية سطيف</h3>
+      <p style="color:var(--text-muted);font-size:0.9rem">18 نهج الاخوة هبّاش، سطيف‎ 19000 • الهاتف: <strong dir="ltr">0774 20 00 56</strong></p>
+      <div class="social-pills"><a href="https://www.google.com/maps/place/?q=place_id:ChIJPfwITOIV8xIR9_lKXJun5Do" target="_blank" rel="noopener" class="social-pill">📍 الخريطة</a></div>
     </div>
-  </section>
+    <button type="button" class="sig-btn" onclick="openOrderModal('طلب خاص من متجر Vogele Mode (zaki shop)', 4500)">⚡ طلب سريع من المحل</button>
+  </div>
 
   <div id="orderModal" class="modal-backdrop" onclick="if(event.target===this)closeOrderModal()">
     <div class="modal-card">
@@ -502,7 +387,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Vogele Mode (zaki shop)</strong> — تصميم متجر إلكتروني مخصص (صالون عرض ملكي مع شريط جانبي (VIP Atelier) + 📹 طلب معاينة فيديو حية للسلعة (Live Video Preview))
+    جميع الحقوق محفوظة © 2026 <strong>Vogele Mode (zaki shop)</strong> — الشكل المعماري: 🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)
   </footer>
 
   <script>
@@ -515,7 +400,6 @@
       btn.parentElement.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active'));
       btn.classList.add('active');
     }
-
     function calcSmartSize() {
       const h = parseInt(document.getElementById('sfHeight')?.value || '172', 10);
       const w = parseInt(document.getElementById('sfWeight')?.value || '70', 10);
@@ -527,51 +411,41 @@
       else sz = 'XXL (مقاس خاص)';
       document.getElementById('sfResult').innerHTML = '✅ المقاس المقترح لطول ' + h + ' سم ووزن ' + w + ' كغ هو: <strong>' + sz + '</strong>';
     }
-
     function calcBundle() {
       const checks = document.querySelectorAll('.sig-check input:checked');
       let sum = 0;
       checks.forEach(c => { sum += parseInt(c.value, 10); });
       const discount = checks.length >= 2 ? 1500 : 0;
       window.bundleTotal = Math.max(0, sum - discount);
-      document.getElementById('bundleResult').innerHTML = 'سعر الطقم المختار (' + checks.length + ' قطع): <strong>' + window.bundleTotal.toLocaleString('fr-DZ') + ' د.ج</strong> ' + (discount ? '(شامل خصم 1,500 د.ج 🎉)' : '');
+      document.getElementById('bundleResult').innerHTML = 'سعر الطقم (' + checks.length + ' قطع): <strong>' + window.bundleTotal.toLocaleString('fr-DZ') + ' د.ج</strong>';
     }
-
     function spinWheelPrize() {
       const prizes = [
         '🎉 مبروك! ربحت كود خصم 800 د.ج فوري (الكود: SETIF800)',
         '🚚 مبروك! ربحت توصيل مجاني لطلبك اليوم (الكود: FREESHIP19)',
         '🎁 مبروك! ربحت خصم 1,000 د.ج عند طلب قطعتين (الكود: VIP1000)'
       ];
-      const pick = prizes[Math.floor(Math.random() * prizes.length)];
-      document.getElementById('wheelResult').innerHTML = '<strong>' + pick + '</strong>';
+      document.getElementById('wheelResult').innerHTML = '<strong>' + prizes[Math.floor(Math.random() * prizes.length)] + '</strong>';
     }
-
     function calcQtyTier() {
       const sel = document.getElementById('qtyTier');
       const qty = parseInt(sel.value, 10);
       const unit = parseInt(sel.options[sel.selectedIndex].getAttribute('data-unit'), 10);
-      const total = qty * unit;
-      document.getElementById('tierResult').innerHTML = 'الإجمالي لـ ' + qty + ' قطع: <strong>' + total.toLocaleString('fr-DZ') + ' د.ج</strong> (' + unit.toLocaleString('fr-DZ') + ' د.ج للقطعة)';
+      document.getElementById('tierResult').innerHTML = 'الإجمالي لـ ' + qty + ' قطع: <strong>' + (qty * unit).toLocaleString('fr-DZ') + ' د.ج</strong>';
     }
-
     function orderTierQty() {
       const sel = document.getElementById('qtyTier');
       const qty = parseInt(sel.value, 10);
       const unit = parseInt(sel.options[sel.selectedIndex].getAttribute('data-unit'), 10);
-      openOrderModal('طلب كمية (' + qty + ' قطع بسعر مخفض)', qty * unit);
+      openOrderModal('طلب كمية (' + qty + ' قطع)', qty * unit);
     }
-
     function activateLoyalty() {
       const ph = document.getElementById('loyalPhone')?.value || '';
-      document.getElementById('loyalResult').innerHTML = '✅ تم تفعيل <strong>500 نقطة (خصم 500 د.ج)</strong> للرقم ' + (ph || 'الخاص بك') + ' — سيُخصم تلقائياً عند تأكيد الطلب!';
+      document.getElementById('loyalResult').innerHTML = '✅ تم تفعيل <strong>500 نقطة (خصم 500 د.ج)</strong> للرقم ' + (ph || 'الخاص بك');
     }
-
     function checkRadar() {
-      const val = document.getElementById('radarWilaya').value;
-      document.getElementById('radarResult').innerHTML = '📍 تفاصيل الشحن: <strong>' + val + '</strong>';
+      document.getElementById('radarResult').innerHTML = '📍 تفاصيل الشحن: <strong>' + document.getElementById('radarWilaya').value + '</strong>';
     }
-
     function openOrderModal(productName, price) {
       currentProductName = productName;
       currentBasePrice = price;
@@ -579,18 +453,12 @@
       updateShipping();
       document.getElementById('orderModal').classList.add('open');
     }
-
-    function closeOrderModal() {
-      document.getElementById('orderModal').classList.remove('open');
-    }
-
+    function closeOrderModal() { document.getElementById('orderModal').classList.remove('open'); }
     function updateShipping() {
       const wilayaSel = document.getElementById('custWilaya');
       const ship = currentBasePrice > 0 ? parseInt(wilayaSel.options[wilayaSel.selectedIndex].getAttribute('data-ship') || '500', 10) : 0;
-      const total = currentBasePrice + ship;
-      document.getElementById('totalPriceDisplay').textContent = total.toLocaleString('fr-DZ') + ' د.ج';
+      document.getElementById('totalPriceDisplay').textContent = (currentBasePrice + ship).toLocaleString('fr-DZ') + ' د.ج';
     }
-
     function submitCodOrder(e) {
       e.preventDefault();
       const name = document.getElementById('custName').value;
@@ -598,11 +466,8 @@
       const wilaya = document.getElementById('custWilaya').value;
       const total = document.getElementById('totalPriceDisplay').textContent;
       const msg = 'طلب جديد من موقع (' + storeTitle + '):\n- الطلب: ' + currentProductName + '\n- الاسم: ' + name + '\n- الهاتف: ' + phone + '\n- الولاية: ' + wilaya + '\n- الإجمالي: ' + total;
-      if (storeWhatsApp) {
-        window.open('https://wa.me/' + storeWhatsApp + '?text=' + encodeURIComponent(msg), '_blank');
-      } else {
-        alert('تم تسجيل طلبك بنجاح!\n\n' + msg);
-      }
+      if (storeWhatsApp) window.open('https://wa.me/' + storeWhatsApp + '?text=' + encodeURIComponent(msg), '_blank');
+      else alert('تم تسجيل طلبك بنجاح!\n\n' + msg);
       closeOrderModal();
     }
   </script>
