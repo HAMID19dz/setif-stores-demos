@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inya Baby | المتجر الإلكتروني الرسمي — سطيف</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #F8FAFC;
+      --bg-surface: #EEF6FF;
+      --bg-card: #FFFFFF;
+      --primary: #0284C7;
+      --primary-hover: #0369A1;
+      --primary-fg: #FFFFFF;
+      --accent: #F43F5E;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --border: #DBEAFE;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    .demo-banner {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: var(--primary-fg);
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .demo-banner a {
+      background: rgba(0,0,0,0.22);
+      color: #fff;
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+    }
+    header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+    .nav-container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-monogram {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: var(--primary-fg);
+      font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    }
+    .brand-name {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: block;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-nav {
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-main);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-nav.primary {
+      background: var(--primary);
+      color: var(--primary-fg);
+      border-color: var(--primary);
+    }
+    .btn-nav:hover { transform: translateY(-2px); }
+
+    /* Hero */
+    .hero {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 48px 20px 56px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: var(--bg-surface);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 3.6vw, 3rem);
+      font-weight: 900;
+      line-height: 1.22;
+      margin-bottom: 16px;
+    }
+    .hero h1 span {
+      color: var(--primary);
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 26px;
+      max-width: 580px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .btn-hero {
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      font-family: inherit;
+    }
+    .btn-hero.main {
+      background: var(--primary);
+      color: var(--primary-fg);
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+    }
+    .btn-hero.secondary {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+    .btn-hero:hover { transform: translateY(-2px); }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .trust-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .hero-visual {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.28);
+      aspect-ratio: 4/4.3;
+    }
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .floating-card {
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      left: 18px;
+      background: rgba(15, 23, 42, 0.86);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Catalog Section */
+    .section {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 900;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.18);
+      border-color: var(--primary);
+    }
+    .product-img-wrap {
+      position: relative;
+      height: 290px;
+      overflow: hidden;
+      background: var(--bg-surface);
+    }
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .product-card:hover .product-img-wrap img {
+      transform: scale(1.06);
+    }
+    .product-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--primary);
+      color: var(--primary-fg);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      z-index: 2;
+    }
+    .product-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .product-cat {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .product-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .price-current {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+    .price-old {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+    .size-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 8px;
+    }
+    .size-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+    .size-chips {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .size-chip {
+      padding: 4px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-main);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .size-chip.active {
+      background: var(--primary);
+      color: var(--primary-fg);
+      border-color: var(--primary);
+    }
+    .btn-order {
+      margin-top: auto;
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      background: var(--primary);
+      color: var(--primary-fg);
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.2s;
+    }
+    .btn-order:hover { opacity: 0.92; }
+
+    /* Store Info Banner */
+    .info-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .social-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .social-pill {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: all 0.2s;
+    }
+    .social-pill:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Checkout Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 16px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-card {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      max-width: 500px;
+      width: 100%;
+      padding: 26px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+    .summary-strip {
+      background: var(--bg-surface);
+      padding: 12px 16px;
+      border-radius: 12px;
+      margin: 14px 0;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      border: 1px dashed var(--primary);
+    }
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+    @media (max-width: 860px) {
+      .hero, .info-box { grid-template-columns: 1fr; }
+      .trust-strip { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-banner">
+    <span>✨ نموذج متجر إلكتروني تجريبي مخصص لـ <strong>Inya Baby</strong> (هوية عالم الأطفال والرضع (Joyful Sky &amp; Coral))</span>
+    <a href="../../index.html">🔙 العودة لدليل مواقع سطيف 1</a>
+  </div>
+
+  <header>
+    <div class="nav-container">
+      <div class="brand-box">
+        <div class="brand-monogram">IN</div>
+        <div>
+          <div class="brand-name">Inya Baby</div>
+          <span class="brand-sub">📍 04 Des Les Freres Meslem St, Sétif • ملابس أطفال</span>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <a href="#catalog" class="btn-nav">🛍️ الكتالوج</a>
+        <a href="tel:0770808485" class="btn-nav primary">📞 0770 80 84 85</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="hero-badge">⚡ أجمل ملابس الأطفال والرضع بأعلى جودة قطنية</div>
+      <h1>مرحباً بكم في <span>Inya Baby</span> — أناقة صغاركم تبدأ من هنا — قطن ناعم وتصاميم مبهجة</h1>
+      <p>تشكيلة واسعة لحديثي الولادة، البنات، والأولاد لكل الأعمار والمناسبات والأعياد مع توصيل سريع لباب المنزل.</p>
+      <div class="hero-ctas">
+        <a href="#catalog" class="btn-hero main">🛒 تسوّق التشكيلة الآن</a>
+        <a href="https://wa.me/213770808485?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Inya%20Baby%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%AF%D9%8A%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AA%D9%88%D9%81%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A" target="_blank" class="btn-hero secondary">💬 طلب سريع عبر واتساب</a>
+      </div>
+      <div class="trust-strip">
+        <div class="trust-item">
+          <div class="trust-icon">🚚</div>
+          <div>
+            <div>توصيل 58 ولاية</div>
+            <small style="color:var(--text-muted);font-weight:500">Yalidine / ZR Express</small>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🤝</div>
+          <div>
+            <div>الدفع عند الاستلام</div>
+            <small style="color:var(--text-muted);font-weight:500">معاينة الطرد قبل الدفع</small>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">⭐</div>
+          <div>
+            <div>مقرنا في سطيف</div>
+            <small style="color:var(--text-muted);font-weight:500">04 Des Les Freres Meslem St,</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=1000&q=80" alt="Inya Baby" />
+      <div class="floating-card">
+        <div>
+          <div style="font-weight:800;font-size:1rem">Inya Baby</div>
+          <div style="font-size:0.8rem;opacity:0.85">متجر معتمد في بلدية سطيف • طلب إلكتروني فوري</div>
+        </div>
+        <span style="background:var(--primary);color:var(--primary-fg);padding:6px 14px;border-radius:999px;font-weight:800;font-size:0.8rem">مفتوح للطلبات</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalog" class="section">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">✨ أحدث الموديلات المتوفرة في Inya Baby</h2>
+        <p class="section-sub">اختر الموديل والمقاس المناسب واضغط «اطلب الآن» لتسجيل طلبك فوراً مع الدفع عند الاستلام</p>
+      </div>
+    </div>
+
+    <div class="products-grid">
+      
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">الأكثر طلباً 🎈</span>
+        <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80" alt="طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)" loading="lazy" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat">ملابس أطفال</div>
+        <h3 class="product-title">طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)</h3>
+        <div class="product-price-row">
+          <span class="price-current">4 600 د.ج</span>
+          <span class="price-old">5 500 د.ج</span>
+        </div>
+        <div class="size-row">
+          <span class="size-label">المقاس:</span>
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+          </div>
+        </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)', 4600)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
+      </div>
+    </div>
+  
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">جديد العيد ✨</span>
+        <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=600&q=80" alt="فستان أميرات للبنات (Robe Princesse Fille)" loading="lazy" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat">ملابس أطفال</div>
+        <h3 class="product-title">فستان أميرات للبنات (Robe Princesse Fille)</h3>
+        <div class="product-price-row">
+          <span class="price-current">4 800 د.ج</span>
+          <span class="price-old">5 800 د.ج</span>
+        </div>
+        <div class="size-row">
+          <span class="size-label">المقاس:</span>
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+          </div>
+        </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('فستان أميرات للبنات (Robe Princesse Fille)', 4800)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
+      </div>
+    </div>
+  
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">قطن طبيعي</span>
+        <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=600&q=80" alt="طقم استقبال مواليد قطن 100% (Pack Nouveau-né)" loading="lazy" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat">ملابس أطفال</div>
+        <h3 class="product-title">طقم استقبال مواليد قطن 100% (Pack Nouveau-né)</h3>
+        <div class="product-price-row">
+          <span class="price-current">3 900 د.ج</span>
+          <span class="price-old">4 700 د.ج</span>
+        </div>
+        <div class="size-row">
+          <span class="size-label">المقاس:</span>
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+          </div>
+        </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('طقم استقبال مواليد قطن 100% (Pack Nouveau-né)', 3900)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
+      </div>
+    </div>
+  
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">مريح للعب</span>
+        <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80" alt="طقم رياضي مريح للأطفال (Survêtement Kids)" loading="lazy" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat">ملابس أطفال</div>
+        <h3 class="product-title">طقم رياضي مريح للأطفال (Survêtement Kids)</h3>
+        <div class="product-price-row">
+          <span class="price-current">3 200 د.ج</span>
+          <span class="price-old">3 900 د.ج</span>
+        </div>
+        <div class="size-row">
+          <span class="size-label">المقاس:</span>
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+          </div>
+        </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('طقم رياضي مريح للأطفال (Survêtement Kids)', 3200)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
+      </div>
+    </div>
+  
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">جودة عالية</span>
+        <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=600&q=80" alt="جاكيت دافئ مبطن للأطفال (Doudoune Enfant)" loading="lazy" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat">ملابس أطفال</div>
+        <h3 class="product-title">جاكيت دافئ مبطن للأطفال (Doudoune Enfant)</h3>
+        <div class="product-price-row">
+          <span class="price-current">5 200 د.ج</span>
+          <span class="price-old">6 200 د.ج</span>
+        </div>
+        <div class="size-row">
+          <span class="size-label">المقاس:</span>
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+          </div>
+        </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('جاكيت دافئ مبطن للأطفال (Doudoune Enfant)', 5200)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
+      </div>
+    </div>
+  
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">طبي ومريح</span>
+        <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80" alt="حذاء أطفال طبي خفيف (Chaussures Kids)" loading="lazy" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat">ملابس أطفال</div>
+        <h3 class="product-title">حذاء أطفال طبي خفيف (Chaussures Kids)</h3>
+        <div class="product-price-row">
+          <span class="price-current">2 900 د.ج</span>
+          <span class="price-old">3 500 د.ج</span>
+        </div>
+        <div class="size-row">
+          <span class="size-label">المقاس:</span>
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+          </div>
+        </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('حذاء أطفال طبي خفيف (Chaussures Kids)', 2900)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
+      </div>
+    </div>
+  
+    </div>
+
+    <div id="contact" class="info-box">
+      <div>
+        <h3 style="font-size:1.4rem;font-weight:900;margin-bottom:8px">📍 تفضلوا بزيارة محلنا في سطيف أو تواصلوا معنا</h3>
+        <p style="color:var(--text-muted);margin-bottom:10px">
+          <strong>العنوان:</strong> 04 Des Les Freres Meslem St, Sétif، بلدية سطيف، ولاية سطيف
+          <br><strong>رقم الهاتف المباشر:</strong> <span dir="ltr">0770 80 84 85</span>
+        </p>
+        <div class="social-pills">
+          <a href="https://www.google.com/maps/place/Inya+Baby/data=!4m7!3m6!1s0x12f315eb6597d915:0x6ee7edb4e09541e0!8m2!3d36.1897377!4d5.4080878!16s%2Fg%2F11l5lhzlm4!19sChIJFdmXZesV8xIR4EGV4LTt524?authuser=0&amp;hl=ar&amp;g_ep=EgoyMDI2MTAyOC4wIJJjKgBIAVAD&amp;rclk=1" target="_blank" rel="noopener" class="social-pill">📍 موقعنا على الخريطة</a>
+        </div>
+      </div>
+      <div style="background:var(--bg-card);padding:22px;border-radius:18px;border:1px solid var(--border);text-align:center">
+        <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:4px">خدمة الزبائن والتوصيل السريع</div>
+        <div style="font-size:1.45rem;font-weight:900;color:var(--primary);margin-bottom:12px" dir="ltr">0770 80 84 85</div>
+        <button type="button" class="btn-order" onclick="openOrderModal('طلب خاص من متجر Inya Baby', 4500)">
+          ⚡ إرسال طلب مباشر للمحل
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Direct Order Modal (58 Wilayas COD) -->
+  <div id="orderModal" class="modal-backdrop" onclick="if(event.target===this)closeOrderModal()">
+    <div class="modal-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+        <h3 style="font-size:1.2rem;font-weight:900">🛍️ استمارة الطلب السريع (58 ولاية)</h3>
+        <button type="button" onclick="closeOrderModal()" style="background:none;border:none;color:var(--text-muted);font-size:1.3rem;cursor:pointer">✕</button>
+      </div>
+      <div id="selectedProductLabel" style="font-size:0.9rem;color:var(--primary);font-weight:800;margin-bottom:12px"></div>
+      <form onsubmit="submitCodOrder(event)">
+        <div class="form-group">
+          <label>الاسم الكامل *</label>
+          <input type="text" id="custName" required class="form-control" placeholder="أدخل اسمك ولقبك" />
+        </div>
+        <div class="form-group">
+          <label>رقم الهاتف (للاتصال بك عند التوصيل) *</label>
+          <input type="tel" id="custPhone" required class="form-control" placeholder="05XX XX XX XX / 06XX / 07XX" dir="ltr" />
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div class="form-group">
+            <label>الولاية *</label>
+            <select id="custWilaya" class="form-control" onchange="updateShipping()">
+              <option value="19 - سطيف" data-ship="400">19 - سطيف (400 د.ج)</option>
+              <option value="16 - الجزائر" data-ship="600">16 - الجزائر العاصمة (600 د.ج)</option>
+              <option value="25 - قسنطينة" data-ship="500">25 - قسنطينة (500 د.ج)</option>
+              <option value="06 - بجاية" data-ship="500">06 - بجاية (500 د.ج)</option>
+              <option value="31 - وهران" data-ship="700">31 - وهران (700 د.ج)</option>
+              <option value="34 - برج بوعريريج" data-ship="500">34 - برج بوعريريج (500 د.ج)</option>
+              <option value="05 - باتنة" data-ship="550">05 - باتنة (550 د.ج)</option>
+              <option value="43 - ميلة" data-ship="500">43 - ميلة (500 د.ج)</option>
+              <option value="28 - المسيلة" data-ship="550">28 - المسيلة (550 د.ج)</option>
+              <option value="باقي الولايات (58 ولاية)" data-ship="650">باقي الولايات (650 د.ج)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>طريقة الاستلام *</label>
+            <select id="custDelivery" class="form-control" onchange="updateShipping()">
+              <option value="مكتب التوصيل (Stop Desk)">مكتب ياليدين / ZR Express</option>
+              <option value="توصيل لباب المنزل (+200 د.ج)">توصيل لباب المنزل</option>
+            </select>
+          </div>
+        </div>
+        <div class="summary-strip">
+          <span>الإجمالي مع التوصيل:</span>
+          <span id="totalPriceDisplay">0 د.ج</span>
+        </div>
+        <button type="submit" class="btn-order">✅ تأكيد الطلب الآن (الدفع عند الاستلام)</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    جميع الحقوق محفوظة © 2026 <strong>Inya Baby</strong> — سطيف، الجزائر | تصميم متجر إلكتروني تجريبي مخصص
+  </footer>
+
+  <script>
+    let currentBasePrice = 4500;
+    let currentProductName = '';
+    const storeWhatsApp = '213770808485';
+    const storeTitle = "Inya Baby";
+
+    function selectSize(btn) {
+      const parent = btn.parentElement;
+      parent.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function openOrderModal(productName, price) {
+      currentProductName = productName;
+      currentBasePrice = price;
+      document.getElementById('selectedProductLabel').textContent = 'المنتج: ' + productName + ' (' + price.toLocaleString('fr-DZ') + ' د.ج)';
+      updateShipping();
+      document.getElementById('orderModal').classList.add('open');
+    }
+
+    function closeOrderModal() {
+      document.getElementById('orderModal').classList.remove('open');
+    }
+
+    function updateShipping() {
+      const wilayaSel = document.getElementById('custWilaya');
+      const ship = parseInt(wilayaSel.options[wilayaSel.selectedIndex].getAttribute('data-ship') || '500', 10);
+      const deliv = document.getElementById('custDelivery').value.includes('المنزل') ? 200 : 0;
+      const total = currentBasePrice + ship + deliv;
+      document.getElementById('totalPriceDisplay').textContent = total.toLocaleString('fr-DZ') + ' د.ج';
+    }
+
+    function submitCodOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value;
+      const phone = document.getElementById('custPhone').value;
+      const wilaya = document.getElementById('custWilaya').value;
+      const delivery = document.getElementById('custDelivery').value;
+      const total = document.getElementById('totalPriceDisplay').textContent;
+
+      const msg = 'طلب جديد من المتجر الإلكتروني (' + storeTitle + '):\n'
+        + '- المنتج: ' + currentProductName + '\n'
+        + '- الزبون: ' + name + '\n'
+        + '- الهاتف: ' + phone + '\n'
+        + '- الولاية: ' + wilaya + '\n'
+        + '- الاستلام: ' + delivery + '\n'
+        + '- الإجمالي: ' + total;
+
+      if (storeWhatsApp) {
+        window.open('https://wa.me/' + storeWhatsApp + '?text=' + encodeURIComponent(msg), '_blank');
+      } else {
+        alert('تم تسجيل طلبك التجريبي بنجاح!\n\n' + msg);
+      }
+      closeOrderModal();
+    }
+  </script>
+</body>
+</html>
