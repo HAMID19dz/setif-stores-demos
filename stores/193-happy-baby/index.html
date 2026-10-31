@@ -3,26 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Baby | المتجر الإلكتروني الرسمي — سطيف</title>
+  <title>Happy Baby | 📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-base: #F8FAFC;
-      --bg-surface: #EEF6FF;
+      --bg-surface: #E0F2FE;
       --bg-card: #FFFFFF;
       --primary: #0284C7;
-      --primary-hover: #0369A1;
       --primary-fg: #FFFFFF;
       --accent: #F43F5E;
       --text-main: #0F172A;
       --text-muted: #475569;
-      --border: #DBEAFE;
+      --border: #BAE6FD;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Cairo', 'Tajawal', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -34,16 +33,16 @@
       color: var(--primary-fg);
       text-align: center;
       padding: 8px 16px;
-      font-size: 0.85rem;
-      font-weight: 700;
+      font-size: 0.84rem;
+      font-weight: 800;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
     }
     .demo-banner a {
-      background: rgba(0,0,0,0.22);
+      background: rgba(0,0,0,0.28);
       color: #fff;
       padding: 3px 12px;
       border-radius: 999px;
@@ -55,7 +54,6 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(12px);
     }
     .nav-container {
       max-width: 1220px;
@@ -66,437 +64,193 @@
       justify-content: space-between;
       gap: 16px;
     }
-    .brand-box {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .brand-box { display: flex; align-items: center; gap: 12px; }
     .brand-monogram {
-      width: 46px;
-      height: 46px;
-      border-radius: 12px;
-      background: var(--primary);
-      color: var(--primary-fg);
-      font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif;
-      font-weight: 800;
-      font-size: 1.15rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+      width: 46px; height: 46px; border-radius: 12px;
+      background: var(--primary); color: var(--primary-fg);
+      font-weight: 900; font-size: 1.15rem;
+      display: flex; align-items: center; justify-content: center;
     }
-    .brand-name {
-      font-size: 1.25rem;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-    }
-    .brand-sub {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      display: block;
-    }
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .brand-name { font-size: 1.25rem; font-weight: 900; }
+    .brand-sub { font-size: 0.78rem; color: var(--text-muted); display: block; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .btn-nav {
-      padding: 9px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.88rem;
-      cursor: pointer;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      color: var(--text-main);
-      transition: all 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      padding: 8px 16px; border-radius: 999px; font-weight: 700; font-size: 0.85rem;
+      border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main);
     }
-    .btn-nav.primary {
-      background: var(--primary);
-      color: var(--primary-fg);
-      border-color: var(--primary);
-    }
-    .btn-nav:hover { transform: translateY(-2px); }
+    .btn-nav.primary { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
 
-    /* Hero */
+    /* Hero Variants */
     .hero {
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 48px 20px 56px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
-      align-items: center;
+      max-width: 1220px; margin: 0 auto; padding: 42px 20px;
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 32px; align-items: center;
     }
+    .hero.vip-frame {
+      border: 2px solid var(--primary); border-radius: 28px; margin-top: 24px; background: var(--bg-surface);
+    }
+    .hero-cinema {
+      min-height: 440px; background-size: cover; background-position: center;
+      display: flex; align-items: center; justify-content: center; text-align: center; padding: 60px 20px; color: #fff;
+    }
+    .hero-cinema-inner { max-width: 780px; }
+    .hero-cinema h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; margin-bottom: 14px; }
+    .hero-cinema p { font-size: 1.1rem; opacity: 0.92; margin-bottom: 24px; }
+
+    .hero-bento {
+      max-width: 1220px; margin: 28px auto; padding: 0 20px;
+      display: grid; grid-template-columns: 1.3fr 0.85fr 0.85fr; gap: 18px;
+    }
+    .bento-main {
+      background: var(--bg-surface); border: 1px solid var(--border); border-radius: 24px; padding: 36px;
+    }
+    .bento-side {
+      min-height: 320px; border-radius: 24px; background-size: cover; background-position: center;
+      display: flex; align-items: flex-end; padding: 20px; color: #fff; border: 1px solid var(--border);
+    }
+    .bento-caption span { background: var(--primary); color: var(--primary-fg); padding: 3px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; }
+    .bento-caption strong { display: block; font-size: 1.05rem; margin-top: 8px; }
+    .bento-caption em { font-style: normal; color: #FBBF24; font-weight: 800; }
+
+    .stories-bar {
+      max-width: 1220px; margin: 20px auto 0; padding: 14px 20px;
+      display: flex; gap: 18px; overflow-x: auto; background: var(--bg-surface); border-radius: 20px; border: 1px solid var(--border);
+    }
+    .story-bubble { text-align: center; cursor: pointer; flex-shrink: 0; width: 88px; }
+    .story-ring {
+      width: 72px; height: 72px; border-radius: 50%; padding: 3px;
+      background: linear-gradient(45deg, var(--primary), var(--accent)); margin: 0 auto 6px;
+    }
+    .story-ring img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid var(--bg-base); }
+    .story-bubble span { font-size: 0.74rem; font-weight: 700; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .flash-ticker {
+      background: var(--accent); color: #fff; text-align: center; padding: 10px; font-weight: 900; font-size: 0.95rem;
+    }
+
     .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
-      border-radius: 999px;
-      background: var(--bg-surface);
-      border: 1px solid var(--primary);
-      color: var(--primary);
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 18px;
+      display: inline-block; padding: 5px 14px; border-radius: 999px;
+      background: var(--bg-card); border: 1px solid var(--primary); color: var(--primary);
+      font-size: 0.82rem; font-weight: 800; margin-bottom: 14px;
     }
-    .hero h1 {
-      font-size: clamp(1.9rem, 3.6vw, 3rem);
-      font-weight: 900;
-      line-height: 1.22;
-      margin-bottom: 16px;
-    }
-    .hero h1 span {
-      color: var(--primary);
-    }
-    .hero p {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      margin-bottom: 26px;
-      max-width: 580px;
-    }
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
+    .hero h1, .bento-main h1 { font-size: clamp(1.8rem, 3.3vw, 2.7rem); font-weight: 900; line-height: 1.25; margin-bottom: 14px; }
+    .hero h1 span, .bento-main h1 span { color: var(--primary); }
+    .hero p, .bento-main p { color: var(--text-muted); font-size: 1rem; margin-bottom: 24px; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
     .btn-hero {
-      padding: 14px 28px;
-      border-radius: 14px;
-      font-weight: 800;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: none;
-      font-family: inherit;
+      padding: 13px 24px; border-radius: 14px; font-weight: 800; font-size: 0.95rem; cursor: pointer;
     }
-    .btn-hero.main {
-      background: var(--primary);
-      color: var(--primary-fg);
-      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
-    }
-    .btn-hero.secondary {
-      background: var(--bg-surface);
-      color: var(--text-main);
-      border: 1px solid var(--border);
-    }
-    .btn-hero:hover { transform: translateY(-2px); }
+    .btn-hero.main { background: var(--primary); color: var(--primary-fg); }
+    .btn-hero.secondary { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border); }
+    .hero-visual { border-radius: 24px; overflow: hidden; border: 2px solid var(--border); height: 390px; }
+    .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
 
-    .trust-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
+    /* Signature Interactive Feature Box */
+    .sig-section { max-width: 1220px; margin: 12px auto 24px; padding: 0 20px; }
+    .sig-widget {
+      background: var(--bg-surface); border: 2px solid var(--primary); border-radius: 24px;
+      padding: 28px; box-shadow: 0 16px 36px rgba(0,0,0,0.12);
     }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.85rem;
-      font-weight: 700;
+    .sig-badge {
+      display: inline-block; background: var(--primary); color: var(--primary-fg);
+      padding: 4px 12px; border-radius: 999px; font-size: 0.76rem; font-weight: 900; margin-bottom: 8px;
     }
-    .trust-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
+    .sig-head h3 { font-size: 1.35rem; font-weight: 900; margin-bottom: 6px; }
+    .sig-head p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; }
+    .sig-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+    .sig-input {
+      flex: 1; min-width: 210px; padding: 11px 14px; border-radius: 12px;
+      border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main);
+      font-family: inherit; font-size: 0.92rem;
     }
-    .hero-visual {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 2px solid var(--border);
-      box-shadow: 0 24px 48px rgba(0,0,0,0.28);
-      aspect-ratio: 4/4.3;
+    .sig-check {
+      background: var(--bg-card); border: 1px solid var(--border); padding: 10px 14px;
+      border-radius: 12px; font-weight: 700; font-size: 0.88rem; cursor: pointer;
     }
-    .hero-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .sig-btn {
+      padding: 12px 22px; border-radius: 12px; border: none;
+      background: var(--primary); color: var(--primary-fg); font-weight: 900;
+      font-family: inherit; cursor: pointer; font-size: 0.92rem;
     }
-    .floating-card {
-      position: absolute;
-      bottom: 18px;
-      right: 18px;
-      left: 18px;
-      background: rgba(15, 23, 42, 0.86);
-      backdrop-filter: blur(12px);
-      color: #fff;
-      padding: 14px 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.15);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .sig-result {
+      background: var(--bg-card); border: 1px dashed var(--primary); padding: 12px 16px;
+      border-radius: 12px; font-size: 0.92rem;
     }
 
-    /* Catalog Section */
-    .section {
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 40px 20px 64px;
-    }
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-    .section-title {
-      font-size: 1.75rem;
-      font-weight: 900;
-    }
-    .section-sub {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-      gap: 24px;
-    }
+    /* Products Grid */
+    .section { max-width: 1220px; margin: 0 auto; padding: 28px 20px 60px; }
+    .section-title { font-size: 1.65rem; font-weight: 900; margin-bottom: 6px; }
+    .section-sub { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 24px; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
     .product-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.25s, box-shadow 0.25s;
-      display: flex;
-      flex-direction: column;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+      overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s;
     }
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 36px rgba(0,0,0,0.18);
-      border-color: var(--primary);
-    }
-    .product-img-wrap {
-      position: relative;
-      height: 290px;
-      overflow: hidden;
-      background: var(--bg-surface);
-    }
-    .product-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s;
-    }
-    .product-card:hover .product-img-wrap img {
-      transform: scale(1.06);
-    }
+    .product-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+    .product-img-wrap { position: relative; height: 270px; background: var(--bg-surface); }
+    .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
     .product-tag {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: var(--primary);
-      color: var(--primary-fg);
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 800;
-      z-index: 2;
+      position: absolute; top: 12px; right: 12px; background: var(--primary); color: var(--primary-fg);
+      padding: 4px 12px; border-radius: 999px; font-size: 0.76rem; font-weight: 800;
     }
-    .product-body {
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .product-cat {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .product-title {
-      font-size: 1.08rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    .product-price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-    .price-current {
-      font-size: 1.3rem;
-      font-weight: 900;
-      color: var(--primary);
-    }
-    .price-old {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      text-decoration: line-through;
-    }
-    .size-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      gap: 8px;
-    }
-    .size-label {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-    .size-chips {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
+    .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+    .product-cat { font-size: 0.76rem; color: var(--text-muted); }
+    .product-title { font-size: 1.05rem; font-weight: 800; margin: 4px 0 10px; }
+    .product-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+    .price-current { font-size: 1.25rem; font-weight: 900; color: var(--primary); }
+    .price-old { font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through; }
+    .size-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 6px; }
+    .size-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; }
+    .size-chips { display: flex; gap: 5px; flex-wrap: wrap; }
     .size-chip {
-      padding: 4px 10px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--bg-surface);
-      color: var(--text-main);
-      font-size: 0.78rem;
-      font-weight: 700;
-      cursor: pointer;
-      font-family: inherit;
+      padding: 3px 9px; border-radius: 7px; border: 1px solid var(--border);
+      background: var(--bg-surface); color: var(--text-main); font-size: 0.76rem; font-weight: 700; cursor: pointer;
     }
-    .size-chip.active {
-      background: var(--primary);
-      color: var(--primary-fg);
-      border-color: var(--primary);
-    }
+    .size-chip.active { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
     .btn-order {
-      margin-top: auto;
-      width: 100%;
-      padding: 12px;
-      border-radius: 12px;
-      border: none;
-      background: var(--primary);
-      color: var(--primary-fg);
-      font-weight: 800;
-      font-size: 0.95rem;
-      cursor: pointer;
-      font-family: inherit;
-      transition: opacity 0.2s;
+      margin-top: auto; width: 100%; padding: 12px; border-radius: 12px; border: none;
+      background: var(--primary); color: var(--primary-fg); font-weight: 800; cursor: pointer; font-family: inherit;
     }
-    .btn-order:hover { opacity: 0.92; }
 
-    /* Store Info Banner */
     .info-box {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 32px;
-      margin-top: 48px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 24px;
-      align-items: center;
+      background: var(--bg-surface); border: 1px solid var(--border); border-radius: 22px;
+      padding: 28px; margin-top: 42px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; align-items: center;
     }
-    .social-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
+    .social-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
     .social-pill {
-      padding: 8px 16px;
-      border-radius: 999px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      font-weight: 700;
-      font-size: 0.88rem;
-      transition: all 0.2s;
-    }
-    .social-pill:hover {
-      border-color: var(--primary);
-      transform: translateY(-2px);
+      padding: 7px 14px; border-radius: 999px; background: var(--bg-card); border: 1px solid var(--border); font-weight: 700; font-size: 0.85rem;
     }
 
-    /* Checkout Modal */
+    /* Modal */
     .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.72);
-      backdrop-filter: blur(6px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 100;
-      padding: 16px;
+      position: fixed; inset: 0; background: rgba(0,0,0,0.72); display: none;
+      align-items: center; justify-content: center; z-index: 100; padding: 16px;
     }
     .modal-backdrop.open { display: flex; }
     .modal-card {
-      background: var(--bg-card);
-      color: var(--text-main);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      max-width: 500px;
-      width: 100%;
-      padding: 26px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+      background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border);
+      border-radius: 22px; max-width: 480px; width: 100%; padding: 24px;
     }
-    .form-group { margin-bottom: 14px; }
-    .form-group label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
+    .form-group { margin-bottom: 12px; }
+    .form-group label { display: block; font-size: 0.84rem; font-weight: 700; margin-bottom: 5px; }
     .form-control {
-      width: 100%;
-      padding: 11px 14px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--bg-surface);
-      color: var(--text-main);
-      font-family: inherit;
-      font-size: 0.95rem;
+      width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border);
+      background: var(--bg-surface); color: var(--text-main); font-family: inherit;
     }
     .summary-strip {
-      background: var(--bg-surface);
-      padding: 12px 16px;
-      border-radius: 12px;
-      margin: 14px 0;
-      font-size: 0.9rem;
-      display: flex;
-      justify-content: space-between;
-      font-weight: 800;
-      border: 1px dashed var(--primary);
+      background: var(--bg-surface); padding: 12px; border-radius: 10px; margin: 12px 0;
+      display: flex; justify-content: space-between; font-weight: 800; border: 1px dashed var(--primary);
     }
-    footer {
-      text-align: center;
-      padding: 28px 20px;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.88rem;
-    }
+    footer { text-align: center; padding: 24px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; }
     @media (max-width: 860px) {
-      .hero, .info-box { grid-template-columns: 1fr; }
-      .trust-strip { grid-template-columns: 1fr; }
+      .hero, .hero-bento { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ نموذج متجر إلكتروني تجريبي مخصص لـ <strong>Happy Baby</strong> (هوية عالم الأطفال والرضع (Joyful Sky &amp; Coral))</span>
-    <a href="../../index.html">🔙 العودة لدليل مواقع سطيف 1</a>
+    <span>🎨 تصميم خاص لـ <strong>Happy Baby</strong> | الهوية: أزرق سماوي مبهج ومرجاني (Playful Sky) | الميزة: 📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</span>
+    <a href="../../index.html">🔙 كل مواقع سطيف 1 (372)</a>
   </div>
 
   <header>
@@ -509,65 +263,42 @@
         </div>
       </div>
       <div class="nav-actions">
-        <a href="#catalog" class="btn-nav">🛍️ الكتالوج</a>
+        <a href="#feature-sec" class="btn-nav">📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</a>
+        <a href="#catalog" class="btn-nav">🛍️ الموديلات</a>
         <a href="tel:0699324070" class="btn-nav primary">📞 0699 32 40 70</a>
       </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div>
-      <div class="hero-badge">⚡ أجمل ملابس الأطفال والرضع بأعلى جودة قطنية</div>
-      <h1>مرحباً بكم في <span>Happy Baby</span> — أناقة صغاركم تبدأ من هنا — قطن ناعم وتصاميم مبهجة</h1>
-      <p>تشكيلة واسعة لحديثي الولادة، البنات، والأولاد لكل الأعمار والمناسبات والأعياد مع توصيل سريع لباب المنزل.</p>
-      <div class="hero-ctas">
-        <a href="#catalog" class="btn-hero main">🛒 تسوّق التشكيلة الآن</a>
-        <a href="https://wa.me/213699324070?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Happy%20Baby%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%AF%D9%8A%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AA%D9%88%D9%81%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A" target="_blank" class="btn-hero secondary">💬 طلب سريع عبر واتساب</a>
+  
+    <section class="hero-cinema" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.85) 100%), url('https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=1000&q=80');">
+      <div class="hero-cinema-inner">
+        <span class="hero-badge">🎬 واجهة سينمائية بانورامية (Cinema Runway) • ملابس أطفال</span>
+        <h1>Happy Baby — عنوان الأناقة والتميز في سطيف</h1>
+        <p>اكتشف تشكيلتنا الحصرية المصممة بعناية مع ميزة <strong>📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</strong> والتوصيل السريع لـ 58 ولاية.</p>
+        <div class="hero-ctas" style="justify-content:center"><a href="#catalog" class="btn-hero main">🛒 تسوّق التشكيلة الآن</a> <a href="https://wa.me/213699324070?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Happy%20Baby%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85%20%D9%88%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%AF%D9%8A%D9%84%D8%A7%D8%AA" target="_blank" class="btn-hero secondary">💬 واتساب مباشر</a></div>
       </div>
-      <div class="trust-strip">
-        <div class="trust-item">
-          <div class="trust-icon">🚚</div>
-          <div>
-            <div>توصيل 58 ولاية</div>
-            <small style="color:var(--text-muted);font-weight:500">Yalidine / ZR Express</small>
-          </div>
+    </section>
+
+  <section id="feature-sec" class="sig-section">
+    
+      <div class="sig-widget">
+        <div class="sig-head">
+          <span class="sig-badge">شفافية وثقة 100%</span>
+          <h3>📹 اطلب تصوير فيديو مباشر للقطعة من داخل محلنا!</h3>
+          <p>نحن في <strong>Happy Baby</strong> نصوّر لك القطعة التي تختارها بالفيديو على الطبيعة في المحل ونرسلها لك على واتساب قبل شحنها:</p>
         </div>
-        <div class="trust-item">
-          <div class="trust-icon">🤝</div>
-          <div>
-            <div>الدفع عند الاستلام</div>
-            <small style="color:var(--text-muted);font-weight:500">معاينة الطرد قبل الدفع</small>
-          </div>
+        <div class="sig-controls">
+          <input type="text" id="vidItem" placeholder="اكتب اسم الموديل واللون الذي تريد رؤيته بالفيديو" value="معاينة فيديو للموديل الأول واللون المتوفر" class="sig-input" />
+          <button type="button" class="sig-btn" onclick="openOrderModal('طلب فيديو معاينة مباشر: ' + document.getElementById('vidItem').value, 0)">📹 اطلب الفيديو عبر واتساب الآن</button>
         </div>
-        <div class="trust-item">
-          <div class="trust-icon">⭐</div>
-          <div>
-            <div>مقرنا في سطيف</div>
-            <small style="color:var(--text-muted);font-weight:500">Setif</small>
-          </div>
-        </div>
+        <div class="sig-result">✨ خدمة مجانية وفورية خلال أوقات عمل المحل من 09:00 صباحاً حتى 21:00 مساءً.</div>
       </div>
-    </div>
-    <div class="hero-visual">
-      <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=1000&q=80" alt="Happy Baby" />
-      <div class="floating-card">
-        <div>
-          <div style="font-weight:800;font-size:1rem">Happy Baby</div>
-          <div style="font-size:0.8rem;opacity:0.85">متجر معتمد في بلدية سطيف • طلب إلكتروني فوري</div>
-        </div>
-        <span style="background:var(--primary);color:var(--primary-fg);padding:6px 14px;border-radius:999px;font-weight:800;font-size:0.8rem">مفتوح للطلبات</span>
-      </div>
-    </div>
   </section>
 
   <section id="catalog" class="section">
-    <div class="section-header">
-      <div>
-        <h2 class="section-title">✨ أحدث الموديلات المتوفرة في Happy Baby</h2>
-        <p class="section-sub">اختر الموديل والمقاس المناسب واضغط «اطلب الآن» لتسجيل طلبك فوراً مع الدفع عند الاستلام</p>
-      </div>
-    </div>
-
+    <h2 class="section-title">✨ كتالوج Happy Baby الحصري</h2>
+    <p class="section-sub">جميع الموديلات متوفرة مع خدمة الدفع عند الاستلام والتوصيل السريع لـ 58 ولاية</p>
     <div class="products-grid">
       
     <div class="product-card">
@@ -723,77 +454,54 @@
 
     <div id="contact" class="info-box">
       <div>
-        <h3 style="font-size:1.4rem;font-weight:900;margin-bottom:8px">📍 تفضلوا بزيارة محلنا في سطيف أو تواصلوا معنا</h3>
-        <p style="color:var(--text-muted);margin-bottom:10px">
-          <strong>العنوان:</strong> Setif، بلدية سطيف، ولاية سطيف
-          <br><strong>رقم الهاتف المباشر:</strong> <span dir="ltr">0699 32 40 70</span>
-        </p>
-        <div class="social-pills">
-          <a href="https://www.google.com/maps/place/Happy+Baby/data=!4m7!3m6!1s0x12f315002fea4add:0x55cea3f43f59cf83!8m2!3d36.1967782!4d5.4284189!16s%2Fg%2F11ydww83w3!19sChIJ3UrqLwAV8xIRg89ZP_SjzlU?authuser=0&amp;hl=ar&amp;g_ep=EgoyMDI2MTAyOC4wIJJjKgBIAVAD&amp;rclk=1" target="_blank" rel="noopener" class="social-pill">📍 موقعنا على الخريطة</a>
-        </div>
+        <h3 style="font-size:1.3rem;font-weight:900;margin-bottom:6px">📍 عنوان ووسائل تواصل Happy Baby</h3>
+        <p style="color:var(--text-muted)">Setif، بلدية سطيف • الهاتف: <strong dir="ltr">0699 32 40 70</strong></p>
+        <div class="social-pills"><a href="https://www.google.com/maps/place/Happy+Baby/data=!4m7!3m6!1s0x12f315002fea4add:0x55cea3f43f59cf83!8m2!3d36.1967782!4d5.4284189!16s%2Fg%2F11ydww83w3!19sChIJ3UrqLwAV8xIRg89ZP_SjzlU?authuser=0&amp;hl=ar&amp;g_ep=EgoyMDI2MTAyOC4wIJJjKgBIAVAD&amp;rclk=1" target="_blank" rel="noopener" class="social-pill">📍 موقعنا على الخريطة</a></div>
       </div>
-      <div style="background:var(--bg-card);padding:22px;border-radius:18px;border:1px solid var(--border);text-align:center">
-        <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:4px">خدمة الزبائن والتوصيل السريع</div>
-        <div style="font-size:1.45rem;font-weight:900;color:var(--primary);margin-bottom:12px" dir="ltr">0699 32 40 70</div>
-        <button type="button" class="btn-order" onclick="openOrderModal('طلب خاص من متجر Happy Baby', 4500)">
-          ⚡ إرسال طلب مباشر للمحل
-        </button>
+      <div>
+        <button type="button" class="sig-btn" onclick="openOrderModal('طلب خاص من متجر Happy Baby', 4500)">⚡ طلب سريع من المحل</button>
       </div>
     </div>
   </section>
 
-  <!-- Direct Order Modal (58 Wilayas COD) -->
   <div id="orderModal" class="modal-backdrop" onclick="if(event.target===this)closeOrderModal()">
     <div class="modal-card">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-        <h3 style="font-size:1.2rem;font-weight:900">🛍️ استمارة الطلب السريع (58 ولاية)</h3>
-        <button type="button" onclick="closeOrderModal()" style="background:none;border:none;color:var(--text-muted);font-size:1.3rem;cursor:pointer">✕</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <h3 style="font-size:1.15rem;font-weight:900">🛍️ استمارة الطلب المباشر (58 ولاية)</h3>
+        <button type="button" onclick="closeOrderModal()" style="background:none;border:none;color:var(--text-muted);font-size:1.2rem;cursor:pointer">✕</button>
       </div>
-      <div id="selectedProductLabel" style="font-size:0.9rem;color:var(--primary);font-weight:800;margin-bottom:12px"></div>
+      <div id="selectedProductLabel" style="font-size:0.88rem;color:var(--primary);font-weight:800;margin-bottom:10px"></div>
       <form onsubmit="submitCodOrder(event)">
         <div class="form-group">
           <label>الاسم الكامل *</label>
-          <input type="text" id="custName" required class="form-control" placeholder="أدخل اسمك ولقبك" />
+          <input type="text" id="custName" required class="form-control" placeholder="الاسم واللقب" />
         </div>
         <div class="form-group">
-          <label>رقم الهاتف (للاتصال بك عند التوصيل) *</label>
-          <input type="tel" id="custPhone" required class="form-control" placeholder="05XX XX XX XX / 06XX / 07XX" dir="ltr" />
+          <label>رقم الهاتف *</label>
+          <input type="tel" id="custPhone" required class="form-control" placeholder="05XX / 06XX / 07XX" dir="ltr" />
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-          <div class="form-group">
-            <label>الولاية *</label>
-            <select id="custWilaya" class="form-control" onchange="updateShipping()">
-              <option value="19 - سطيف" data-ship="400">19 - سطيف (400 د.ج)</option>
-              <option value="16 - الجزائر" data-ship="600">16 - الجزائر العاصمة (600 د.ج)</option>
-              <option value="25 - قسنطينة" data-ship="500">25 - قسنطينة (500 د.ج)</option>
-              <option value="06 - بجاية" data-ship="500">06 - بجاية (500 د.ج)</option>
-              <option value="31 - وهران" data-ship="700">31 - وهران (700 د.ج)</option>
-              <option value="34 - برج بوعريريج" data-ship="500">34 - برج بوعريريج (500 د.ج)</option>
-              <option value="05 - باتنة" data-ship="550">05 - باتنة (550 د.ج)</option>
-              <option value="43 - ميلة" data-ship="500">43 - ميلة (500 د.ج)</option>
-              <option value="28 - المسيلة" data-ship="550">28 - المسيلة (550 د.ج)</option>
-              <option value="باقي الولايات (58 ولاية)" data-ship="650">باقي الولايات (650 د.ج)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>طريقة الاستلام *</label>
-            <select id="custDelivery" class="form-control" onchange="updateShipping()">
-              <option value="مكتب التوصيل (Stop Desk)">مكتب ياليدين / ZR Express</option>
-              <option value="توصيل لباب المنزل (+200 د.ج)">توصيل لباب المنزل</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label>الولاية *</label>
+          <select id="custWilaya" class="form-control" onchange="updateShipping()">
+            <option value="19 - سطيف" data-ship="400">19 - سطيف (400 د.ج)</option>
+            <option value="16 - الجزائر" data-ship="600">16 - الجزائر (600 د.ج)</option>
+            <option value="25 - قسنطينة" data-ship="500">25 - قسنطينة (500 د.ج)</option>
+            <option value="06 - بجاية" data-ship="500">06 - بجاية (500 د.ج)</option>
+            <option value="31 - وهران" data-ship="700">31 - وهران (700 د.ج)</option>
+            <option value="باقي الولايات (58 ولاية)" data-ship="650">باقي الولايات (650 د.ج)</option>
+          </select>
         </div>
         <div class="summary-strip">
           <span>الإجمالي مع التوصيل:</span>
           <span id="totalPriceDisplay">0 د.ج</span>
         </div>
-        <button type="submit" class="btn-order">✅ تأكيد الطلب الآن (الدفع عند الاستلام)</button>
+        <button type="submit" class="btn-order">✅ تأكيد الطلب (الدفع عند الاستلام)</button>
       </form>
     </div>
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Happy Baby</strong> — سطيف، الجزائر | تصميم متجر إلكتروني تجريبي مخصص
+    جميع الحقوق محفوظة © 2026 <strong>Happy Baby</strong> — تصميم متجر إلكتروني مخصص (واجهة سينمائية بانورامية (Cinema Runway) + 📹 طلب معاينة فيديو حية للسلعة (Live Video Preview))
   </footer>
 
   <script>
@@ -803,15 +511,70 @@
     const storeTitle = "Happy Baby";
 
     function selectSize(btn) {
-      const parent = btn.parentElement;
-      parent.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active'));
+      btn.parentElement.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active'));
       btn.classList.add('active');
+    }
+
+    function calcSmartSize() {
+      const h = parseInt(document.getElementById('sfHeight')?.value || '172', 10);
+      const w = parseInt(document.getElementById('sfWeight')?.value || '70', 10);
+      let sz = 'L (مناسب جداً)';
+      if (w < 60) sz = 'S (مقاس رشيق)';
+      else if (w < 73) sz = 'M (مقاس مثالي)';
+      else if (w < 86) sz = 'L (مقاس مريح)';
+      else if (w < 98) sz = 'XL (مقاس واسع)';
+      else sz = 'XXL (مقاس خاص)';
+      document.getElementById('sfResult').innerHTML = '✅ المقاس المقترح لطول ' + h + ' سم ووزن ' + w + ' كغ هو: <strong>' + sz + '</strong>';
+    }
+
+    function calcBundle() {
+      const checks = document.querySelectorAll('.sig-check input:checked');
+      let sum = 0;
+      checks.forEach(c => { sum += parseInt(c.value, 10); });
+      const discount = checks.length >= 2 ? 1500 : 0;
+      window.bundleTotal = Math.max(0, sum - discount);
+      document.getElementById('bundleResult').innerHTML = 'سعر الطقم المختار (' + checks.length + ' قطع): <strong>' + window.bundleTotal.toLocaleString('fr-DZ') + ' د.ج</strong> ' + (discount ? '(شامل خصم 1,500 د.ج 🎉)' : '');
+    }
+
+    function spinWheelPrize() {
+      const prizes = [
+        '🎉 مبروك! ربحت كود خصم 800 د.ج فوري (الكود: SETIF800)',
+        '🚚 مبروك! ربحت توصيل مجاني لطلبك اليوم (الكود: FREESHIP19)',
+        '🎁 مبروك! ربحت خصم 1,000 د.ج عند طلب قطعتين (الكود: VIP1000)'
+      ];
+      const pick = prizes[Math.floor(Math.random() * prizes.length)];
+      document.getElementById('wheelResult').innerHTML = '<strong>' + pick + '</strong>';
+    }
+
+    function calcQtyTier() {
+      const sel = document.getElementById('qtyTier');
+      const qty = parseInt(sel.value, 10);
+      const unit = parseInt(sel.options[sel.selectedIndex].getAttribute('data-unit'), 10);
+      const total = qty * unit;
+      document.getElementById('tierResult').innerHTML = 'الإجمالي لـ ' + qty + ' قطع: <strong>' + total.toLocaleString('fr-DZ') + ' د.ج</strong> (' + unit.toLocaleString('fr-DZ') + ' د.ج للقطعة)';
+    }
+
+    function orderTierQty() {
+      const sel = document.getElementById('qtyTier');
+      const qty = parseInt(sel.value, 10);
+      const unit = parseInt(sel.options[sel.selectedIndex].getAttribute('data-unit'), 10);
+      openOrderModal('طلب كمية (' + qty + ' قطع بسعر مخفض)', qty * unit);
+    }
+
+    function activateLoyalty() {
+      const ph = document.getElementById('loyalPhone')?.value || '';
+      document.getElementById('loyalResult').innerHTML = '✅ تم تفعيل <strong>500 نقطة (خصم 500 د.ج)</strong> للرقم ' + (ph || 'الخاص بك') + ' — سيُخصم تلقائياً عند تأكيد الطلب!';
+    }
+
+    function checkRadar() {
+      const val = document.getElementById('radarWilaya').value;
+      document.getElementById('radarResult').innerHTML = '📍 تفاصيل الشحن: <strong>' + val + '</strong>';
     }
 
     function openOrderModal(productName, price) {
       currentProductName = productName;
       currentBasePrice = price;
-      document.getElementById('selectedProductLabel').textContent = 'المنتج: ' + productName + ' (' + price.toLocaleString('fr-DZ') + ' د.ج)';
+      document.getElementById('selectedProductLabel').textContent = productName + (price > 0 ? ' (' + price.toLocaleString('fr-DZ') + ' د.ج)' : ' (مجاني)');
       updateShipping();
       document.getElementById('orderModal').classList.add('open');
     }
@@ -822,9 +585,8 @@
 
     function updateShipping() {
       const wilayaSel = document.getElementById('custWilaya');
-      const ship = parseInt(wilayaSel.options[wilayaSel.selectedIndex].getAttribute('data-ship') || '500', 10);
-      const deliv = document.getElementById('custDelivery').value.includes('المنزل') ? 200 : 0;
-      const total = currentBasePrice + ship + deliv;
+      const ship = currentBasePrice > 0 ? parseInt(wilayaSel.options[wilayaSel.selectedIndex].getAttribute('data-ship') || '500', 10) : 0;
+      const total = currentBasePrice + ship;
       document.getElementById('totalPriceDisplay').textContent = total.toLocaleString('fr-DZ') + ' د.ج';
     }
 
@@ -833,21 +595,12 @@
       const name = document.getElementById('custName').value;
       const phone = document.getElementById('custPhone').value;
       const wilaya = document.getElementById('custWilaya').value;
-      const delivery = document.getElementById('custDelivery').value;
       const total = document.getElementById('totalPriceDisplay').textContent;
-
-      const msg = 'طلب جديد من المتجر الإلكتروني (' + storeTitle + '):\n'
-        + '- المنتج: ' + currentProductName + '\n'
-        + '- الزبون: ' + name + '\n'
-        + '- الهاتف: ' + phone + '\n'
-        + '- الولاية: ' + wilaya + '\n'
-        + '- الاستلام: ' + delivery + '\n'
-        + '- الإجمالي: ' + total;
-
+      const msg = 'طلب جديد من موقع (' + storeTitle + '):\n- الطلب: ' + currentProductName + '\n- الاسم: ' + name + '\n- الهاتف: ' + phone + '\n- الولاية: ' + wilaya + '\n- الإجمالي: ' + total;
       if (storeWhatsApp) {
         window.open('https://wa.me/' + storeWhatsApp + '?text=' + encodeURIComponent(msg), '_blank');
       } else {
-        alert('تم تسجيل طلبك التجريبي بنجاح!\n\n' + msg);
+        alert('تم تسجيل طلبك بنجاح!\n\n' + msg);
       }
       closeOrderModal();
     }
