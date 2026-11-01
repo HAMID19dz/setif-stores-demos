@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Footwear plus-sétif | 🌈 بطاقات هولوغرام منشورية متلألئة (Iridescent Holographic Foil Prism)</title>
+  <title>Footwear plus-sétif | 📸 حبل غسيل بولارويد واستوديو تصوير (Vintage Polaroid Studio Wall)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Changa', sans-serif;
+      font-family: 'Tajawal', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -79,22 +79,35 @@
     .section-title { font-size: 1.65rem; font-weight: 900; margin-bottom: 6px; }
     .section-sub { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 24px; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-    .product-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
+    .product-card { position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s; }
+    .product-card::before { content: ''; position: absolute; width: 240px; height: 240px; left: var(--mx, 50%); top: var(--my, 50%); background: radial-gradient(circle, rgba(255,255,255,0.16) 0%, transparent 70%); border-radius: 50%; transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.25s; pointer-events: none; z-index: 3; }
+    .product-card:hover::before { opacity: 1; }
+    .product-card:hover { transform: translateY(-5px); }
     .product-img-wrap { position: relative; height: 260px; background: var(--bg-surface); overflow: hidden; }
-    .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-    .product-tag { position: absolute; top: 12px; right: 12px; background: var(--primary); color: var(--primary-fg); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; }
-    .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; }
+    .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .product-card:hover .product-img-wrap img { transform: scale(1.06); }
+    .product-tag { position: absolute; top: 12px; right: 12px; background: var(--primary); color: var(--primary-fg); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; z-index: 2; }
+    .quick-zoom-btn { position: absolute; bottom: 10px; left: 10px; background: rgba(15,23,42,0.85); backdrop-filter: blur(8px); color: #fff; border: 1px solid rgba(255,255,255,0.25); padding: 4px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 800; cursor: pointer; font-family: inherit; z-index: 2; transition: transform 0.2s; }
+    .quick-zoom-btn:hover { transform: scale(1.06); background: var(--primary); color: var(--primary-fg); }
+    .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; position: relative; z-index: 2; }
     .product-cat { font-size: 0.76rem; color: var(--text-muted); }
     .product-title { font-size: 1.05rem; font-weight: 800; margin: 4px 0 8px; }
     .product-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
     .price-current { font-size: 1.25rem; font-weight: 900; color: var(--primary); }
     .price-old { font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through; }
-    .size-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 6px; }
+    .swatch-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; gap: 6px; }
+    .color-swatch { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--border); cursor: pointer; transition: transform 0.2s; }
+    .color-swatch.active { transform: scale(1.22); outline: 2px solid var(--primary); outline-offset: 2px; }
+    .size-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; gap: 6px; }
     .size-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; }
     .size-chips { display: flex; gap: 5px; flex-wrap: wrap; }
     .size-chip { padding: 3px 9px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg-surface); color: var(--text-main); font-size: 0.75rem; font-weight: 700; cursor: pointer; }
     .size-chip.active { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
-    .btn-order { width: 100%; padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: var(--primary-fg); font-weight: 800; cursor: pointer; font-family: inherit; }
+    .stock-bar-wrap { margin-bottom: 12px; }
+    .stock-bar-track { height: 5px; background: var(--bg-surface); border-radius: 999px; overflow: hidden; }
+    .stock-bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 999px; }
+    .btn-order { width: 100%; padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: var(--primary-fg); font-weight: 800; cursor: pointer; font-family: inherit; transition: transform 0.2s; }
+    .btn-order:hover { transform: scale(1.02); }
 
     .info-box { max-width: 1180px; margin: 24px auto; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; align-items: center; }
     .social-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
@@ -112,19 +125,32 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .holo-banner, .product-card { position: relative; background: linear-gradient(135deg, var(--bg-card), var(--bg-surface)) !important; border: 2px solid transparent !important; background-clip: padding-box !important; box-shadow: 0 0 28px rgba(168,85,247,0.22), inset 0 0 20px rgba(56,189,248,0.12) !important; }
+        .products-grid { gap: 36px !important; padding: 20px 10px; }
+        .product-card {
+          background: #FFFFFF !important;
+          color: #111827 !important;
+          padding: 16px 16px 26px 16px !important;
+          border-radius: 6px !important;
+          border: 1px solid #E5E7EB !important;
+          box-shadow: 0 20px 38px rgba(0,0,0,0.22) !important;
+        }
+        .product-card:nth-child(odd) { transform: rotate(-1.8deg); }
+        .product-card:nth-child(even) { transform: rotate(1.8deg); }
+        .product-card:hover { transform: rotate(0deg) scale(1.03) !important; z-index: 5; }
+        .product-img-wrap { border-radius: 2px; height: 280px !important; border: 1px solid #f3f4f6; }
+        .product-cat, .size-label { color: #4B5563 !important; }
       
 
     /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
-    body { background-image: radial-gradient(circle at 95% 10%, var(--bg-surface) 0%, transparent 35%); }
-    header { border-bottom: 4px solid var(--primary) !important; outline: 1px solid var(--accent); outline-offset: -5px; }
-    .product-card, .runway-slide, .masonry-pin { border-radius: 80px 20px 80px 20px !important; border-left: 6px solid var(--primary) !important; }
+    body { background-image: radial-gradient(var(--border) 1.2px, transparent 1.2px); background-size: 22px 22px; }
+    header { background: transparent !important; border: none !important; } .brand-box, .nav-actions { background: var(--bg-surface); padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border); }
+    .product-card, .runway-slide, .masonry-pin { border: none !important; background: transparent !important; box-shadow: none !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #311: 🌈 بطاقات هولوغرام منشورية متلألئة × بطاقات (كبسولة غير متماثلة (Asymmetric Pill)) × شريط آرت ديكو مدرج بإطار مزدوج</strong> | الميزة: <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong></span>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #311: 📸 حبل غسيل بولارويد واستوديو تصوير × بطاقات (منصة متحفية عائمة بدون حدود) × شريط عائم منفصل إلى جزيرتين</strong> | الميزة: <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong></span>
     <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
@@ -146,16 +172,15 @@
   </header>
 
   
-  <section class="hero">
-    <div>
-      <span class="hero-badge">🌈 بطاقات هولوغرام منشورية متلألئة (Iridescent Holographic Foil Prism)</span>
-      <h1><span>Footwear plus-sétif</span> — ملابس وأحذية رياضية + أحذية</h1>
-      <p>أهلاً بكم في متجرنا بسطيف (سطيف‎). اكتشفوا تصميم <strong>شكل #311: 🌈 بطاقات هولوغرام منشورية متلألئة × بطاقات (كبسولة غير متماثلة (Asymmetric Pill)) × شريط آرت ديكو مدرج بإطار مزدوج</strong> وميزة <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong>.</p>
-      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213779315057?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Footwear%20plus-s%C3%A9tif%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
-    </div>
-    <div class="hero-visual"><img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1000&q=80" alt="Footwear plus-sétif" /></div>
-  </section>
-  <section id="feature-sec" class="sig-section">
+    <section class="section" style="text-align:center;padding-bottom:10px">
+      <div style="display:inline-flex;gap:10px;align-items:center;background:var(--bg-surface);padding:8px 20px;border-radius:999px;border:2px dashed var(--primary);margin-bottom:12px">
+        <span>📸 استوديو بولارويد الفوتوغرافي</span> • <span>📍 سطيف‎</span>
+      </div>
+      <h1 style="font-size:clamp(2rem,4vw,3.2rem);font-weight:900">🎞️ معرض الصور الفورية — Footwear plus-sétif</h1>
+      <p style="color:var(--text-muted);max-width:660px;margin:8px auto 18px">كل قطعة معروضة داخل إطار صورة بولارويد مطبوعة ومعلقة بزاوية فنية، تقفز نحوك عند تمرير الفأرة</p>
+      <div class="hero-ctas" style="justify-content:center"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213779315057?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Footwear%20plus-s%C3%A9tif%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+    </section>
+    <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">خدمة كبار الزبائن في سطيف</span>
@@ -173,28 +198,44 @@
         </div>
         <div class="sig-result">✅ تبقى القطعة محجوزة باسمك لمدة 24 ساعة في المحل مجاناً!</div>
       </div></section>
-  <section id="catalog" class="section">
-    <h2 class="section-title">✨ كتالوج Footwear plus-sétif (شكل #311)</h2>
-    <p class="section-sub">الدفع عند الاستلام والتوصيل السريع لـ 58 ولاية</p>
-    <div class="products-grid">
-    <div class="product-card">
+    <section id="catalog" class="section"><div class="products-grid">
+    <div class="product-card" data-card-idx="0" onmousemove="trackCardSpotlight(event, this)">
       <div class="product-img-wrap">
         <span class="product-tag">قطن 100%</span>
+        <button type="button" class="quick-zoom-btn" onclick="inspectFabric('تيشيرت مطبوع أوفرسايز (Graphic Tee)', 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80', 2400)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
         <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="تيشيرت مطبوع أوفرسايز (Graphic Tee)" loading="lazy" />
       </div>
       <div class="product-body">
         <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span class="product-cat">ملابس وأحذية رياضية + أحذية</span>
+            <span style="font-size:0.74rem;color:#F59E0B;font-weight:900">★★★★★ (4.8)</span>
+          </div>
           <h3 class="product-title">تيشيرت مطبوع أوفرسايز (Graphic Tee)</h3>
           <div class="product-price-row">
             <span class="price-current">2 400 د.ج</span>
             <span class="price-old">3 000 د.ج</span>
           </div>
+          <div class="swatch-row">
+            <span class="size-label">🎨 اللون:</span>
+            <div style="display:flex;gap:6px;align-items:center">
+              <button type="button" class="color-swatch active" style="background:var(--primary)" onclick="selectColorSwatch(this, 'اللون الأساسي')" title="اللون الأساسي"></button>
+              <button type="button" class="color-swatch" style="background:#111827" onclick="selectColorSwatch(this, 'أسود ملكي')" title="أسود ملكي"></button>
+              <button type="button" class="color-swatch" style="background:#D6D3D1" onclick="selectColorSwatch(this, 'بيج لؤلؤي')" title="بيج لؤلؤي"></button>
+            </div>
+          </div>
           <div class="size-row">
-            <span class="size-label">المقاس:</span>
+            <span class="size-label">📏 المقاس:</span>
             <div class="size-chips">
               <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
             </div>
+          </div>
+          <div class="stock-bar-wrap">
+            <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--text-muted);margin-bottom:3px">
+              <span>🔥 متوفر في مخزن سطيف</span>
+              <span>متبقي 2 قطع</span>
+            </div>
+            <div class="stock-bar-track"><div class="stock-bar-fill" style="width:65%"></div></div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('تيشيرت مطبوع أوفرسايز (Graphic Tee)', 2400)">
@@ -204,24 +245,43 @@
     </div>
   
 
-    <div class="product-card">
+    <div class="product-card" data-card-idx="1" onmousemove="trackCardSpotlight(event, this)">
       <div class="product-img-wrap">
         <span class="product-tag">نعل مريح</span>
+        <button type="button" class="quick-zoom-btn" onclick="inspectFabric('سنيكرز رياضي مريح (Urban Sneakers)', 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80', 5900)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="سنيكرز رياضي مريح (Urban Sneakers)" loading="lazy" />
       </div>
       <div class="product-body">
         <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span class="product-cat">ملابس وأحذية رياضية + أحذية</span>
+            <span style="font-size:0.74rem;color:#F59E0B;font-weight:900">★★★★★ (4.9)</span>
+          </div>
           <h3 class="product-title">سنيكرز رياضي مريح (Urban Sneakers)</h3>
           <div class="product-price-row">
             <span class="price-current">5 900 د.ج</span>
             <span class="price-old">6 900 د.ج</span>
           </div>
+          <div class="swatch-row">
+            <span class="size-label">🎨 اللون:</span>
+            <div style="display:flex;gap:6px;align-items:center">
+              <button type="button" class="color-swatch active" style="background:var(--primary)" onclick="selectColorSwatch(this, 'اللون الأساسي')" title="اللون الأساسي"></button>
+              <button type="button" class="color-swatch" style="background:#111827" onclick="selectColorSwatch(this, 'أسود ملكي')" title="أسود ملكي"></button>
+              <button type="button" class="color-swatch" style="background:#D6D3D1" onclick="selectColorSwatch(this, 'بيج لؤلؤي')" title="بيج لؤلؤي"></button>
+            </div>
+          </div>
           <div class="size-row">
-            <span class="size-label">المقاس:</span>
+            <span class="size-label">📏 المقاس:</span>
             <div class="size-chips">
               <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
             </div>
+          </div>
+          <div class="stock-bar-wrap">
+            <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--text-muted);margin-bottom:3px">
+              <span>🔥 متوفر في مخزن سطيف</span>
+              <span>متبقي 3 قطع</span>
+            </div>
+            <div class="stock-bar-track"><div class="stock-bar-fill" style="width:71%"></div></div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('سنيكرز رياضي مريح (Urban Sneakers)', 5900)">
@@ -231,24 +291,43 @@
     </div>
   
 
-    <div class="product-card">
+    <div class="product-card" data-card-idx="2" onmousemove="trackCardSpotlight(event, this)">
       <div class="product-img-wrap">
         <span class="product-tag">الأكثر مبيعاً 🔥</span>
+        <button type="button" class="quick-zoom-btn" onclick="inspectFabric('هودي أوفرسايز قطن ثقيل (Heavyweight Hoodie)', 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80', 4200)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
         <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80" alt="هودي أوفرسايز قطن ثقيل (Heavyweight Hoodie)" loading="lazy" />
       </div>
       <div class="product-body">
         <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span class="product-cat">ملابس وأحذية رياضية + أحذية</span>
+            <span style="font-size:0.74rem;color:#F59E0B;font-weight:900">★★★★★ (4.8)</span>
+          </div>
           <h3 class="product-title">هودي أوفرسايز قطن ثقيل (Heavyweight Hoodie)</h3>
           <div class="product-price-row">
             <span class="price-current">4 200 د.ج</span>
             <span class="price-old">5 200 د.ج</span>
           </div>
+          <div class="swatch-row">
+            <span class="size-label">🎨 اللون:</span>
+            <div style="display:flex;gap:6px;align-items:center">
+              <button type="button" class="color-swatch active" style="background:var(--primary)" onclick="selectColorSwatch(this, 'اللون الأساسي')" title="اللون الأساسي"></button>
+              <button type="button" class="color-swatch" style="background:#111827" onclick="selectColorSwatch(this, 'أسود ملكي')" title="أسود ملكي"></button>
+              <button type="button" class="color-swatch" style="background:#D6D3D1" onclick="selectColorSwatch(this, 'بيج لؤلؤي')" title="بيج لؤلؤي"></button>
+            </div>
+          </div>
           <div class="size-row">
-            <span class="size-label">المقاس:</span>
+            <span class="size-label">📏 المقاس:</span>
             <div class="size-chips">
               <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
             </div>
+          </div>
+          <div class="stock-bar-wrap">
+            <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--text-muted);margin-bottom:3px">
+              <span>🔥 متوفر في مخزن سطيف</span>
+              <span>متبقي 4 قطع</span>
+            </div>
+            <div class="stock-bar-track"><div class="stock-bar-fill" style="width:77%"></div></div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('هودي أوفرسايز قطن ثقيل (Heavyweight Hoodie)', 4200)">
@@ -258,24 +337,43 @@
     </div>
   
 
-    <div class="product-card">
+    <div class="product-card" data-card-idx="3" onmousemove="trackCardSpotlight(event, this)">
       <div class="product-img-wrap">
         <span class="product-tag">ترند 2026 ✨</span>
+        <button type="button" class="quick-zoom-btn" onclick="inspectFabric('طقم ستريت وير كاجوال (Street Tracksuit)', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80', 6800)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
         <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="طقم ستريت وير كاجوال (Street Tracksuit)" loading="lazy" />
       </div>
       <div class="product-body">
         <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span class="product-cat">ملابس وأحذية رياضية + أحذية</span>
+            <span style="font-size:0.74rem;color:#F59E0B;font-weight:900">★★★★★ (4.9)</span>
+          </div>
           <h3 class="product-title">طقم ستريت وير كاجوال (Street Tracksuit)</h3>
           <div class="product-price-row">
             <span class="price-current">6 800 د.ج</span>
             <span class="price-old">7 900 د.ج</span>
           </div>
+          <div class="swatch-row">
+            <span class="size-label">🎨 اللون:</span>
+            <div style="display:flex;gap:6px;align-items:center">
+              <button type="button" class="color-swatch active" style="background:var(--primary)" onclick="selectColorSwatch(this, 'اللون الأساسي')" title="اللون الأساسي"></button>
+              <button type="button" class="color-swatch" style="background:#111827" onclick="selectColorSwatch(this, 'أسود ملكي')" title="أسود ملكي"></button>
+              <button type="button" class="color-swatch" style="background:#D6D3D1" onclick="selectColorSwatch(this, 'بيج لؤلؤي')" title="بيج لؤلؤي"></button>
+            </div>
+          </div>
           <div class="size-row">
-            <span class="size-label">المقاس:</span>
+            <span class="size-label">📏 المقاس:</span>
             <div class="size-chips">
               <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
             </div>
+          </div>
+          <div class="stock-bar-wrap">
+            <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--text-muted);margin-bottom:3px">
+              <span>🔥 متوفر في مخزن سطيف</span>
+              <span>متبقي 5 قطع</span>
+            </div>
+            <div class="stock-bar-track"><div class="stock-bar-fill" style="width:83%"></div></div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('طقم ستريت وير كاجوال (Street Tracksuit)', 6800)">
@@ -285,24 +383,43 @@
     </div>
   
 
-    <div class="product-card">
+    <div class="product-card" data-card-idx="4" onmousemove="trackCardSpotlight(event, this)">
       <div class="product-img-wrap">
         <span class="product-tag">ستايل شبابي</span>
+        <button type="button" class="quick-zoom-btn" onclick="inspectFabric('بنطال كارغو بجيوب متعددة (Cargo Parachute)', 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=600&q=80', 3900)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
         <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=600&q=80" alt="بنطال كارغو بجيوب متعددة (Cargo Parachute)" loading="lazy" />
       </div>
       <div class="product-body">
         <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span class="product-cat">ملابس وأحذية رياضية + أحذية</span>
+            <span style="font-size:0.74rem;color:#F59E0B;font-weight:900">★★★★★ (4.8)</span>
+          </div>
           <h3 class="product-title">بنطال كارغو بجيوب متعددة (Cargo Parachute)</h3>
           <div class="product-price-row">
             <span class="price-current">3 900 د.ج</span>
             <span class="price-old">4 500 د.ج</span>
           </div>
+          <div class="swatch-row">
+            <span class="size-label">🎨 اللون:</span>
+            <div style="display:flex;gap:6px;align-items:center">
+              <button type="button" class="color-swatch active" style="background:var(--primary)" onclick="selectColorSwatch(this, 'اللون الأساسي')" title="اللون الأساسي"></button>
+              <button type="button" class="color-swatch" style="background:#111827" onclick="selectColorSwatch(this, 'أسود ملكي')" title="أسود ملكي"></button>
+              <button type="button" class="color-swatch" style="background:#D6D3D1" onclick="selectColorSwatch(this, 'بيج لؤلؤي')" title="بيج لؤلؤي"></button>
+            </div>
+          </div>
           <div class="size-row">
-            <span class="size-label">المقاس:</span>
+            <span class="size-label">📏 المقاس:</span>
             <div class="size-chips">
               <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
             </div>
+          </div>
+          <div class="stock-bar-wrap">
+            <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--text-muted);margin-bottom:3px">
+              <span>🔥 متوفر في مخزن سطيف</span>
+              <span>متبقي 2 قطع</span>
+            </div>
+            <div class="stock-bar-track"><div class="stock-bar-fill" style="width:89%"></div></div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('بنطال كارغو بجيوب متعددة (Cargo Parachute)', 3900)">
@@ -312,24 +429,43 @@
     </div>
   
 
-    <div class="product-card">
+    <div class="product-card" data-card-idx="5" onmousemove="trackCardSpotlight(event, this)">
       <div class="product-img-wrap">
         <span class="product-tag">إصدار خاص</span>
+        <button type="button" class="quick-zoom-btn" onclick="inspectFabric('جاكيت بومبر كوليدج (Varsity Jacket)', 'https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=600&q=80', 7500)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
         <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=600&q=80" alt="جاكيت بومبر كوليدج (Varsity Jacket)" loading="lazy" />
       </div>
       <div class="product-body">
         <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span class="product-cat">ملابس وأحذية رياضية + أحذية</span>
+            <span style="font-size:0.74rem;color:#F59E0B;font-weight:900">★★★★★ (4.9)</span>
+          </div>
           <h3 class="product-title">جاكيت بومبر كوليدج (Varsity Jacket)</h3>
           <div class="product-price-row">
             <span class="price-current">7 500 د.ج</span>
             <span class="price-old">8 800 د.ج</span>
           </div>
+          <div class="swatch-row">
+            <span class="size-label">🎨 اللون:</span>
+            <div style="display:flex;gap:6px;align-items:center">
+              <button type="button" class="color-swatch active" style="background:var(--primary)" onclick="selectColorSwatch(this, 'اللون الأساسي')" title="اللون الأساسي"></button>
+              <button type="button" class="color-swatch" style="background:#111827" onclick="selectColorSwatch(this, 'أسود ملكي')" title="أسود ملكي"></button>
+              <button type="button" class="color-swatch" style="background:#D6D3D1" onclick="selectColorSwatch(this, 'بيج لؤلؤي')" title="بيج لؤلؤي"></button>
+            </div>
+          </div>
           <div class="size-row">
-            <span class="size-label">المقاس:</span>
+            <span class="size-label">📏 المقاس:</span>
             <div class="size-chips">
               <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
             </div>
+          </div>
+          <div class="stock-bar-wrap">
+            <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--text-muted);margin-bottom:3px">
+              <span>🔥 متوفر في مخزن سطيف</span>
+              <span>متبقي 3 قطع</span>
+            </div>
+            <div class="stock-bar-track"><div class="stock-bar-fill" style="width:95%"></div></div>
           </div>
         </div>
         <button type="button" class="btn-order" onclick="openOrderModal('جاكيت بومبر كوليدج (Varsity Jacket)', 7500)">
@@ -337,8 +473,7 @@
         </button>
       </div>
     </div>
-  </div>
-  </section>
+  </div></section>
 
   <div class="info-box">
     <div>
@@ -385,28 +520,42 @@
     </div>
   </div>
 
+  <div id="fabricModal" class="modal-backdrop" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal-card" style="max-width:520px;text-align:center">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <strong id="fabricTitle" style="font-size:1.05rem;color:var(--primary)">🔍 فحص تفاصيل القماش والخياطة</strong>
+        <button type="button" onclick="document.getElementById('fabricModal').classList.remove('open')" style="background:none;border:none;color:var(--text-muted);font-size:1.2rem;cursor:pointer">✕</button>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;height:320px;border:2px solid var(--primary);margin-bottom:12px">
+        <img id="fabricImg" src="" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.18)" />
+      </div>
+      <p style="font-size:0.86rem;color:var(--text-muted);margin-bottom:14px">✅ خامة مضمونة بجودة عالية • معاينة الطرد مسموحة عند الاستلام في جميع الـ 58 ولاية</p>
+      <button type="button" id="fabricOrderBtn" class="btn-order">🛒 اطلب هذه القطعة الآن</button>
+    </div>
+  </div>
+
   <!-- Live Shape & Theme Morphing Studio (مختبر تبديل الأشكال الحي) -->
   <div id="shapeStudioBar" style="position:fixed;bottom:18px;left:18px;z-index:990;">
-    <button onclick="document.getElementById('studioPanel').style.display = document.getElementById('studioPanel').style.display === 'block' ? 'none' : 'block'" style="background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border:2px solid var(--surface);border-radius:999px;padding:10px 18px;font-family:inherit;font-weight:900;font-size:0.82rem;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,0.35);display:flex;align-items:center;gap:8px;">
-      🎛️ مختبر الأشكال الحي (جرّب +50 شكلاً فوراً)
+    <button onclick="document.getElementById('studioPanel').style.display = document.getElementById('studioPanel').style.display === 'block' ? 'none' : 'block'" style="background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border:2px solid var(--bg-surface);border-radius:999px;padding:10px 18px;font-family:inherit;font-weight:900;font-size:0.82rem;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,0.35);display:flex;align-items:center;gap:8px;">
+      🎛️ مختبر الأشكال الحي (جرّب +73 شكلاً فوراً)
     </button>
-    <div id="studioPanel" style="display:none;position:absolute;bottom:54px;left:0;width:320px;background:var(--surface);color:var(--text);border:2px solid var(--primary);border-radius:18px;padding:16px;box-shadow:0 24px 50px rgba(0,0,0,0.45);text-align:right;">
+    <div id="studioPanel" style="display:none;position:absolute;bottom:54px;left:0;width:330px;background:var(--bg-surface);color:var(--text-main);border:2px solid var(--primary);border-radius:18px;padding:16px;box-shadow:0 24px 50px rgba(0,0,0,0.45);text-align:right;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid var(--border);padding-bottom:8px;">
-        <strong style="font-size:0.9rem;color:var(--primary)">🧬 مختبر التحويل الهندسي الفوري</strong>
-        <button onclick="document.getElementById('studioPanel').style.display='none'" style="background:none;border:none;color:var(--muted);cursor:pointer;font-weight:900">✕</button>
+        <strong style="font-size:0.9rem;color:var(--primary)">🧬 مختبر التحويل الهندسي الفوري (UI/UX Pro Max)</strong>
+        <button onclick="document.getElementById('studioPanel').style.display='none'" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-weight:900">✕</button>
       </div>
-      <div style="font-size:0.76rem;color:var(--muted);margin-bottom:6px;font-weight:700">1. غيّر شكل البطاقات الهندسي (53 شكلاً):</div>
+      <div style="font-size:0.76rem;color:var(--text-muted);margin-bottom:6px;font-weight:700">1. غيّر شكل البطاقات الهندسي (73 شكلاً):</div>
       <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;">
-        <button onclick="morphCardShape('arch')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🏛️ قوس أندلسي</button>
-        <button onclick="morphCardShape('octagon')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🛑 مثمّن</button>
-        <button onclick="morphCardShape('leaf')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🍃 ورقة</button>
-        <button onclick="morphCardShape('brutal')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🧱 بوب آرت</button>
-        <button onclick="morphCardShape('3d')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🧊 منظور 3D</button>
-        <button onclick="morphCardShape('clay')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">☁️ كلاي ناعم</button>
-        <button onclick="morphCardShape('cyber')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">⚡ سايبر</button>
-        <button onclick="morphCardShape('circle')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">💿 كبسولة</button>
+        <button onclick="morphCardShape('arch')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🏛️ قوس أندلسي</button>
+        <button onclick="morphCardShape('octagon')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🛑 مثمّن</button>
+        <button onclick="morphCardShape('leaf')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🍃 ورقة</button>
+        <button onclick="morphCardShape('brutal')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🧱 بوب آرت</button>
+        <button onclick="morphCardShape('3d')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🧊 منظور 3D</button>
+        <button onclick="morphCardShape('clay')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">☁️ كلاي ناعم</button>
+        <button onclick="morphCardShape('cyber')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">⚡ سايبر</button>
+        <button onclick="morphCardShape('circle')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">💿 كبسولة</button>
       </div>
-      <div style="font-size:0.76rem;color:var(--muted);margin-bottom:6px;font-weight:700">2. غيّر الطيف اللوني والوضع البصري:</div>
+      <div style="font-size:0.76rem;color:var(--text-muted);margin-bottom:6px;font-weight:700">2. غيّر الطيف اللوني والوضع البصري:</div>
       <div style="display:flex;flex-wrap:wrap;gap:5px;">
         <button onclick="morphTheme('#0A0E17','#111827','#38BDF8','#F43F5E','#F8FAFC')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#0A0E17;color:#38BDF8;cursor:pointer;font-family:inherit;font-weight:700">🌌 نيون ليلي</button>
         <button onclick="morphTheme('#FAF6F0','#FFFFFF','#9A6B3B','#C89D66','#1E1610')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#FAF6F0;color:#9A6B3B;cursor:pointer;font-family:inherit;font-weight:700">🏛️ فخامة ذهبية</button>
@@ -417,7 +566,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Footwear plus-sétif</strong> — الشكل المعماري: 🌈 بطاقات هولوغرام منشورية متلألئة (Iridescent Holographic Foil Prism)
+    جميع الحقوق محفوظة © 2026 <strong>Footwear plus-sétif</strong> — الشكل المعماري: 📸 حبل غسيل بولارويد واستوديو تصوير (Vintage Polaroid Studio Wall)
   </footer>
 
   <script>
@@ -426,6 +575,40 @@
     const storeWhatsApp = '213779315057';
     const storeTitle = "Footwear plus-sétif";
 
+    function trackCardSpotlight(e, card) {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }
+    function selectColorSwatch(btn, colorName) {
+      btn.parentElement.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      const card = btn.closest('.product-card');
+      if (card) {
+        const tag = card.querySelector('.product-tag');
+        if (tag) tag.textContent = '🎨 ' + colorName;
+      }
+    }
+    function inspectFabric(name, img, price) {
+      document.getElementById('fabricTitle').textContent = '🔍 فحص جودة وخياطة: ' + name;
+      document.getElementById('fabricImg').src = img;
+      document.getElementById('fabricOrderBtn').onclick = function() {
+        document.getElementById('fabricModal').classList.remove('open');
+        openOrderModal(name, price);
+      };
+      document.getElementById('fabricModal').classList.add('open');
+    }
+    function filterCatalogByTag(mode, btn) {
+      if (btn && btn.parentElement) {
+        btn.parentElement.querySelectorAll('.closet-tab').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+      }
+      document.querySelectorAll('.product-card').forEach((c, idx) => {
+        if (mode === 'all') c.style.display = '';
+        else if (mode === 'odd') c.style.display = idx % 2 === 0 ? '' : 'none';
+        else if (mode === 'even') c.style.display = idx % 2 === 1 ? '' : 'none';
+      });
+    }
     function selectSize(btn) {
       btn.parentElement.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active'));
       btn.classList.add('active');
@@ -508,7 +691,7 @@
         if (mode === 'arch') { c.style.borderRadius = '140px 140px 16px 16px'; }
         else if (mode === 'octagon') { c.style.clipPath = 'polygon(24px 0, calc(100% - 24px) 0, 100% 24px, 100% calc(100% - 24px), calc(100% - 24px) 100%, 24px 100%, 0 calc(100% - 24px), 0 24px)'; c.style.borderRadius = '0'; }
         else if (mode === 'leaf') { c.style.borderRadius = '72px 8px 72px 8px'; }
-        else if (mode === 'brutal') { c.style.borderRadius = '0'; c.style.border = '3px solid var(--text)'; c.style.boxShadow = '8px 8px 0 var(--primary)'; }
+        else if (mode === 'brutal') { c.style.borderRadius = '0'; c.style.border = '3px solid var(--text-main)'; c.style.boxShadow = '8px 8px 0 var(--primary)'; }
         else if (mode === '3d') { c.style.borderRadius = '22px'; c.style.transform = idx % 2 === 0 ? 'perspective(800px) rotateY(-8deg) rotateX(4deg)' : 'perspective(800px) rotateY(8deg) rotateX(-4deg)'; }
         else if (mode === 'clay') { c.style.borderRadius = '38px'; c.style.boxShadow = '14px 14px 28px rgba(0,0,0,0.18), inset -6px -6px 14px rgba(0,0,0,0.08), inset 6px 6px 14px rgba(255,255,255,0.5)'; }
         else if (mode === 'cyber') { c.style.clipPath = 'polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px))'; c.style.border = '2px solid var(--primary)'; }
@@ -517,11 +700,12 @@
     }
     function morphTheme(bg, surface, primary, accent, text) {
       const r = document.documentElement.style;
-      r.setProperty('--bg', bg);
-      r.setProperty('--surface', surface);
+      r.setProperty('--bg-base', bg);
+      r.setProperty('--bg-surface', surface);
+      r.setProperty('--bg-card', surface);
       r.setProperty('--primary', primary);
       r.setProperty('--accent', accent);
-      r.setProperty('--text', text);
+      r.setProperty('--text-main', text);
     }
   </script>
 </body>

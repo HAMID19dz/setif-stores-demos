@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZAHRA &amp; KIDS | 🧱 شبكة شلال بينترست غير متماثلة (Pinterest Staggered Masonry)</title>
+  <title>ZAHRA &amp; KIDS | 🐝 خلية نحل سداسية متشابكة (Hexagonal Honeycomb Hive Grid)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'Changa', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -79,22 +79,35 @@
     .section-title { font-size: 1.65rem; font-weight: 900; margin-bottom: 6px; }
     .section-sub { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 24px; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-    .product-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
+    .product-card { position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s; }
+    .product-card::before { content: ''; position: absolute; width: 240px; height: 240px; left: var(--mx, 50%); top: var(--my, 50%); background: radial-gradient(circle, rgba(255,255,255,0.16) 0%, transparent 70%); border-radius: 50%; transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.25s; pointer-events: none; z-index: 3; }
+    .product-card:hover::before { opacity: 1; }
+    .product-card:hover { transform: translateY(-5px); }
     .product-img-wrap { position: relative; height: 260px; background: var(--bg-surface); overflow: hidden; }
-    .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-    .product-tag { position: absolute; top: 12px; right: 12px; background: var(--primary); color: var(--primary-fg); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; }
-    .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; }
+    .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .product-card:hover .product-img-wrap img { transform: scale(1.06); }
+    .product-tag { position: absolute; top: 12px; right: 12px; background: var(--primary); color: var(--primary-fg); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; z-index: 2; }
+    .quick-zoom-btn { position: absolute; bottom: 10px; left: 10px; background: rgba(15,23,42,0.85); backdrop-filter: blur(8px); color: #fff; border: 1px solid rgba(255,255,255,0.25); padding: 4px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 800; cursor: pointer; font-family: inherit; z-index: 2; transition: transform 0.2s; }
+    .quick-zoom-btn:hover { transform: scale(1.06); background: var(--primary); color: var(--primary-fg); }
+    .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; position: relative; z-index: 2; }
     .product-cat { font-size: 0.76rem; color: var(--text-muted); }
     .product-title { font-size: 1.05rem; font-weight: 800; margin: 4px 0 8px; }
     .product-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
     .price-current { font-size: 1.25rem; font-weight: 900; color: var(--primary); }
     .price-old { font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through; }
-    .size-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 6px; }
+    .swatch-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; gap: 6px; }
+    .color-swatch { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--border); cursor: pointer; transition: transform 0.2s; }
+    .color-swatch.active { transform: scale(1.22); outline: 2px solid var(--primary); outline-offset: 2px; }
+    .size-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; gap: 6px; }
     .size-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; }
     .size-chips { display: flex; gap: 5px; flex-wrap: wrap; }
     .size-chip { padding: 3px 9px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg-surface); color: var(--text-main); font-size: 0.75rem; font-weight: 700; cursor: pointer; }
     .size-chip.active { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
-    .btn-order { width: 100%; padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: var(--primary-fg); font-weight: 800; cursor: pointer; font-family: inherit; }
+    .stock-bar-wrap { margin-bottom: 12px; }
+    .stock-bar-track { height: 5px; background: var(--bg-surface); border-radius: 999px; overflow: hidden; }
+    .stock-bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 999px; }
+    .btn-order { width: 100%; padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: var(--primary-fg); font-weight: 800; cursor: pointer; font-family: inherit; transition: transform 0.2s; }
+    .btn-order:hover { transform: scale(1.02); }
 
     .info-box { max-width: 1180px; margin: 24px auto; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; align-items: center; }
     .social-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
@@ -112,25 +125,22 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .pinterest-masonry { column-count: 3; column-gap: 22px; max-width: 1220px; margin: 0 auto; padding: 10px 20px 50px; }
-        .masonry-pin { break-inside: avoid; margin-bottom: 22px; background: var(--bg-card); border-radius: 26px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 12px 30px rgba(0,0,0,0.12); display: inline-block; width: 100%; }
-        .masonry-pin:nth-child(odd) .product-img-wrap { height: 380px !important; }
-        .masonry-pin:nth-child(even) .product-img-wrap { height: 250px !important; }
-        .pin-save-btn { position: absolute; top: 14px; left: 14px; background: #E60023; color: #fff; font-weight: 900; font-size: 0.78rem; padding: 6px 14px; border-radius: 999px; border: none; cursor: pointer; }
-        @media (max-width: 920px) { .pinterest-masonry { column-count: 2; } }
-        @media (max-width: 600px) { .pinterest-masonry { column-count: 1; } }
+        .hive-grid { max-width: 1220px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 28px; }
+        .hex-card { background: var(--bg-card); padding: 24px 18px; text-align: center; border: 2px solid var(--primary); position: relative; }
+        .hex-img { width: 220px; height: 220px; margin: 0 auto 14px; clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); overflow: hidden; background: var(--primary); }
+        .hex-img img { width: 100%; height: 100%; object-fit: cover; }
       
 
     /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
-    body { background-image: radial-gradient(circle at 20% 20%, var(--bg-surface) 0%, transparent 30%), radial-gradient(circle at 80% 50%, var(--bg-card) 0%, transparent 30%), radial-gradient(circle at 40% 85%, var(--bg-surface) 0%, transparent 30%); }
-    .btn-nav { border-radius: 14px !important; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-    .product-card, .runway-slide, .masonry-pin { border-radius: 24px !important; box-shadow: 0 12px 0 var(--primary), 0 22px 40px rgba(0,0,0,0.35) !important; }
+    body { background-image: none; }
+    header { max-width: 1190px; margin: 10px auto; border-radius: 22px; border: 2px solid var(--border); }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 6px !important; border-left: 8px dashed var(--primary) !important; border-right: 8px dashed var(--primary) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #203: 🧱 شبكة شلال بينترست غير متماثلة × بطاقات (بطاقة ظل نيون سفلي عريض) × شريط كبسولات متجاورة (Modular Pill Nav)</strong> | الميزة: <strong>🎡 عجلة الحظ وكوبون التخفيض الفوري (Spin &amp; Win)</strong></span>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #203: 🐝 خلية نحل سداسية متشابكة × بطاقات (شريحة فيلم سينمائي 35mm بحواف مسننة) × هيدر كبسولي عريض بحاشية داخلية</strong> | الميزة: <strong>🎡 عجلة الحظ وكوبون التخفيض الفوري (Spin &amp; Win)</strong></span>
     <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
@@ -152,10 +162,10 @@
   </header>
 
   
-    <section class="section" style="text-align:center;padding-bottom:14px">
-      <span class="hero-badge">🧱 شبكة شلال بينترست غير متماثلة (Pinterest Staggered Masonry)</span>
-      <h1 style="font-size:clamp(2rem,3.8vw,3rem);font-weight:900;margin-bottom:8px">🧱 جدار إلهام وموديلات ZAHRA &amp; KIDS</h1>
-      <p style="color:var(--text-muted);max-width:680px;margin:0 auto 18px">تصميم شلال غير متماثل مستوحى من Pinterest لعرض أحدث تشكيلة (ملابس أطفال) في Sétif.</p>
+    <section class="section" style="text-align:center;padding-bottom:10px">
+      <span class="hero-badge">🐝 خلية نحل سداسية متشابكة (Hexagonal Honeycomb Hive Grid)</span>
+      <h1 style="font-size:2.4rem;font-weight:900">🐝 خلية النحل الهندسية السداسية — ZAHRA &amp; KIDS</h1>
+      <p style="color:var(--text-muted)">نوافذ عرض سداسية الأضلاع (ملابس أطفال) في Sétif</p>
     </section>
     <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
@@ -169,103 +179,55 @@
         </div>
         <div id="wheelResult" class="sig-result">اضغط لاكتشاف هديتك (توصيل مجاني / خصم 800 د.ج / خصم 1,000 د.ج) 🎁</div>
       </div></section>
-    <section id="catalog" class="pinterest-masonry">
-      <div class="masonry-pin">
-        <div class="product-img-wrap">
-          <button type="button" class="pin-save-btn" onclick="openOrderModal('جاكيت دافئ مبطن للأطفال (Doudoune Enfant)', 5300)">📌 احفظ واطلب</button>
-          <span class="product-tag">جودة عالية</span>
-          <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=600&q=80" alt="جاكيت دافئ مبطن للأطفال (Doudoune Enfant)" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">جاكيت دافئ مبطن للأطفال (Doudoune Enfant)</h3>
-          <div class="product-price-row">
-            <span class="price-current">5 300 د.ج</span>
-            <span class="price-old">6 300 د.ج</span>
-          </div>
-          <button type="button" class="btn-order" onclick="openOrderModal('جاكيت دافئ مبطن للأطفال (Doudoune Enfant)', 5300)">🛒 اطلب الآن</button>
-        </div>
+    <div id="catalog" class="hive-grid">
+      <div class="hex-card product-card">
+        <div class="hex-img"><img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=600&q=80" alt="جاكيت دافئ مبطن للأطفال (Doudoune Enfant)" /></div>
+        <span class="sig-badge">جودة عالية</span>
+        <h3 class="product-title">جاكيت دافئ مبطن للأطفال (Doudoune Enfant)</h3>
+        <div class="price-current" style="margin:8px 0">5 300 د.ج</div>
+        <button type="button" class="btn-order" onclick="openOrderModal('جاكيت دافئ مبطن للأطفال (Doudoune Enfant)', 5300)">🛒 اطلب من الخلية السداسية</button>
       </div>
     
-      <div class="masonry-pin">
-        <div class="product-img-wrap">
-          <button type="button" class="pin-save-btn" onclick="openOrderModal('حذاء أطفال طبي خفيف (Chaussures Kids)', 3000)">📌 احفظ واطلب</button>
-          <span class="product-tag">طبي ومريح</span>
-          <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80" alt="حذاء أطفال طبي خفيف (Chaussures Kids)" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">حذاء أطفال طبي خفيف (Chaussures Kids)</h3>
-          <div class="product-price-row">
-            <span class="price-current">3 000 د.ج</span>
-            <span class="price-old">3 600 د.ج</span>
-          </div>
-          <button type="button" class="btn-order" onclick="openOrderModal('حذاء أطفال طبي خفيف (Chaussures Kids)', 3000)">🛒 اطلب الآن</button>
-        </div>
+      <div class="hex-card product-card">
+        <div class="hex-img"><img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80" alt="حذاء أطفال طبي خفيف (Chaussures Kids)" /></div>
+        <span class="sig-badge">طبي ومريح</span>
+        <h3 class="product-title">حذاء أطفال طبي خفيف (Chaussures Kids)</h3>
+        <div class="price-current" style="margin:8px 0">3 000 د.ج</div>
+        <button type="button" class="btn-order" onclick="openOrderModal('حذاء أطفال طبي خفيف (Chaussures Kids)', 3000)">🛒 اطلب من الخلية السداسية</button>
       </div>
     
-      <div class="masonry-pin">
-        <div class="product-img-wrap">
-          <button type="button" class="pin-save-btn" onclick="openOrderModal('طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)', 4700)">📌 احفظ واطلب</button>
-          <span class="product-tag">الأكثر طلباً 🎈</span>
-          <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80" alt="طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 700 د.ج</span>
-            <span class="price-old">5 600 د.ج</span>
-          </div>
-          <button type="button" class="btn-order" onclick="openOrderModal('طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)', 4700)">🛒 اطلب الآن</button>
-        </div>
+      <div class="hex-card product-card">
+        <div class="hex-img"><img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80" alt="طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)" /></div>
+        <span class="sig-badge">الأكثر طلباً 🎈</span>
+        <h3 class="product-title">طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)</h3>
+        <div class="price-current" style="margin:8px 0">4 700 د.ج</div>
+        <button type="button" class="btn-order" onclick="openOrderModal('طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)', 4700)">🛒 اطلب من الخلية السداسية</button>
       </div>
     
-      <div class="masonry-pin">
-        <div class="product-img-wrap">
-          <button type="button" class="pin-save-btn" onclick="openOrderModal('فستان أميرات للبنات (Robe Princesse Fille)', 4900)">📌 احفظ واطلب</button>
-          <span class="product-tag">جديد العيد ✨</span>
-          <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=600&q=80" alt="فستان أميرات للبنات (Robe Princesse Fille)" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">فستان أميرات للبنات (Robe Princesse Fille)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 900 د.ج</span>
-            <span class="price-old">5 900 د.ج</span>
-          </div>
-          <button type="button" class="btn-order" onclick="openOrderModal('فستان أميرات للبنات (Robe Princesse Fille)', 4900)">🛒 اطلب الآن</button>
-        </div>
+      <div class="hex-card product-card">
+        <div class="hex-img"><img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=600&q=80" alt="فستان أميرات للبنات (Robe Princesse Fille)" /></div>
+        <span class="sig-badge">جديد العيد ✨</span>
+        <h3 class="product-title">فستان أميرات للبنات (Robe Princesse Fille)</h3>
+        <div class="price-current" style="margin:8px 0">4 900 د.ج</div>
+        <button type="button" class="btn-order" onclick="openOrderModal('فستان أميرات للبنات (Robe Princesse Fille)', 4900)">🛒 اطلب من الخلية السداسية</button>
       </div>
     
-      <div class="masonry-pin">
-        <div class="product-img-wrap">
-          <button type="button" class="pin-save-btn" onclick="openOrderModal('طقم استقبال مواليد قطن 100% (Pack Nouveau-né)', 4000)">📌 احفظ واطلب</button>
-          <span class="product-tag">قطن طبيعي</span>
-          <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=600&q=80" alt="طقم استقبال مواليد قطن 100% (Pack Nouveau-né)" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">طقم استقبال مواليد قطن 100% (Pack Nouveau-né)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 000 د.ج</span>
-            <span class="price-old">4 800 د.ج</span>
-          </div>
-          <button type="button" class="btn-order" onclick="openOrderModal('طقم استقبال مواليد قطن 100% (Pack Nouveau-né)', 4000)">🛒 اطلب الآن</button>
-        </div>
+      <div class="hex-card product-card">
+        <div class="hex-img"><img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=600&q=80" alt="طقم استقبال مواليد قطن 100% (Pack Nouveau-né)" /></div>
+        <span class="sig-badge">قطن طبيعي</span>
+        <h3 class="product-title">طقم استقبال مواليد قطن 100% (Pack Nouveau-né)</h3>
+        <div class="price-current" style="margin:8px 0">4 000 د.ج</div>
+        <button type="button" class="btn-order" onclick="openOrderModal('طقم استقبال مواليد قطن 100% (Pack Nouveau-né)', 4000)">🛒 اطلب من الخلية السداسية</button>
       </div>
     
-      <div class="masonry-pin">
-        <div class="product-img-wrap">
-          <button type="button" class="pin-save-btn" onclick="openOrderModal('طقم رياضي مريح للأطفال (Survêtement Kids)', 3300)">📌 احفظ واطلب</button>
-          <span class="product-tag">مريح للعب</span>
-          <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80" alt="طقم رياضي مريح للأطفال (Survêtement Kids)" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">طقم رياضي مريح للأطفال (Survêtement Kids)</h3>
-          <div class="product-price-row">
-            <span class="price-current">3 300 د.ج</span>
-            <span class="price-old">4 000 د.ج</span>
-          </div>
-          <button type="button" class="btn-order" onclick="openOrderModal('طقم رياضي مريح للأطفال (Survêtement Kids)', 3300)">🛒 اطلب الآن</button>
-        </div>
+      <div class="hex-card product-card">
+        <div class="hex-img"><img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80" alt="طقم رياضي مريح للأطفال (Survêtement Kids)" /></div>
+        <span class="sig-badge">مريح للعب</span>
+        <h3 class="product-title">طقم رياضي مريح للأطفال (Survêtement Kids)</h3>
+        <div class="price-current" style="margin:8px 0">3 300 د.ج</div>
+        <button type="button" class="btn-order" onclick="openOrderModal('طقم رياضي مريح للأطفال (Survêtement Kids)', 3300)">🛒 اطلب من الخلية السداسية</button>
       </div>
-    </section>
+    </div>
 
   <div class="info-box">
     <div>
@@ -312,28 +274,42 @@
     </div>
   </div>
 
+  <div id="fabricModal" class="modal-backdrop" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal-card" style="max-width:520px;text-align:center">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <strong id="fabricTitle" style="font-size:1.05rem;color:var(--primary)">🔍 فحص تفاصيل القماش والخياطة</strong>
+        <button type="button" onclick="document.getElementById('fabricModal').classList.remove('open')" style="background:none;border:none;color:var(--text-muted);font-size:1.2rem;cursor:pointer">✕</button>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;height:320px;border:2px solid var(--primary);margin-bottom:12px">
+        <img id="fabricImg" src="" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.18)" />
+      </div>
+      <p style="font-size:0.86rem;color:var(--text-muted);margin-bottom:14px">✅ خامة مضمونة بجودة عالية • معاينة الطرد مسموحة عند الاستلام في جميع الـ 58 ولاية</p>
+      <button type="button" id="fabricOrderBtn" class="btn-order">🛒 اطلب هذه القطعة الآن</button>
+    </div>
+  </div>
+
   <!-- Live Shape & Theme Morphing Studio (مختبر تبديل الأشكال الحي) -->
   <div id="shapeStudioBar" style="position:fixed;bottom:18px;left:18px;z-index:990;">
-    <button onclick="document.getElementById('studioPanel').style.display = document.getElementById('studioPanel').style.display === 'block' ? 'none' : 'block'" style="background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border:2px solid var(--surface);border-radius:999px;padding:10px 18px;font-family:inherit;font-weight:900;font-size:0.82rem;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,0.35);display:flex;align-items:center;gap:8px;">
-      🎛️ مختبر الأشكال الحي (جرّب +50 شكلاً فوراً)
+    <button onclick="document.getElementById('studioPanel').style.display = document.getElementById('studioPanel').style.display === 'block' ? 'none' : 'block'" style="background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border:2px solid var(--bg-surface);border-radius:999px;padding:10px 18px;font-family:inherit;font-weight:900;font-size:0.82rem;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,0.35);display:flex;align-items:center;gap:8px;">
+      🎛️ مختبر الأشكال الحي (جرّب +73 شكلاً فوراً)
     </button>
-    <div id="studioPanel" style="display:none;position:absolute;bottom:54px;left:0;width:320px;background:var(--surface);color:var(--text);border:2px solid var(--primary);border-radius:18px;padding:16px;box-shadow:0 24px 50px rgba(0,0,0,0.45);text-align:right;">
+    <div id="studioPanel" style="display:none;position:absolute;bottom:54px;left:0;width:330px;background:var(--bg-surface);color:var(--text-main);border:2px solid var(--primary);border-radius:18px;padding:16px;box-shadow:0 24px 50px rgba(0,0,0,0.45);text-align:right;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid var(--border);padding-bottom:8px;">
-        <strong style="font-size:0.9rem;color:var(--primary)">🧬 مختبر التحويل الهندسي الفوري</strong>
-        <button onclick="document.getElementById('studioPanel').style.display='none'" style="background:none;border:none;color:var(--muted);cursor:pointer;font-weight:900">✕</button>
+        <strong style="font-size:0.9rem;color:var(--primary)">🧬 مختبر التحويل الهندسي الفوري (UI/UX Pro Max)</strong>
+        <button onclick="document.getElementById('studioPanel').style.display='none'" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-weight:900">✕</button>
       </div>
-      <div style="font-size:0.76rem;color:var(--muted);margin-bottom:6px;font-weight:700">1. غيّر شكل البطاقات الهندسي (53 شكلاً):</div>
+      <div style="font-size:0.76rem;color:var(--text-muted);margin-bottom:6px;font-weight:700">1. غيّر شكل البطاقات الهندسي (73 شكلاً):</div>
       <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;">
-        <button onclick="morphCardShape('arch')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🏛️ قوس أندلسي</button>
-        <button onclick="morphCardShape('octagon')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🛑 مثمّن</button>
-        <button onclick="morphCardShape('leaf')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🍃 ورقة</button>
-        <button onclick="morphCardShape('brutal')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🧱 بوب آرت</button>
-        <button onclick="morphCardShape('3d')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🧊 منظور 3D</button>
-        <button onclick="morphCardShape('clay')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">☁️ كلاي ناعم</button>
-        <button onclick="morphCardShape('cyber')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">⚡ سايبر</button>
-        <button onclick="morphCardShape('circle')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">💿 كبسولة</button>
+        <button onclick="morphCardShape('arch')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🏛️ قوس أندلسي</button>
+        <button onclick="morphCardShape('octagon')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🛑 مثمّن</button>
+        <button onclick="morphCardShape('leaf')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🍃 ورقة</button>
+        <button onclick="morphCardShape('brutal')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🧱 بوب آرت</button>
+        <button onclick="morphCardShape('3d')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🧊 منظور 3D</button>
+        <button onclick="morphCardShape('clay')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">☁️ كلاي ناعم</button>
+        <button onclick="morphCardShape('cyber')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">⚡ سايبر</button>
+        <button onclick="morphCardShape('circle')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">💿 كبسولة</button>
       </div>
-      <div style="font-size:0.76rem;color:var(--muted);margin-bottom:6px;font-weight:700">2. غيّر الطيف اللوني والوضع البصري:</div>
+      <div style="font-size:0.76rem;color:var(--text-muted);margin-bottom:6px;font-weight:700">2. غيّر الطيف اللوني والوضع البصري:</div>
       <div style="display:flex;flex-wrap:wrap;gap:5px;">
         <button onclick="morphTheme('#0A0E17','#111827','#38BDF8','#F43F5E','#F8FAFC')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#0A0E17;color:#38BDF8;cursor:pointer;font-family:inherit;font-weight:700">🌌 نيون ليلي</button>
         <button onclick="morphTheme('#FAF6F0','#FFFFFF','#9A6B3B','#C89D66','#1E1610')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#FAF6F0;color:#9A6B3B;cursor:pointer;font-family:inherit;font-weight:700">🏛️ فخامة ذهبية</button>
@@ -344,7 +320,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>ZAHRA &amp; KIDS</strong> — الشكل المعماري: 🧱 شبكة شلال بينترست غير متماثلة (Pinterest Staggered Masonry)
+    جميع الحقوق محفوظة © 2026 <strong>ZAHRA &amp; KIDS</strong> — الشكل المعماري: 🐝 خلية نحل سداسية متشابكة (Hexagonal Honeycomb Hive Grid)
   </footer>
 
   <script>
@@ -353,6 +329,40 @@
     const storeWhatsApp = '213561328747';
     const storeTitle = "ZAHRA & KIDS";
 
+    function trackCardSpotlight(e, card) {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }
+    function selectColorSwatch(btn, colorName) {
+      btn.parentElement.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      const card = btn.closest('.product-card');
+      if (card) {
+        const tag = card.querySelector('.product-tag');
+        if (tag) tag.textContent = '🎨 ' + colorName;
+      }
+    }
+    function inspectFabric(name, img, price) {
+      document.getElementById('fabricTitle').textContent = '🔍 فحص جودة وخياطة: ' + name;
+      document.getElementById('fabricImg').src = img;
+      document.getElementById('fabricOrderBtn').onclick = function() {
+        document.getElementById('fabricModal').classList.remove('open');
+        openOrderModal(name, price);
+      };
+      document.getElementById('fabricModal').classList.add('open');
+    }
+    function filterCatalogByTag(mode, btn) {
+      if (btn && btn.parentElement) {
+        btn.parentElement.querySelectorAll('.closet-tab').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+      }
+      document.querySelectorAll('.product-card').forEach((c, idx) => {
+        if (mode === 'all') c.style.display = '';
+        else if (mode === 'odd') c.style.display = idx % 2 === 0 ? '' : 'none';
+        else if (mode === 'even') c.style.display = idx % 2 === 1 ? '' : 'none';
+      });
+    }
     function selectSize(btn) {
       btn.parentElement.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active'));
       btn.classList.add('active');
@@ -435,7 +445,7 @@
         if (mode === 'arch') { c.style.borderRadius = '140px 140px 16px 16px'; }
         else if (mode === 'octagon') { c.style.clipPath = 'polygon(24px 0, calc(100% - 24px) 0, 100% 24px, 100% calc(100% - 24px), calc(100% - 24px) 100%, 24px 100%, 0 calc(100% - 24px), 0 24px)'; c.style.borderRadius = '0'; }
         else if (mode === 'leaf') { c.style.borderRadius = '72px 8px 72px 8px'; }
-        else if (mode === 'brutal') { c.style.borderRadius = '0'; c.style.border = '3px solid var(--text)'; c.style.boxShadow = '8px 8px 0 var(--primary)'; }
+        else if (mode === 'brutal') { c.style.borderRadius = '0'; c.style.border = '3px solid var(--text-main)'; c.style.boxShadow = '8px 8px 0 var(--primary)'; }
         else if (mode === '3d') { c.style.borderRadius = '22px'; c.style.transform = idx % 2 === 0 ? 'perspective(800px) rotateY(-8deg) rotateX(4deg)' : 'perspective(800px) rotateY(8deg) rotateX(-4deg)'; }
         else if (mode === 'clay') { c.style.borderRadius = '38px'; c.style.boxShadow = '14px 14px 28px rgba(0,0,0,0.18), inset -6px -6px 14px rgba(0,0,0,0.08), inset 6px 6px 14px rgba(255,255,255,0.5)'; }
         else if (mode === 'cyber') { c.style.clipPath = 'polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px))'; c.style.border = '2px solid var(--primary)'; }
@@ -444,11 +454,12 @@
     }
     function morphTheme(bg, surface, primary, accent, text) {
       const r = document.documentElement.style;
-      r.setProperty('--bg', bg);
-      r.setProperty('--surface', surface);
+      r.setProperty('--bg-base', bg);
+      r.setProperty('--bg-surface', surface);
+      r.setProperty('--bg-card', surface);
       r.setProperty('--primary', primary);
       r.setProperty('--accent', accent);
-      r.setProperty('--text', text);
+      r.setProperty('--text-main', text);
     }
   </script>
 </body>
