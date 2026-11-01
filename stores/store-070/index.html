@@ -78,18 +78,21 @@
     .section { max-width: 1220px; margin: 0 auto; padding: 28px 20px 56px; }
     .section-title { font-size: 1.65rem; font-weight: 900; margin-bottom: 6px; }
     .section-sub { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 24px; }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-    .product-card { position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s; }
-    .product-card::before { content: ''; position: absolute; width: 240px; height: 240px; left: var(--mx, 50%); top: var(--my, 50%); background: radial-gradient(circle, rgba(255,255,255,0.16) 0%, transparent 70%); border-radius: 50%; transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.25s; pointer-events: none; z-index: 3; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; perspective: 1200px; }
+    .product-card { position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transform-style: preserve-3d; transition: transform 0.18s ease-out, box-shadow 0.25s ease; will-change: transform; }
+    .product-card::before { content: ''; position: absolute; width: 260px; height: 260px; left: var(--mx, 50%); top: var(--my, 50%); background: radial-gradient(circle, rgba(255,255,255,0.22) 0%, transparent 70%); border-radius: 50%; transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.25s; pointer-events: none; z-index: 3; }
     .product-card:hover::before { opacity: 1; }
-    .product-card:hover { transform: translateY(-5px); }
-    .product-img-wrap { position: relative; height: 260px; background: var(--bg-surface); overflow: hidden; }
+    .card-glare { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 50%, rgba(0,0,0,0.12) 100%); opacity: 0; transition: opacity 0.25s; pointer-events: none; z-index: 3; }
+    .product-card:hover .card-glare { opacity: 1; }
+    .product-card:hover { box-shadow: 0 24px 48px rgba(0,0,0,0.28), 0 0 22px rgba(56,189,248,0.16); }
+    .product-img-wrap { position: relative; height: 260px; background: var(--bg-surface); overflow: hidden; transform: translateZ(14px); }
     .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-    .product-card:hover .product-img-wrap img { transform: scale(1.06); }
-    .product-tag { position: absolute; top: 12px; right: 12px; background: var(--primary); color: var(--primary-fg); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; z-index: 2; }
-    .quick-zoom-btn { position: absolute; bottom: 10px; left: 10px; background: rgba(15,23,42,0.85); backdrop-filter: blur(8px); color: #fff; border: 1px solid rgba(255,255,255,0.25); padding: 4px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 800; cursor: pointer; font-family: inherit; z-index: 2; transition: transform 0.2s; }
+    .product-card:hover .product-img-wrap img { transform: scale(1.07); }
+    .product-tag { position: absolute; top: 12px; right: 12px; background: var(--primary); color: var(--primary-fg); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; z-index: 4; transform: translateZ(28px); box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
+    .quick-zoom-btn { position: absolute; bottom: 10px; left: 10px; background: rgba(15,23,42,0.85); backdrop-filter: blur(8px); color: #fff; border: 1px solid rgba(255,255,255,0.25); padding: 4px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 800; cursor: pointer; font-family: inherit; z-index: 4; transition: transform 0.2s; }
     .quick-zoom-btn:hover { transform: scale(1.06); background: var(--primary); color: var(--primary-fg); }
-    .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; position: relative; z-index: 2; }
+    .quick-3d-btn { position: absolute; bottom: 10px; right: 10px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; border: none; padding: 4px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 900; cursor: pointer; font-family: inherit; z-index: 4; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; position: relative; z-index: 2; transform: translateZ(18px); }
     .product-cat { font-size: 0.76rem; color: var(--text-muted); }
     .product-title { font-size: 1.05rem; font-weight: 800; margin: 4px 0 8px; }
     .product-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
@@ -108,6 +111,39 @@
     .stock-bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 999px; }
     .btn-order { width: 100%; padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: var(--primary-fg); font-weight: 800; cursor: pointer; font-family: inherit; transition: transform 0.2s; }
     .btn-order:hover { transform: scale(1.02); }
+
+    /* Interactive 360° 3D Cylindrical Showroom Styles */
+    #bg3dCanvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.28; }
+    header, section, .info-box, footer, .demo-banner { position: relative; z-index: 2; }
+    .showroom3d-wrap { max-width: 1220px; margin: 22px auto; padding: 28px 20px; background: linear-gradient(145deg, var(--bg-surface), var(--bg-card)); border: 2px solid var(--primary); border-radius: 28px; box-shadow: 0 25px 60px rgba(0,0,0,0.22); overflow: hidden; position: relative; z-index: 2; }
+    .showroom3d-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+    .showroom3d-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .btn-3d-ctrl { padding: 7px 13px; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-base); color: var(--text-main); font-family: inherit; font-size: 0.78rem; font-weight: 800; cursor: pointer; transition: all 0.2s; }
+    .btn-3d-ctrl.active, .btn-3d-ctrl:hover { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
+    .stage3d-viewport { height: 390px; perspective: 1300px; display: flex; align-items: center; justify-content: center; position: relative; user-select: none; cursor: grab; overflow: visible; }
+    .stage3d-viewport:active { cursor: grabbing; }
+    .ring3d-carousel { width: 230px; height: 320px; position: relative; transform-style: preserve-3d; transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); transform: rotateX(-5deg) rotateY(var(--ring-angle, 0deg)); }
+    .ring3d-item { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateY(var(--item-angle)) translateZ(310px); transition: transform 0.45s ease; }
+    .ring3d-card { width: 100%; height: 100%; background: var(--bg-card); border: 2px solid var(--primary); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 18px 40px rgba(0,0,0,0.35); position: relative; }
+    .ring3d-card img { width: 100%; height: 185px; object-fit: cover; }
+    .ring3d-badge { position: absolute; top: 8px; right: 8px; background: var(--primary); color: var(--primary-fg); padding: 2px 9px; border-radius: 999px; font-size: 0.7rem; font-weight: 900; }
+    .ring3d-info { padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; flex: 1; text-align: center; }
+    .ring3d-info h4 { font-size: 0.88rem; font-weight: 900; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ring3d-price { font-size: 1rem; font-weight: 900; color: var(--primary); margin: 3px 0; }
+    .ring3d-btn { width: 100%; padding: 6px; border-radius: 8px; border: none; background: var(--primary); color: var(--primary-fg); font-family: inherit; font-size: 0.76rem; font-weight: 800; cursor: pointer; }
+    /* Alternative 3D Stage Modes */
+    .stage3d-viewport.mode-coverflow .ring3d-item { transform: translateX(calc((var(--idx, 0) - 2.5) * 170px)) translateZ(calc(Math.abs(var(--idx, 0) - 2.5) * -60px)) rotateY(calc((var(--idx, 0) - 2.5) * -18deg)); }
+    .stage3d-viewport.mode-isometric .ring3d-carousel { width: 100%; height: auto; transform: perspective(1000px) rotateX(24deg) rotateZ(-14deg); display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .stage3d-viewport.mode-isometric .ring3d-item { position: relative; transform: translateZ(20px); height: 260px; }
+    @media (max-width: 760px) {
+      .ring3d-item { transform: rotateY(var(--item-angle)) translateZ(210px); }
+      .ring3d-carousel { width: 185px; height: 290px; }
+    }
+
+    /* Redz Team Top & Bottom Agency Bar */
+    .redz-agency-strip { max-width: 1220px; margin: 16px auto; padding: 14px 20px; border-radius: 18px; background: linear-gradient(90deg, #0F172A, #1E293B); color: #F8FAFC; border: 1px solid #38BDF8; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; position: relative; z-index: 2; }
+    .redz-agency-strip strong { color: #38BDF8; }
+    .redz-cta-btn { background: linear-gradient(135deg, #10B981, #059669); color: #fff; padding: 8px 16px; border-radius: 999px; font-weight: 900; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 6px; border: none; cursor: pointer; font-family: inherit; }
 
     .info-box { max-width: 1180px; margin: 24px auto; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; align-items: center; }
     .social-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
@@ -144,12 +180,15 @@
 </head>
 <body>
 
+  <canvas id="bg3dCanvas"></canvas>
+
   <div class="demo-banner">
-    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #070: 🏛️ معمارية الأقواس الرومانية ومجلة فوغ × بطاقات (بطاقة معرض عائم بظل سفلي عميق) × ترويسة أوريغامي مقصوصة الأطراف</strong> | الميزة: <strong>🎁 منسّق الأطقم بخصم 20% (Mix &amp; Match Bundle)</strong></span>
-    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
+    <span>🚀 تصميم ثلاثي الأبعاد مطوّر خصيصاً لـ <strong>محل بيجامة الرودسيلاق سطيف</strong> بواسطة <strong>Redz Team (0777202336)</strong> | 🧬 <strong>شكل #070: 🏛️ معمارية الأقواس الرومانية ومجلة فوغ × بطاقات (بطاقة معرض عائم بظل سفلي عميق) × ترويسة أوريغامي مقصوصة الأطراف</strong></span>
+    <a href="https://wa.me/213777202336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%81%D8%B1%D9%8A%D9%82%20Redz%20Team%D8%8C%20%D8%A3%D9%86%D8%A7%20%D8%B5%D8%A7%D8%AD%D8%A8%20%D9%85%D8%AA%D8%AC%D8%B1%20(%D9%85%D8%AD%D9%84%20%D8%A8%D9%8A%D8%AC%D8%A7%D9%85%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%AF%D8%B3%D9%8A%D9%84%D8%A7%D9%82%20%D8%B3%D8%B7%D9%8A%D9%81)%20%D9%88%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%81%D8%B9%D9%8A%D9%84%20%D9%85%D9%88%D9%82%D8%B9%D9%8A%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A" target="_blank">💬 تفعيل الموقع مع Redz Team (0777202336)</a>
+    <a href="../../index.html">🔙 تصفح كل المواقع والتصاميم (372)</a>
   </div>
 
-  <header>
+  <header id="mainHeader">
     <div class="nav-container">
       <div class="brand-box">
         <div class="brand-monogram">مح</div>
@@ -159,8 +198,10 @@
         </div>
       </div>
       <div class="nav-actions">
+        <a href="#showroom3dSection" class="btn-nav">🧊 مسرح 3D (360°)</a>
         <a href="#feature-sec" class="btn-nav">🎁 منسّق الأطقم بخصم 20% (Mix &amp; Match Bundle)</a>
         <a href="#catalog" class="btn-nav">🛍️ الكتالوج</a>
+        <button type="button" class="btn-nav primary" onclick="toggleStudioPanel()">🎨 خيّر التصميم والـ 3D</button>
         
       </div>
     </div>
@@ -197,10 +238,12 @@
       <h2 class="section-title" style="text-align:center">🏛️ أروقة الموديلات المختارة</h2>
       <p class="section-sub" style="text-align:center">نوافذ عرض مقوّسة مستوحاة من دور الأزياء الإيطالية</p>
       <div class="products-grid">
-    <div class="product-card" data-card-idx="0" onmousemove="trackCardSpotlight(event, this)">
+    <div class="product-card" data-card-idx="0" onmousemove="trackCardSpotlight(event, this)" onmouseleave="resetCard3D(this)">
+      <div class="card-glare"></div>
       <div class="product-img-wrap">
         <span class="product-tag">مريح وعصري</span>
         <button type="button" class="quick-zoom-btn" onclick="inspectFabric('طقم كاجوال يومي أنيق (Set Casual Tendance)', 'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=600&q=80', 5100)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
+        <button type="button" class="quick-3d-btn" onclick="focusIn3DShowroom(0)" title="عرض في مسرح 3D">🧊 3D</button>
         <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=600&q=80" alt="طقم كاجوال يومي أنيق (Set Casual Tendance)" loading="lazy" />
       </div>
       <div class="product-body">
@@ -243,10 +286,12 @@
     </div>
   
 
-    <div class="product-card" data-card-idx="1" onmousemove="trackCardSpotlight(event, this)">
+    <div class="product-card" data-card-idx="1" onmousemove="trackCardSpotlight(event, this)" onmouseleave="resetCard3D(this)">
+      <div class="card-glare"></div>
       <div class="product-img-wrap">
         <span class="product-tag">إصدار محدود</span>
         <button type="button" class="quick-zoom-btn" onclick="inspectFabric('معطف ترنش كلاسيكي (Trench Coat Parisien)', 'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80', 8800)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
+        <button type="button" class="quick-3d-btn" onclick="focusIn3DShowroom(1)" title="عرض في مسرح 3D">🧊 3D</button>
         <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="معطف ترنش كلاسيكي (Trench Coat Parisien)" loading="lazy" />
       </div>
       <div class="product-body">
@@ -289,10 +334,12 @@
     </div>
   
 
-    <div class="product-card" data-card-idx="2" onmousemove="trackCardSpotlight(event, this)">
+    <div class="product-card" data-card-idx="2" onmousemove="trackCardSpotlight(event, this)" onmouseleave="resetCard3D(this)">
+      <div class="card-glare"></div>
       <div class="product-img-wrap">
         <span class="product-tag">تكمل إطلالتك</span>
         <button type="button" class="quick-zoom-btn" onclick="inspectFabric('حقيبة يد جلدية فاخرة (Sac à Main Couture)', 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80', 4000)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
+        <button type="button" class="quick-3d-btn" onclick="focusIn3DShowroom(2)" title="عرض في مسرح 3D">🧊 3D</button>
         <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة يد جلدية فاخرة (Sac à Main Couture)" loading="lazy" />
       </div>
       <div class="product-body">
@@ -335,10 +382,12 @@
     </div>
   
 
-    <div class="product-card" data-card-idx="3" onmousemove="trackCardSpotlight(event, this)">
+    <div class="product-card" data-card-idx="3" onmousemove="trackCardSpotlight(event, this)" onmouseleave="resetCard3D(this)">
+      <div class="card-glare"></div>
       <div class="product-img-wrap">
         <span class="product-tag">الأكثر طلباً 💖</span>
         <button type="button" class="quick-zoom-btn" onclick="inspectFabric('طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80', 7700)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
+        <button type="button" class="quick-3d-btn" onclick="focusIn3DShowroom(3)" title="عرض في مسرح 3D">🧊 3D</button>
         <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)" loading="lazy" />
       </div>
       <div class="product-body">
@@ -381,10 +430,12 @@
     </div>
   
 
-    <div class="product-card" data-card-idx="4" onmousemove="trackCardSpotlight(event, this)">
+    <div class="product-card" data-card-idx="4" onmousemove="trackCardSpotlight(event, this)" onmouseleave="resetCard3D(this)">
+      <div class="card-glare"></div>
       <div class="product-img-wrap">
         <span class="product-tag">تشكيلة جديدة ✨</span>
         <button type="button" class="quick-zoom-btn" onclick="inspectFabric('فستان ميدي تركي أنيق (Robe Midi Élégante)', 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=600&q=80', 5800)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
+        <button type="button" class="quick-3d-btn" onclick="focusIn3DShowroom(4)" title="عرض في مسرح 3D">🧊 3D</button>
         <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=600&q=80" alt="فستان ميدي تركي أنيق (Robe Midi Élégante)" loading="lazy" />
       </div>
       <div class="product-body">
@@ -427,10 +478,12 @@
     </div>
   
 
-    <div class="product-card" data-card-idx="5" onmousemove="trackCardSpotlight(event, this)">
+    <div class="product-card" data-card-idx="5" onmousemove="trackCardSpotlight(event, this)" onmouseleave="resetCard3D(this)">
+      <div class="card-glare"></div>
       <div class="product-img-wrap">
         <span class="product-tag">خامة ناعمة</span>
         <button type="button" class="quick-zoom-btn" onclick="inspectFabric('بلوزة حريرية ساتان فاخرة (Blouse Satinée)', 'https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=600&q=80', 3500)" title="معاينة القماش عن قرب">🔍 معاينة القماش</button>
+        <button type="button" class="quick-3d-btn" onclick="focusIn3DShowroom(5)" title="عرض في مسرح 3D">🧊 3D</button>
         <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=600&q=80" alt="بلوزة حريرية ساتان فاخرة (Blouse Satinée)" loading="lazy" />
       </div>
       <div class="product-body">
@@ -473,6 +526,113 @@
     </div>
   </div>
     </section>
+
+  <!-- Interactive 360° 3D Cylindrical Showroom Section -->
+  <section id="showroom3dSection" class="showroom3d-wrap">
+    <div class="showroom3d-head">
+      <div>
+        <span class="sig-badge">🧊 تكنولوجيا العرض التفاعلي ثلاثي الأبعاد (Web3D 360° Turntable)</span>
+        <h2 style="font-size:1.45rem;font-weight:900">مسرح العرض ثلاثي الأبعاد لمتجر محل بيجامة الرودسيلاق سطيف — دوّر الموديلات 360°</h2>
+        <p style="font-size:0.86rem;color:var(--text-muted)">اسحب يميناً ويساراً بالفأرة أو اللمس، أو غيّر زاوية الدوران والمنظور ثلاثي الأبعاد لمعاينة القطع في الفضاء</p>
+      </div>
+      <div class="showroom3d-controls">
+        <button type="button" class="btn-3d-ctrl" onclick="rotate3DStage(-60)">◀ يمين</button>
+        <button type="button" id="autoSpinBtn" class="btn-3d-ctrl active" onclick="toggleAutoSpin3D()">🔄 دوران تلقائي 3D</button>
+        <button type="button" class="btn-3d-ctrl" onclick="rotate3DStage(60)">يسار ▶</button>
+        <input type="range" id="angle3dSlider" min="0" max="360" value="0" oninput="set3DAngle(this.value)" style="width:110px;accent-color:var(--primary)" title="زاوية الدوران 360°" />
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+      <span style="font-size:0.78rem;color:var(--text-muted);font-weight:800;align-self:center">خيّر وضع المسرح ثلاثي الأبعاد:</span>
+      <button type="button" class="btn-3d-ctrl active" onclick="set3DStageMode('ring', this)">🎠 حلقة 3D دوارة 360°</button>
+      <button type="button" class="btn-3d-ctrl" onclick="set3DStageMode('tilt', this)">🛸 مدار مائل عميق</button>
+      <button type="button" class="btn-3d-ctrl" onclick="set3DStageMode('isometric', this)">🧊 شبكة إيزومترية 3D</button>
+      <button type="button" class="btn-3d-ctrl" onclick="set3DStageMode('zoom', this)">🔍 تقريب سينمائي 3D</button>
+    </div>
+    <div id="stage3dViewport" class="stage3d-viewport">
+      <div id="ring3dCarousel" class="ring3d-carousel">
+        
+      <div class="ring3d-item" data-idx="0" style="--item-angle:0deg" onclick="select3DItem(0)">
+        <div class="ring3d-card">
+          <div class="ring3d-badge">#01 • 3D</div>
+          <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=600&q=80" alt="طقم كاجوال يومي أنيق (Set Casual Tendance)" loading="lazy" />
+          <div class="ring3d-info">
+            <h4>طقم كاجوال يومي أنيق (Set Casual Tendance)</h4>
+            <div class="ring3d-price">5 100 د.ج</div>
+            <button type="button" class="ring3d-btn" onclick="event.stopPropagation();openOrderModal('طقم كاجوال يومي أنيق (Set Casual Tendance)', 5100)">🛒 اطلب القطعة</button>
+          </div>
+        </div>
+      </div>
+      <div class="ring3d-item" data-idx="1" style="--item-angle:60deg" onclick="select3DItem(1)">
+        <div class="ring3d-card">
+          <div class="ring3d-badge">#02 • 3D</div>
+          <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="معطف ترنش كلاسيكي (Trench Coat Parisien)" loading="lazy" />
+          <div class="ring3d-info">
+            <h4>معطف ترنش كلاسيكي (Trench Coat Parisien)</h4>
+            <div class="ring3d-price">8 800 د.ج</div>
+            <button type="button" class="ring3d-btn" onclick="event.stopPropagation();openOrderModal('معطف ترنش كلاسيكي (Trench Coat Parisien)', 8800)">🛒 اطلب القطعة</button>
+          </div>
+        </div>
+      </div>
+      <div class="ring3d-item" data-idx="2" style="--item-angle:120deg" onclick="select3DItem(2)">
+        <div class="ring3d-card">
+          <div class="ring3d-badge">#03 • 3D</div>
+          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة يد جلدية فاخرة (Sac à Main Couture)" loading="lazy" />
+          <div class="ring3d-info">
+            <h4>حقيبة يد جلدية فاخرة (Sac à Main Couture)</h4>
+            <div class="ring3d-price">4 000 د.ج</div>
+            <button type="button" class="ring3d-btn" onclick="event.stopPropagation();openOrderModal('حقيبة يد جلدية فاخرة (Sac à Main Couture)', 4000)">🛒 اطلب القطعة</button>
+          </div>
+        </div>
+      </div>
+      <div class="ring3d-item" data-idx="3" style="--item-angle:180deg" onclick="select3DItem(3)">
+        <div class="ring3d-card">
+          <div class="ring3d-badge">#04 • 3D</div>
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)" loading="lazy" />
+          <div class="ring3d-info">
+            <h4>طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)</h4>
+            <div class="ring3d-price">7 700 د.ج</div>
+            <button type="button" class="ring3d-btn" onclick="event.stopPropagation();openOrderModal('طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)', 7700)">🛒 اطلب القطعة</button>
+          </div>
+        </div>
+      </div>
+      <div class="ring3d-item" data-idx="4" style="--item-angle:240deg" onclick="select3DItem(4)">
+        <div class="ring3d-card">
+          <div class="ring3d-badge">#05 • 3D</div>
+          <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=600&q=80" alt="فستان ميدي تركي أنيق (Robe Midi Élégante)" loading="lazy" />
+          <div class="ring3d-info">
+            <h4>فستان ميدي تركي أنيق (Robe Midi Élégante)</h4>
+            <div class="ring3d-price">5 800 د.ج</div>
+            <button type="button" class="ring3d-btn" onclick="event.stopPropagation();openOrderModal('فستان ميدي تركي أنيق (Robe Midi Élégante)', 5800)">🛒 اطلب القطعة</button>
+          </div>
+        </div>
+      </div>
+      <div class="ring3d-item" data-idx="5" style="--item-angle:300deg" onclick="select3DItem(5)">
+        <div class="ring3d-card">
+          <div class="ring3d-badge">#06 • 3D</div>
+          <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=600&q=80" alt="بلوزة حريرية ساتان فاخرة (Blouse Satinée)" loading="lazy" />
+          <div class="ring3d-info">
+            <h4>بلوزة حريرية ساتان فاخرة (Blouse Satinée)</h4>
+            <div class="ring3d-price">3 500 د.ج</div>
+            <button type="button" class="ring3d-btn" onclick="event.stopPropagation();openOrderModal('بلوزة حريرية ساتان فاخرة (Blouse Satinée)', 3500)">🛒 اطلب القطعة</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Redz Team Service Explanation Banner for Store Owner -->
+  <div class="redz-agency-strip">
+    <div>
+      <div style="font-size:0.78rem;color:#94A3B8;font-weight:700">⚡ نسخة تجريبية مخصصة لمتجر (محل بيجامة الرودسيلاق سطيف) — مقدمة من فريق <strong>Redz Team</strong></div>
+      <div style="font-size:0.98rem;font-weight:900;margin-top:2px">ربط مباشر مع إنستغرام وواتساب المحل + طلبات 58 ولاية + حرية تغيير التصميم والـ 3D في أي وقت!</div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button type="button" class="redz-cta-btn" style="background:linear-gradient(135deg,#0EA5E9,#6366F1)" onclick="toggleStudioPanel()">🎨 خيّر بين كامل التصاميم والأشكال</button>
+      <a href="https://wa.me/213777202336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%81%D8%B1%D9%8A%D9%82%20Redz%20Team%D8%8C%20%D8%A3%D9%86%D8%A7%20%D9%85%D9%86%20%D9%85%D8%AA%D8%AC%D8%B1%20(%D9%85%D8%AD%D9%84%20%D8%A8%D9%8A%D8%AC%D8%A7%D9%85%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%AF%D8%B3%D9%8A%D9%84%D8%A7%D9%82%20%D8%B3%D8%B7%D9%8A%D9%81)%20%D9%88%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8%D9%8A%20%D9%88%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D9%81%D8%B9%D9%8A%D9%84%D9%87" target="_blank" class="redz-cta-btn">📱 تواصل مع Redz Team: 0777202336</a>
+    </div>
+  </div>
 
   <div class="info-box">
     <div>
@@ -533,39 +693,67 @@
     </div>
   </div>
 
-  <!-- Live Shape & Theme Morphing Studio (مختبر تبديل الأشكال الحي) -->
+  <!-- Universal Live Design, 3D & Website Chooser (مبدّل التصاميم والمواقع والـ 3D الشامل) -->
   <div id="shapeStudioBar" style="position:fixed;bottom:18px;left:18px;z-index:990;">
-    <button onclick="document.getElementById('studioPanel').style.display = document.getElementById('studioPanel').style.display === 'block' ? 'none' : 'block'" style="background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border:2px solid var(--bg-surface);border-radius:999px;padding:10px 18px;font-family:inherit;font-weight:900;font-size:0.82rem;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,0.35);display:flex;align-items:center;gap:8px;">
-      🎛️ مختبر الأشكال الحي (جرّب +73 شكلاً فوراً)
+    <button onclick="toggleStudioPanel()" style="background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border:2px solid var(--bg-surface);border-radius:999px;padding:11px 20px;font-family:inherit;font-weight:900;font-size:0.84rem;cursor:pointer;box-shadow:0 14px 34px rgba(0,0,0,0.4);display:flex;align-items:center;gap:8px;">
+      🎨 مبدّل التصاميم والمواقع والـ 3D (خيّر شكلك فوراً)
     </button>
-    <div id="studioPanel" style="display:none;position:absolute;bottom:54px;left:0;width:330px;background:var(--bg-surface);color:var(--text-main);border:2px solid var(--primary);border-radius:18px;padding:16px;box-shadow:0 24px 50px rgba(0,0,0,0.45);text-align:right;">
+    <div id="studioPanel" style="display:none;position:absolute;bottom:58px;left:0;width:370px;max-width:92vw;max-height:80vh;overflow-y:auto;background:var(--bg-surface);color:var(--text-main);border:2px solid var(--primary);border-radius:20px;padding:16px;box-shadow:0 28px 60px rgba(0,0,0,0.55);text-align:right;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid var(--border);padding-bottom:8px;">
-        <strong style="font-size:0.9rem;color:var(--primary)">🧬 مختبر التحويل الهندسي الفوري (UI/UX Pro Max)</strong>
-        <button onclick="document.getElementById('studioPanel').style.display='none'" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-weight:900">✕</button>
+        <div>
+          <strong style="font-size:0.92rem;color:var(--primary);display:block">🎨 استوديو الاختيار الشامل (Redz Team)</strong>
+          <span style="font-size:0.7rem;color:var(--text-muted)">خيّر بين كامل التصاميم وأنماط 3D والألوان والمواقع</span>
+        </div>
+        <button onclick="toggleStudioPanel()" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-weight:900;font-size:1.1rem">✕</button>
       </div>
-      <div style="font-size:0.76rem;color:var(--text-muted);margin-bottom:6px;font-weight:700">1. غيّر شكل البطاقات الهندسي (73 شكلاً):</div>
-      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;">
-        <button onclick="morphCardShape('arch')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🏛️ قوس أندلسي</button>
-        <button onclick="morphCardShape('octagon')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🛑 مثمّن</button>
-        <button onclick="morphCardShape('leaf')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🍃 ورقة</button>
-        <button onclick="morphCardShape('brutal')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🧱 بوب آرت</button>
-        <button onclick="morphCardShape('3d')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🧊 منظور 3D</button>
-        <button onclick="morphCardShape('clay')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">☁️ كلاي ناعم</button>
-        <button onclick="morphCardShape('cyber')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">⚡ سايبر</button>
-        <button onclick="morphCardShape('circle')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">💿 كبسولة</button>
+
+      <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:5px;font-weight:800">1. خيّر نمط عرض الصفحة والـ 3D الكامل:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+        <button onclick="switchFullLayoutMode('default')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🏛️ التصميم الأصلي</button>
+        <button onclick="switchFullLayoutMode('showroom3d')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--primary);background:var(--bg-base);color:var(--primary);cursor:pointer;font-family:inherit;font-weight:800">🎠 مسرح 3D (360°)</button>
+        <button onclick="switchFullLayoutMode('isometric3d')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🧊 شبكة إيزومترية 3D</button>
+        <button onclick="switchFullLayoutMode('runway')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🎞️ شريط سينمائي</button>
+        <button onclick="switchFullLayoutMode('masonry')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🧱 شلال بينترست</button>
+        <button onclick="switchFullLayoutMode('compact')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">📱 بطاقات مدمجة</button>
       </div>
-      <div style="font-size:0.76rem;color:var(--text-muted);margin-bottom:6px;font-weight:700">2. غيّر الطيف اللوني والوضع البصري:</div>
-      <div style="display:flex;flex-wrap:wrap;gap:5px;">
-        <button onclick="morphTheme('#0A0E17','#111827','#38BDF8','#F43F5E','#F8FAFC')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#0A0E17;color:#38BDF8;cursor:pointer;font-family:inherit;font-weight:700">🌌 نيون ليلي</button>
-        <button onclick="morphTheme('#FAF6F0','#FFFFFF','#9A6B3B','#C89D66','#1E1610')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#FAF6F0;color:#9A6B3B;cursor:pointer;font-family:inherit;font-weight:700">🏛️ فخامة ذهبية</button>
-        <button onclick="morphTheme('#061A14','#0C2920','#10B981','#F59E0B','#ECFDF5')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#061A14;color:#10B981;cursor:pointer;font-family:inherit;font-weight:700">💎 زمردي ملكي</button>
-        <button onclick="morphTheme('#FFF0F5','#FFFFFF','#E11D48','#8B5CF6','#310B19')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#FFF0F5;color:#E11D48;cursor:pointer;font-family:inherit;font-weight:700">🌸 باريسي وردي</button>
+
+      <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:5px;font-weight:800">2. خيّر شكل البطاقات الهندسي (73 شكلاً):</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+        <button onclick="morphCardShape('arch')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🏛️ قوس أندلسي</button>
+        <button onclick="morphCardShape('octagon')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🛑 مثمّن</button>
+        <button onclick="morphCardShape('leaf')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🍃 ورقة</button>
+        <button onclick="morphCardShape('brutal')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🧱 بوب آرت</button>
+        <button onclick="morphCardShape('3d')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🧊 منظور 3D</button>
+        <button onclick="morphCardShape('clay')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">☁️ كلاي ناعم</button>
+        <button onclick="morphCardShape('cyber')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">⚡ سايبر</button>
+        <button onclick="morphCardShape('circle')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">💿 كبسولة</button>
+        <button onclick="morphCardShape('diamond')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">💎 ماسي</button>
+        <button onclick="morphCardShape('ticket')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);cursor:pointer;font-family:inherit;font-weight:700">🎟️ تذكرة</button>
       </div>
+
+      <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:5px;font-weight:800">3. خيّر الطيف اللوني والوضع البصري:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+        <button onclick="morphTheme('#0A0E17','#111827','#38BDF8','#F43F5E','#F8FAFC')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:#0A0E17;color:#38BDF8;cursor:pointer;font-family:inherit;font-weight:700">🌌 نيون ليلي</button>
+        <button onclick="morphTheme('#FAF6F0','#FFFFFF','#9A6B3B','#C89D66','#1E1610')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:#FAF6F0;color:#9A6B3B;cursor:pointer;font-family:inherit;font-weight:700">🏛️ فخامة ذهبية</button>
+        <button onclick="morphTheme('#061A14','#0C2920','#10B981','#F59E0B','#ECFDF5')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:#061A14;color:#10B981;cursor:pointer;font-family:inherit;font-weight:700">💎 زمردي ملكي</button>
+        <button onclick="morphTheme('#FFF0F5','#FFFFFF','#E11D48','#8B5CF6','#310B19')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:#FFF0F5;color:#E11D48;cursor:pointer;font-family:inherit;font-weight:700">🌸 باريسي وردي</button>
+        <button onclick="morphTheme('#120B24','#1E1238','#C084FC','#F472B6','#F5F3FF')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:#120B24;color:#C084FC;cursor:pointer;font-family:inherit;font-weight:700">🔮 بنفسجي كوتور</button>
+        <button onclick="morphTheme('#FFFFFF','#F8FAFC','#0F172A','#E11D48','#0F172A')" style="padding:4px 8px;font-size:0.71rem;border-radius:6px;border:1px solid var(--border);background:#FFFFFF;color:#0F172A;cursor:pointer;font-family:inherit;font-weight:700">🕊️ أبيض باريسي</button>
+      </div>
+
+      <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:5px;font-weight:800">4. تصفح وقارن مع التصاميم والمواقع الـ 60+ الأخرى:</div>
+      <select onchange="if(this.value)window.location.href=this.value" style="width:100%;padding:7px 10px;border-radius:8px;border:1px solid var(--border);background:var(--bg-base);color:var(--text-main);font-family:inherit;font-size:0.74rem;margin-bottom:10px">
+        <option value="../001-rich-men-setif/index.html" >شكل #001 — Rich men Setif (🎯 لوك-بوك تفاعلي بنقاط تس)</option><option value="../002-boutique-papillon/index.html" >شكل #002 — Boutique Papillon (🎞️ شريط سينمائي أفقي متحر)</option><option value="../003-rk-moda-setif/index.html" >شكل #003 — RK MODA SETIF (🧱 شبكة شلال بينترست غير م)</option><option value="../004-boutique-hasna-setif/index.html" >شكل #004 — Boutique hasna setif (📑 سجل أتيليه جدولي تفاعلي)</option><option value="../005-zh-setif/index.html" >شكل #005 — Zh Setif (🫧 بوابات دائرية وعضوية عا)</option><option value="../006-urbanman-ouled-brahem/index.html" >شكل #006 — UrbanMan Ouled Brahem (⚡ زين ستريت-وير بروتاليسم )</option><option value="../007-boutique-istanbul-setif-1/index.html" >شكل #007 — Boutique istanbul setif 1 (🖥️ شرائح شاشة كاملة متتال)</option><option value="../008-boutique-istanbul-setif-500/index.html" >شكل #008 — Boutique istanbul setif 500 (🍱 لوحة بينتو معيارية متعد)</option><option value="../store-009/index.html" >شكل #009 — ثوب الأناقة 19 (🎬 شاشة مزدوجة: بوستر ثابت)</option><option value="../010-infinity-shop/index.html" >شكل #010 — Infinity shop (🏛️ معمارية الأقواس الروما)</option><option value="../011-l-med-streetwear/index.html" >شكل #011 — L’med streetwear (📸 حبل غسيل بولارويد واستو)</option><option value="../012-nadjmou-mode-setif/index.html" >شكل #012 — Nadjmou Mode, Sétif (🛸 واجهة مستقبلية وزوايا م)</option><option value="../013-boutique-la-rome/index.html" >شكل #013 — Boutique la rome (👑 قصر أندلسي ملكي بزخارف )</option><option value="../014-boutique-faten/index.html" >شكل #014 — Boutique faten (📰 صحيفة موضة باريسية متعد)</option><option value="../015-fashion-style-setif/index.html" >شكل #015 — Fashion Style Setif (🔮 جزر زجاجية عائمة وشريط )</option><option value="../store-016/index.html" >شكل #016 — الباخرة (🌿 متحف إسكندنافي فائق الن)</option><option value="../017-black-bull-vetements-hommes/index.html" >شكل #017 — BLACK BULL VETEMENTS HOMMES (🪗 ستائر أكورديون تفاعلية )</option><option value="../018-bridal-garden-setif/index.html" >شكل #018 — BRIDAL GARDEN Sétif (📱 تطبيق ستوري وموجز تسوق )</option><option value="../019-izak-mode/index.html" >شكل #019 — Izak mode (🌼 بوتيك ريترو السبعينات ا)</option><option value="../020-maggie-fitwear-setif/index.html" >شكل #020 — Maggie Fitwear Setif (💎 صالون VIP بقائمة جانبية)</option><option value="../021-medusa/index.html" >شكل #021 — Medusa (🎡 مسرح كفر-فلو ثلاثي الأب)</option><option value="../022-sofiane-store/index.html" >شكل #022 — Sofiane store (🔄 بطاقات ثلاثية الأبعاد ت)</option><option value="../023-khaled-promod/index.html" >شكل #023 — Khaled promod (🐝 خلية نحل سداسية متشابكة)</option><option value="../024-lorenzo-magasin/index.html" >شكل #024 — Lorenzo Magasin (📐 مدرج مائل بزاوية سينمائ)</option><option value="../025-setif-shop-rafik/index.html" >شكل #025 — Setif Shop Rafik (💿 أسطوانة فينيل دوارة ومع)</option><option value="../026-mioz-mode-2/index.html" >شكل #026 — Mioz mode ميوز2 (🧊 طاولة عرض إيزومترية ثلا)</option><option value="../027-boutique-zaki/index.html" >شكل #027 — Boutique zaki (🏪 واجهة متجر فرنسي بمظلة )</option><option value="../028-vintage/index.html" >شكل #028 — Vintage (⏳ خط زمني عمودي متفرع للمو)</option><option value="../029-luxury-kids-milano/index.html" >شكل #029 — Luxury Kids Milano (🃏 منصة تبديل البطاقات الت)</option><option value="../store-030/index.html" >شكل #030 — امبراطورية ملابس الاطفال لتحطيم الاسعار (🖼️ ثلاثية معمارية متناظرة)</option><option value="../031-bebetto-setif/index.html" >شكل #031 — Bebetto Setif (🌈 بطاقات هولوغرام منشورية)</option><option value="../032-vesmode/index.html" >شكل #032 — Vesmode (🧸 تصميم صمغي ثلاثي الأبعا)</option><option value="../033-zaki-shoes/index.html" >شكل #033 — Zaki shoes (🦢 طيات أوريغامي هندسية مت)</option><option value="../store-034/index.html" >شكل #034 — القيصر (💻 شاشة أوامر رقمية للموضة)</option><option value="../store-035/index.html" >شكل #035 — الهضاب امام مالك بن نبي (⌚ خزنة مجوهرات ملكية بإضاء)</option><option value="../store-036/index.html" >شكل #036 — بزار لعايلة للالبسة الاوربية بالميزان (🧩 شبكة فسيفساء متداخلة غي)</option><option value="../store-037/index.html" >شكل #037 — رغبة الأطفال (🎗️ أشرطة سينمائية متقاطعة)</option><option value="../store-038/index.html" >شكل #038 — رُكن الأنيقة (✈️ تذاكر سفر الدرجة الأولى)</option><option value="../store-039/index.html" >شكل #039 — عروس المغرب (🎭 قصر آرت ديكو غاتسبي الذ)</option><option value="../store-040/index.html" >شكل #040 — محل بيع الاحذية طيبة الاحبة (🚪 خزانة ملابس مبوبة تفاعل)</option><option value="../store-041/index.html" >شكل #041 — ملكة الحجاب الشرعي (🥽 واجهة VisionOS المكانية)</option><option value="../042-bazar-janna/index.html" >شكل #042 — Bazar Janna بازار جنة (🟥 لوحة باوهاوس الهندسية ا)</option><option value="../043-boutique-iyade/index.html" >شكل #043 — BOUTIQUE IYADE (🔤 جدار التيبوغرافي الحركي)</option><option value="../044-boutique-nessma/index.html" >شكل #044 — Boutique Nessma (💿 مستقبلية Y2K المعدنية ا)</option><option value="../045-chicomod/index.html" >شكل #045 — Chicomod (🌅 شبكة أفق نيون سينث-ويف )</option><option value="../046-intimissima/index.html" >شكل #046 — intimissima (📜 ورق الحبر الإلكتروني ال)</option><option value="../047-maison-keraghel/index.html" >شكل #047 — Maison Keraghel (🍃 التصميم الحيوي العضوي ا)</option><option value="../048-mayar-moda/index.html" >شكل #048 — Mayar Moda (📺 انكسار الطيف الضوئي ثلا)</option><option value="../049-mini-style-kids/index.html" >شكل #049 — Mini style kids (📽️ شريط سينما 35mm الكلاس)</option><option value="../050-patron/index.html" >شكل #050 — PATRON (🎨 نظام Material 3 Express)</option><option value="../051-superdry-sport/index.html" >شكل #051 — SUPERDRY SPORT (🔺 كولاج ممفيس الإيطالي ال)</option><option value="../052-vamos-setif/index.html" >شكل #052 — Vamos Sétif (🛰️ قمرة قيادة خيال علمي ر)</option><option value="../053-x-malak-x-fashion-x/index.html" >شكل #053 — x.malak.x.fashion.x (🎥 عدسة الانقسام المزدوج ا)</option><option value="../054-zone-pyjama-setif/index.html" >شكل #054 — Zone Pyjama Setif (🪐 مدار كوكبي شعاعي حول ال)</option><option value="../055-story-mode/index.html" >شكل #055 — STORY MODE ولاد الصيفي (🗂️ بطاقات متراكمة تدريجيا)</option><option value="../056-boutique-belinza/index.html" >شكل #056 — Boutique Belinza (⚔️ شطر قطري حاد بزاوية متع)</option><option value="../057-vip-style-homme/index.html" >شكل #057 — Vip style homme (🐚 حلزون النسبة الذهبية في)</option><option value="../058-dr-wear/index.html" >شكل #058 — DR WEAR (🎬 شاشة سينما عريضة 2.39:1)</option><option value="../059-boutique-la-perla/index.html" >شكل #059 — Boutique la perla (🏝️ أرخبيل البطاقات المعلق)</option><option value="../060-la-gare/index.html" >شكل #060 — La gare (🎛️ مختبر تخصيص الموديل وا)</option>
+      </select>
+
+      <a href="https://wa.me/213777202336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%81%D8%B1%D9%8A%D9%82%20Redz%20Team%D8%8C%20%D8%A3%D9%86%D8%A7%20%D9%85%D9%86%20%D9%85%D8%AA%D8%AC%D8%B1%20(%D9%85%D8%AD%D9%84%20%D8%A8%D9%8A%D8%AC%D8%A7%D9%85%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%AF%D8%B3%D9%8A%D9%84%D8%A7%D9%82%20%D8%B3%D8%B7%D9%8A%D9%81)%20%D9%88%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20%D8%A7%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%88%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%86%D8%A7" target="_blank" style="display:block;text-align:center;background:linear-gradient(135deg,#10B981,#059669);color:#fff;padding:9px;border-radius:10px;font-weight:900;font-size:0.78rem;">
+        ✅ اعتمد هذا التصميم مع Redz Team (0777202336)
+      </a>
     </div>
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>محل بيجامة الرودسيلاق سطيف</strong> — الشكل المعماري: 🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Milanese Archway Palace)
+    جميع الحقوق محفوظة © 2026 <strong>محل بيجامة الرودسيلاق سطيف</strong> — تصميم وتطوير: <strong>Redz Team (0777202336)</strong> • الشكل المعماري: 🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Milanese Archway Palace)
   </footer>
 
   <script>
@@ -573,12 +761,189 @@
     let currentProductName = '';
     const storeWhatsApp = '';
     const storeTitle = "محل بيجامة الرودسيلاق سطيف";
+    let current3DAngle = 0;
+    let autoSpin3D = true;
 
+    function toggleStudioPanel() {
+      const p = document.getElementById('studioPanel');
+      p.style.display = p.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // 6DOF 3D Card Tilt + Spotlight Physics
     function trackCardSpotlight(e, card) {
       const r = card.getBoundingClientRect();
-      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      const x = e.clientX - r.left;
+      const y = e.clientY - r.top;
+      card.style.setProperty('--mx', x + 'px');
+      card.style.setProperty('--my', y + 'px');
+      const normX = (x / r.width) - 0.5;
+      const normY = (y / r.height) - 0.5;
+      const rotY = (normX * 14).toFixed(2);
+      const rotX = (-normY * 14).toFixed(2);
+      card.style.transform = 'perspective(950px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translateY(-6px)';
     }
+    function resetCard3D(card) {
+      card.style.transform = '';
+    }
+
+    // Interactive 360° 3D Showroom Logic
+    function update3DCarouselTransform() {
+      const ring = document.getElementById('ring3dCarousel');
+      if (!ring) return;
+      ring.style.setProperty('--ring-angle', current3DAngle + 'deg');
+      const slider = document.getElementById('angle3dSlider');
+      if (slider) slider.value = ((current3DAngle % 360) + 360) % 360;
+    }
+    function rotate3DStage(delta) {
+      autoSpin3D = false;
+      const btn = document.getElementById('autoSpinBtn');
+      if (btn) btn.classList.remove('active');
+      current3DAngle += delta;
+      update3DCarouselTransform();
+    }
+    function set3DAngle(val) {
+      autoSpin3D = false;
+      const btn = document.getElementById('autoSpinBtn');
+      if (btn) btn.classList.remove('active');
+      current3DAngle = parseFloat(val) || 0;
+      update3DCarouselTransform();
+    }
+    function select3DItem(idx) {
+      autoSpin3D = false;
+      current3DAngle = -idx * 60;
+      update3DCarouselTransform();
+    }
+    function focusIn3DShowroom(idx) {
+      const sec = document.getElementById('showroom3dSection');
+      if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      select3DItem(idx);
+    }
+    function toggleAutoSpin3D() {
+      autoSpin3D = !autoSpin3D;
+      const btn = document.getElementById('autoSpinBtn');
+      if (btn) btn.classList.toggle('active', autoSpin3D);
+    }
+    function set3DStageMode(mode, btn) {
+      if (btn && btn.parentElement) {
+        btn.parentElement.querySelectorAll('.btn-3d-ctrl').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+      const vp = document.getElementById('stage3dViewport');
+      const ring = document.getElementById('ring3dCarousel');
+      if (!vp || !ring) return;
+      vp.classList.remove('mode-isometric');
+      if (mode === 'ring') {
+        ring.style.transform = 'rotateX(-5deg) rotateY(var(--ring-angle, 0deg))';
+      } else if (mode === 'tilt') {
+        ring.style.transform = 'rotateX(-22deg) rotateZ(6deg) rotateY(var(--ring-angle, 0deg))';
+      } else if (mode === 'isometric') {
+        autoSpin3D = false;
+        vp.classList.add('mode-isometric');
+      } else if (mode === 'zoom') {
+        ring.style.transform = 'scale(1.14) rotateX(-3deg) rotateY(var(--ring-angle, 0deg))';
+      }
+    }
+
+    // Drag to rotate 3D Showroom + Auto-spin loop
+    (function init3DStageEvents() {
+      const vp = document.getElementById('stage3dViewport');
+      if (vp) {
+        let dragging = false, startX = 0, startAngle = 0;
+        vp.addEventListener('pointerdown', e => {
+          if (e.target.tagName === 'BUTTON') return;
+          dragging = true; startX = e.clientX; startAngle = current3DAngle; autoSpin3D = false;
+        });
+        window.addEventListener('pointermove', e => {
+          if (!dragging) return;
+          current3DAngle = startAngle + (e.clientX - startX) * 0.45;
+          update3DCarouselTransform();
+        });
+        window.addEventListener('pointerup', () => { dragging = false; });
+      }
+      setInterval(() => {
+        if (autoSpin3D) {
+          current3DAngle = (current3DAngle + 0.35) % 360;
+          update3DCarouselTransform();
+        }
+      }, 30);
+    })();
+
+    // Lightweight 3D Geometric Wireframe Background Canvas
+    (function initBg3dCanvas() {
+      const canvas = document.getElementById('bg3dCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let w = canvas.width = window.innerWidth;
+      let h = canvas.height = window.innerHeight;
+      window.addEventListener('resize', () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; });
+      const nodes = Array.from({ length: 26 }, () => ({
+        x: (Math.random() - 0.5) * w,
+        y: (Math.random() - 0.5) * h,
+        z: Math.random() * 400 + 100,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6
+      }));
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+        const primary = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#38BDF8';
+        ctx.strokeStyle = primary;
+        ctx.fillStyle = primary;
+        const pts = nodes.map(n => {
+          n.x += n.vx; n.y += n.vy;
+          if (Math.abs(n.x) > w * 0.6) n.vx *= -1;
+          if (Math.abs(n.y) > h * 0.6) n.vy *= -1;
+          const scale = 300 / (300 + n.z);
+          return { sx: w / 2 + n.x * scale, sy: h / 2 + n.y * scale, r: Math.max(1.5, 3.5 * scale) };
+        });
+        pts.forEach((p, i) => {
+          ctx.beginPath(); ctx.arc(p.sx, p.sy, p.r, 0, Math.PI * 2); ctx.fill();
+          for (let j = i + 1; j < pts.length; j++) {
+            const d = Math.hypot(p.sx - pts[j].sx, p.sy - pts[j].sy);
+            if (d < 160) {
+              ctx.globalAlpha = (1 - d / 160) * 0.35;
+              ctx.beginPath(); ctx.moveTo(p.sx, p.sy); ctx.lineTo(pts[j].sx, pts[j].sy); ctx.stroke();
+            }
+          }
+        });
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    function switchFullLayoutMode(mode) {
+      if (mode === 'showroom3d') {
+        const sec = document.getElementById('showroom3dSection');
+        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        set3DStageMode('ring');
+        return;
+      }
+      if (mode === 'isometric3d') {
+        const sec = document.getElementById('showroom3dSection');
+        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        set3DStageMode('isometric');
+        return;
+      }
+      const grid = document.querySelector('.products-grid, .lookbook-strip, .pinterest-masonry, .runway-track');
+      if (!grid) return;
+      grid.style.display = 'grid';
+      grid.style.overflowX = 'visible';
+      if (mode === 'default') {
+        grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+      } else if (mode === 'runway') {
+        grid.style.display = 'flex';
+        grid.style.overflowX = 'auto';
+        grid.style.gap = '20px';
+      } else if (mode === 'masonry') {
+        grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(260px, 1fr))';
+        document.querySelectorAll('.product-card').forEach((c, idx) => {
+          c.style.transform = idx % 2 === 0 ? 'translateY(-12px)' : 'translateY(12px)';
+        });
+      } else if (mode === 'compact') {
+        grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(220px, 1fr))';
+      }
+    }
+
     function selectColorSwatch(btn, colorName) {
       btn.parentElement.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
       btn.classList.add('active');
@@ -695,6 +1060,8 @@
         else if (mode === 'clay') { c.style.borderRadius = '38px'; c.style.boxShadow = '14px 14px 28px rgba(0,0,0,0.18), inset -6px -6px 14px rgba(0,0,0,0.08), inset 6px 6px 14px rgba(255,255,255,0.5)'; }
         else if (mode === 'cyber') { c.style.clipPath = 'polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px))'; c.style.border = '2px solid var(--primary)'; }
         else if (mode === 'circle') { c.style.borderRadius = '56px'; }
+        else if (mode === 'diamond') { c.style.clipPath = 'polygon(50% 0%, 100% 12%, 100% 88%, 50% 100%, 0% 88%, 0% 12%)'; c.style.borderRadius = '0'; }
+        else if (mode === 'ticket') { c.style.borderRadius = '20px'; c.style.border = '2px dashed var(--primary)'; }
       });
     }
     function morphTheme(bg, surface, primary, accent, text) {
