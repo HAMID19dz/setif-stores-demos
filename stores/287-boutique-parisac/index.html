@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #0F0A1C;
-      --bg-surface: #1A1130;
-      --bg-card: #251942;
-      --primary: #A855F7;
-      --primary-fg: #FFFFFF;
-      --accent: #EC4899;
-      --text-main: #FAF5FF;
-      --text-muted: #C4B5FD;
-      --border: #3B2866;
+      --bg-base: #12180C;
+      --bg-surface: #1F2716;
+      --bg-card: #2A331E;
+      --primary: #9CE740;
+      --primary-fg: #090D16;
+      --accent: #45ED5E;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: #3F4D2E;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -117,13 +117,18 @@
         .snap-slide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
         .snap-overlay { position: relative; z-index: 2; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.92) 15%, rgba(0,0,0,0.35) 75%, transparent); padding: 36px; color: #fff; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(circle at 0% 0%, var(--bg-surface) 0%, var(--bg-base) 65%); }
+    header { position: fixed !important; top: auto !important; bottom: 16px !important; left: 50%; transform: translateX(-50%); width: max-content; max-width: 95vw; border-radius: 999px; border: 2px solid var(--primary); box-shadow: 0 20px 50px rgba(0,0,0,0.45); }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 0 !important; border: 3px solid var(--text-main) !important; box-shadow: 10px 10px 0 var(--primary) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🖥️ شرائح شاشة كاملة متتالية 100vh (Zara Fullscreen Snap Monograph)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #287: 🖥️ شرائح شاشة كاملة متتالية 100vh × بطاقات (مكعب بروتالي بظل يميني صلب) × شريط أوامر سفلي عائم (Bottom Apple Dock)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

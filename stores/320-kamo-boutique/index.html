@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #FFFDF9;
-      --bg-surface: #F9EFE6;
+      --bg-base: #FCF8FB;
+      --bg-surface: #F4E6F3;
       --bg-card: #FFFFFF;
-      --primary: #C85A32;
+      --primary: #A9199D;
       --primary-fg: #FFFFFF;
-      --accent: #2A9D8F;
-      --text-main: #261812;
-      --text-muted: #6E554B;
-      --border: #EBD9C8;
+      --accent: #C8193F;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --border: #E2CAE0;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -119,13 +119,18 @@
         .product-card { border-radius: 24px !important; border: 1px solid var(--primary) !important; }
         @media (max-width: 900px) { .salon-layout { grid-template-columns: 1fr; } .salon-sidebar { height: auto; position: static; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(var(--bg-surface) 2px, transparent 2px); background-size: 14px 14px; }
+    header { border-top: 3px double var(--text-main); border-bottom: 3px double var(--text-main) !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 26px !important; border: 4px double var(--primary) !important; box-shadow: 0 16px 36px rgba(0,0,0,0.22) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>💎 صالون VIP بقائمة جانبية ثابتة (Private Concierge Sidebar Salon)</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #320: 💎 صالون VIP بقائمة جانبية ثابتة × بطاقات (إطار ملكي مزدوج مذهّب) × ترويسة صحيفة يومية بخطوط مزدوجة</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

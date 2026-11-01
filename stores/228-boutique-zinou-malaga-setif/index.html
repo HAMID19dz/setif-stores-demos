@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #FFFFFF;
-      --bg-surface: #F4F4F5;
+      --bg-base: #F9F8FC;
+      --bg-surface: #EAE6F4;
       --bg-card: #FFFFFF;
-      --primary: #18181B;
+      --primary: #3B19A9;
       --primary-fg: #FFFFFF;
-      --accent: #B45309;
-      --text-main: #09090B;
-      --text-muted: #52525B;
-      --border: #E4E4E7;
+      --accent: #BC19C8;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --border: #D0CAE2;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -120,13 +120,18 @@
         .bento-span-12 { grid-column: span 12; }
         @media (max-width: 900px) { .bento-span-8, .bento-span-4, .bento-span-6 { grid-column: span 12; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: repeating-linear-gradient(0deg, transparent, transparent 32px, var(--bg-surface) 32px, var(--bg-surface) 33px); }
+    header { border-bottom: 4px solid var(--primary) !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 30px !important; border: 2px dashed var(--primary) !important; outline: 4px solid var(--bg-surface); }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🍱 لوحة بينتو معيارية متعددة الخلايا (Apple-Style Modular Bento Grid)</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #228: 🍱 لوحة بينتو معيارية متعددة الخلايا × بطاقات (خياطة كوتور متقطعة بارزة) × ترويسة بانورامية بشريط أخبار مدمج</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

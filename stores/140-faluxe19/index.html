@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #FFFDF9;
-      --bg-surface: #F9EFE6;
+      --bg-base: #FCFAF8;
+      --bg-surface: #F4EEE6;
       --bg-card: #FFFFFF;
-      --primary: #C85A32;
+      --primary: #A96A19;
       --primary-fg: #FFFFFF;
-      --accent: #2A9D8F;
-      --text-main: #261812;
-      --text-muted: #6E554B;
-      --border: #EBD9C8;
+      --accent: #99C819;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --border: #E2D8CA;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -119,13 +119,18 @@
         .product-card { border-radius: 24px !important; border: 1px solid var(--primary) !important; }
         @media (max-width: 900px) { .salon-layout { grid-template-columns: 1fr; } .salon-sidebar { height: auto; position: static; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: repeating-linear-gradient(45deg, transparent, transparent 18px, var(--bg-surface) 18px, var(--bg-surface) 20px); }
+    header { background: transparent !important; backdrop-filter: blur(10px); border-bottom: 1px dashed var(--primary) !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 14px 52px 18px 46px !important; border-width: 2px !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>💎 صالون VIP بقائمة جانبية ثابتة (Private Concierge Sidebar Salon)</strong> | الميزة: <strong>📏 حاسبة المقاس الذكية (AI Size Finder)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #140: 💎 صالون VIP بقائمة جانبية ثابتة × بطاقات (خلية عضوية معكوسة (Blob B)) × هيدر شفاف متدرج بدون خلفية صلبة</strong> | الميزة: <strong>📏 حاسبة المقاس الذكية (AI Size Finder)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

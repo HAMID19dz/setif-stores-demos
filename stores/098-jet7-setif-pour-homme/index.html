@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #07111E;
-      --bg-surface: #0E1E33;
-      --bg-card: #152A45;
-      --primary: #84CC16;
-      --primary-fg: #07111E;
-      --accent: #06B6D4;
-      --text-main: #F1F5F9;
-      --text-muted: #94A3B8;
-      --border: #213D61;
+      --bg-base: #FCF9F8;
+      --bg-surface: #F4EAE6;
+      --bg-card: #FFFFFF;
+      --primary: #A94419;
+      --primary-fg: #FFFFFF;
+      --accent: #C8C819;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --border: #E2D1CA;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -118,13 +118,18 @@
         .story-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg-base); }
         .social-feed { max-width: 960px; margin: 0 auto; padding: 10px 20px 50px; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: linear-gradient(90deg, var(--bg-base), var(--bg-surface), var(--bg-base)); }
+    .nav-container { flex-direction: column !important; text-align: center; } .brand-box { flex-direction: column; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 0 !important; clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px); }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #098: 📱 تطبيق ستوري وموجز تسوق اجتماعي × بطاقات (مثمّن هندسي مشطوف الزوايا) × ترويسة مجلة مركزية بشعار علوي كبير</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

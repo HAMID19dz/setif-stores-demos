@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #FCFAFF;
-      --bg-surface: #F3E8FF;
-      --bg-card: #FFFFFF;
-      --primary: #7E22CE;
-      --primary-fg: #FFFFFF;
-      --accent: #DB2777;
-      --text-main: #1E102E;
-      --text-muted: #5B4670;
-      --border: #E9D5FF;
+      --bg-base: #0C1813;
+      --bg-surface: #162721;
+      --bg-card: #1E332B;
+      --primary: #40E7A7;
+      --primary-fg: #090D16;
+      --accent: #45B8ED;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: #2E4D41;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -120,13 +120,18 @@
         @media (max-width: 920px) { .pinterest-masonry { column-count: 2; } }
         @media (max-width: 600px) { .pinterest-masonry { column-count: 1; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: repeating-linear-gradient(-45deg, transparent, transparent 22px, var(--bg-surface) 22px, var(--bg-surface) 24px); }
+    header { background: transparent !important; border: none !important; } .brand-box, .nav-actions { background: var(--bg-surface); padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border); }
+    .product-card, .runway-slide, .masonry-pin { clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%); border-radius: 0 !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🧱 شبكة شلال بينترست غير متماثلة (Pinterest Staggered Masonry)</strong> | الميزة: <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #243: 🧱 شبكة شلال بينترست غير متماثلة × بطاقات (سداسي هندسي حديث (Hex Cut)) × شريط عائم منفصل إلى جزيرتين</strong> | الميزة: <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

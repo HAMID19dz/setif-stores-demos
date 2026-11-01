@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #090D16;
-      --bg-surface: #111827;
-      --bg-card: #1A2436;
-      --primary: #D4AF37;
+      --bg-base: #0C1018;
+      --bg-surface: #161B27;
+      --bg-card: #1E2533;
+      --primary: #4075E7;
       --primary-fg: #090D16;
-      --accent: #38BDF8;
+      --accent: #8545ED;
       --text-main: #F8FAFC;
       --text-muted: #94A3B8;
-      --border: #293548;
+      --border: #2E384D;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -127,13 +127,18 @@
         .products-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important; }
         @media (max-width: 920px) { .split-screen-wrap { grid-template-columns: 1fr; } .split-poster { position: static; height: 420px; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: repeating-linear-gradient(45deg, transparent, transparent 18px, var(--bg-surface) 18px, var(--bg-surface) 20px); }
+    header { background: linear-gradient(90deg, var(--bg-surface), var(--bg-card)) !important; border-bottom: 2px solid var(--primary) !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 36px !important; border: 3px solid var(--text-main) !important; box-shadow: 6px 6px 0 var(--primary), 12px 12px 0 var(--accent) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🎬 شاشة مزدوجة: بوستر ثابت وكتالوج متحرك (Split Sticky Billboard)</strong> | الميزة: <strong>📏 حاسبة المقاس الذكية (AI Size Finder)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #089: 🎬 شاشة مزدوجة: بوستر ثابت وكتالوج متحرك × بطاقات (ملصق ريترو بحواف سميكة وظل مزدوج) × شريط بتدرج لوني كامل (Full Gradient Bar)</strong> | الميزة: <strong>📏 حاسبة المقاس الذكية (AI Size Finder)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

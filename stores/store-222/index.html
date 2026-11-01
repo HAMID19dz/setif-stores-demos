@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #F8FAFC;
-      --bg-surface: #E0F2FE;
+      --bg-base: #F8FCFA;
+      --bg-surface: #E6F4ED;
       --bg-card: #FFFFFF;
-      --primary: #0284C7;
+      --primary: #19A95F;
       --primary-fg: #FFFFFF;
-      --accent: #F43F5E;
-      --text-main: #0F172A;
-      --text-muted: #475569;
-      --border: #BAE6FD;
+      --accent: #19A8C8;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --border: #CAE2D6;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -119,13 +119,18 @@
         .runway-slide { flex: 0 0 370px; scroll-snap-align: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: 26px; overflow: hidden; position: relative; display: flex; flex-direction: column; box-shadow: 0 18px 40px rgba(0,0,0,0.2); }
         .runway-num { position: absolute; top: 14px; left: 16px; font-size: 2.4rem; font-weight: 900; color: rgba(255,255,255,0.85); text-shadow: 0 4px 14px rgba(0,0,0,0.6); z-index: 2; font-family: monospace; }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(var(--border) 1.2px, transparent 1.2px); background-size: 22px 22px; }
+    header { background: linear-gradient(90deg, var(--bg-surface), var(--bg-card)) !important; border-bottom: 2px solid var(--primary) !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 0 !important; clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px); }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🎞️ شريط سينمائي أفقي متحرك (Awwwards Horizontal Filmstrip Runway)</strong> | الميزة: <strong>🎡 عجلة الحظ وكوبون التخفيض الفوري (Spin &amp; Win)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #222: 🎞️ شريط سينمائي أفقي متحرك × بطاقات (مثمّن هندسي مشطوف الزوايا) × شريط بتدرج لوني كامل (Full Gradient Bar)</strong> | الميزة: <strong>🎡 عجلة الحظ وكوبون التخفيض الفوري (Spin &amp; Win)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #FFFDFB;
-      --bg-surface: #FCEEF2;
+      --bg-base: #F9FCF8;
+      --bg-surface: #EAF4E6;
       --bg-card: #FFFFFF;
-      --primary: #B8336A;
+      --primary: #3FA919;
       --primary-fg: #FFFFFF;
-      --accent: #E07A5F;
-      --text-main: #22151C;
-      --text-muted: #6E525F;
-      --border: #F3D6E0;
+      --accent: #19C865;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --border: #D0E2CA;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -119,13 +119,18 @@
         .product-card { border-radius: 24px !important; border: 1px solid var(--primary) !important; }
         @media (max-width: 900px) { .salon-layout { grid-template-columns: 1fr; } .salon-sidebar { height: auto; position: static; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 44px 44px; }
+    header { border-radius: 0 0 42px 42px; border-bottom: 3px solid var(--primary) !important; max-width: 1240px; margin: 0 auto; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 120px 120px 40px 8px !important; border: 2px solid var(--primary) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>💎 صالون VIP بقائمة جانبية ثابتة (Private Concierge Sidebar Salon)</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #240: 💎 صالون VIP بقائمة جانبية ثابتة × بطاقات (قبة مسجدية/مغاربية مدببة) × قوس علوي مقوس القاعدة</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

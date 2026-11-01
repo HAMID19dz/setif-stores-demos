@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #FFFDFB;
-      --bg-surface: #FCEEF2;
-      --bg-card: #FFFFFF;
-      --primary: #B8336A;
-      --primary-fg: #FFFFFF;
-      --accent: #E07A5F;
-      --text-main: #22151C;
-      --text-muted: #6E525F;
-      --border: #F3D6E0;
+      --bg-base: #0D0C18;
+      --bg-surface: #181627;
+      --bg-card: #211E33;
+      --primary: #5440E7;
+      --primary-fg: #090D16;
+      --accent: #CE45ED;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: #312E4D;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -117,13 +117,18 @@
         .snap-slide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
         .snap-overlay { position: relative; z-index: 2; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.92) 15%, rgba(0,0,0,0.35) 75%, transparent); padding: 36px; color: #fff; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(circle at 12% 15%, var(--bg-surface) 0%, transparent 40%), radial-gradient(circle at 88% 85%, var(--bg-card) 0%, transparent 40%); }
+    .brand-monogram { transform: rotate(45deg); border-radius: 8px !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 6px 6px 28px 28px !important; border-top: 8px solid var(--primary) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🖥️ شرائح شاشة كاملة متتالية 100vh (Zara Fullscreen Snap Monograph)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #207: 🖥️ شرائح شاشة كاملة متتالية 100vh × بطاقات (شريط علوي متوج بـ 8px) × شريط كوتور بشارة معينية (Diamond Badge)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

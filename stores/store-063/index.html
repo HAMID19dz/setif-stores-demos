@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #0F0A1C;
-      --bg-surface: #1A1130;
-      --bg-card: #251942;
-      --primary: #A855F7;
-      --primary-fg: #FFFFFF;
-      --accent: #EC4899;
-      --text-main: #FAF5FF;
-      --text-muted: #C4B5FD;
-      --border: #3B2866;
+      --bg-base: #0D0C18;
+      --bg-surface: #171627;
+      --bg-card: #201E33;
+      --primary: #4E40E7;
+      --primary-fg: #090D16;
+      --accent: #C845ED;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: #302E4D;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -120,13 +120,18 @@
         @media (max-width: 920px) { .pinterest-masonry { column-count: 2; } }
         @media (max-width: 600px) { .pinterest-masonry { column-count: 1; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(circle at 95% 10%, var(--bg-surface) 0%, transparent 35%); }
+    header { max-width: 1180px; margin: 12px auto; clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px)); border: 2px solid var(--primary); }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 170px 170px 16px 16px !important; border-width: 2px !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🧱 شبكة شلال بينترست غير متماثلة (Pinterest Staggered Masonry)</strong> | الميزة: <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #063: 🧱 شبكة شلال بينترست غير متماثلة × بطاقات (قوس روماني كلاسيكي) × كبسولة علوية مضغوطة بحواف مشطوفة</strong> | الميزة: <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

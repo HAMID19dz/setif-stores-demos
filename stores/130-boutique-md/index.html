@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #FFFFFF;
-      --bg-surface: #F4F4F5;
+      --bg-base: #F9FCF8;
+      --bg-surface: #EBF4E6;
       --bg-card: #FFFFFF;
-      --primary: #18181B;
+      --primary: #4BA919;
       --primary-fg: #FFFFFF;
-      --accent: #B45309;
-      --text-main: #09090B;
-      --text-muted: #52525B;
-      --border: #E4E4E7;
+      --accent: #19C856;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --border: #D3E2CA;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -122,13 +122,18 @@
         .product-img-wrap { border-radius: 175px 175px 0 0; height: 310px !important; }
         .size-row, .product-price-row { justify-content: center !important; }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: linear-gradient(var(--bg-surface) 1px, transparent 1px), linear-gradient(90deg, var(--bg-surface) 1px, transparent 1px); background-size: 16px 16px; }
+    header { border-top: 3px double var(--text-main); border-bottom: 3px double var(--text-main) !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 0 !important; clip-path: polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 34px 100%, 0 calc(100% - 34px)); }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Milanese Archway Palace)</strong> | الميزة: <strong>📏 حاسبة المقاس الذكية (AI Size Finder)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #130: 🏛️ معمارية الأقواس الرومانية ومجلة فوغ × بطاقات (درع مستقبلي مقصوص الزاويتين) × ترويسة صحيفة يومية بخطوط مزدوجة</strong> | الميزة: <strong>📏 حاسبة المقاس الذكية (AI Size Finder)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

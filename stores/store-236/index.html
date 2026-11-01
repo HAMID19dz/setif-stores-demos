@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #111113;
-      --bg-surface: #1B1B1F;
-      --bg-card: #242429;
-      --primary: #E11D48;
+      --bg-base: #FAF8FC;
+      --bg-surface: #EEE6F4;
+      --bg-card: #FFFFFF;
+      --primary: #6A19A9;
       --primary-fg: #FFFFFF;
-      --accent: #FBBF24;
-      --text-main: #F4F4F6;
-      --text-muted: #A1A1AA;
-      --border: #34343C;
+      --accent: #C81999;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --border: #D8CAE2;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -123,13 +123,18 @@
         .btn-order { background: transparent !important; color: var(--text-main) !important; border: 2px solid var(--text-main) !important; border-radius: 999px !important; }
         .btn-order:hover { background: var(--primary) !important; color: var(--primary-fg) !important; border-color: var(--primary) !important; }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(circle at 0% 0%, var(--bg-surface) 0%, var(--bg-base) 65%); }
+    .nav-container { flex-direction: row-reverse !important; }
+    .product-card, .runway-slide, .masonry-pin { border: none !important; background: transparent !important; box-shadow: none !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🌿 متحف إسكندنافي فائق النقاء بدون إطارات (Nordic Gallery Plinth)</strong> | الميزة: <strong>🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #236: 🌿 متحف إسكندنافي فائق النقاء بدون إطارات × بطاقات (منصة متحفية عائمة بدون حدود) × ترويسة معكوسة (الأزرار يميناً والشعار يساراً)</strong> | الميزة: <strong>🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

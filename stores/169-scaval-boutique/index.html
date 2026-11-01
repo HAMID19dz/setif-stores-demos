@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #111113;
-      --bg-surface: #1B1B1F;
-      --bg-card: #242429;
-      --primary: #E11D48;
-      --primary-fg: #FFFFFF;
-      --accent: #FBBF24;
-      --text-main: #F4F4F6;
-      --text-muted: #A1A1AA;
-      --border: #34343C;
+      --bg-base: #17180C;
+      --bg-surface: #272716;
+      --bg-card: #33331E;
+      --primary: #E5E740;
+      --primary-fg: #090D16;
+      --accent: #75ED45;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: #4C4D2E;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -127,13 +127,18 @@
         .products-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important; }
         @media (max-width: 920px) { .split-screen-wrap { grid-template-columns: 1fr; } .split-poster { position: static; height: 420px; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(circle at 100% 100%, var(--bg-surface) 0%, var(--bg-base) 65%); }
+    .brand-monogram { transform: rotate(45deg); border-radius: 8px !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 18px !important; border-left: 6px dotted var(--primary) !important; border-right: 6px dotted var(--primary) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🎬 شاشة مزدوجة: بوستر ثابت وكتالوج متحرك (Split Sticky Billboard)</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #169: 🎬 شاشة مزدوجة: بوستر ثابت وكتالوج متحرك × بطاقات (تذكرة سينمائية بفرزات جانبية) × شريط كوتور بشارة معينية (Diamond Badge)</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

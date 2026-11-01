@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #07111E;
-      --bg-surface: #0E1E33;
-      --bg-card: #152A45;
-      --primary: #84CC16;
-      --primary-fg: #07111E;
-      --accent: #06B6D4;
-      --text-main: #F1F5F9;
+      --bg-base: #150C18;
+      --bg-surface: #241627;
+      --bg-card: #2F1E33;
+      --primary: #C640E7;
+      --primary-fg: #090D16;
+      --accent: #ED4599;
+      --text-main: #F8FAFC;
       --text-muted: #94A3B8;
-      --border: #213D61;
+      --border: #462E4D;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -117,13 +117,18 @@
         .snap-slide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
         .snap-overlay { position: relative; z-index: 2; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.92) 15%, rgba(0,0,0,0.35) 75%, transparent); padding: 36px; color: #fff; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(var(--primary) 0.9px, transparent 0.9px); background-size: 38px 38px; }
+    header { max-width: 1180px; margin: 12px auto; clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px)); border: 2px solid var(--primary); }
+    .product-card, .runway-slide, .masonry-pin { clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%); border-radius: 0 !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🖥️ شرائح شاشة كاملة متتالية 100vh (Zara Fullscreen Snap Monograph)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #367: 🖥️ شرائح شاشة كاملة متتالية 100vh × بطاقات (سداسي هندسي حديث (Hex Cut)) × كبسولة علوية مضغوطة بحواف مشطوفة</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

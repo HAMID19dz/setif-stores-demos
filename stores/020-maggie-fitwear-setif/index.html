@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #07111E;
-      --bg-surface: #0E1E33;
-      --bg-card: #152A45;
-      --primary: #84CC16;
-      --primary-fg: #07111E;
-      --accent: #06B6D4;
-      --text-main: #F1F5F9;
-      --text-muted: #94A3B8;
-      --border: #213D61;
+      --bg-base: #FAFCF8;
+      --bg-surface: #ECF4E6;
+      --bg-card: #FFFFFF;
+      --primary: #5AA919;
+      --primary-fg: #FFFFFF;
+      --accent: #19C844;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --border: #D5E2CA;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -119,13 +119,18 @@
         .product-card { border-radius: 24px !important; border: 1px solid var(--primary) !important; }
         @media (max-width: 900px) { .salon-layout { grid-template-columns: 1fr; } .salon-sidebar { height: auto; position: static; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(circle at 12% 15%, var(--bg-surface) 0%, transparent 40%), radial-gradient(circle at 88% 85%, var(--bg-card) 0%, transparent 40%); }
+    header { max-width: 1160px; margin: 14px auto; border-radius: 999px; border: 1px solid var(--primary); backdrop-filter: blur(16px); }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 16px !important; border-right: 10px solid var(--primary) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>💎 صالون VIP بقائمة جانبية ثابتة (Private Concierge Sidebar Salon)</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #020: 💎 صالون VIP بقائمة جانبية ثابتة × بطاقات (شريط عمودي بشعار جانبي عريض) × شريط علوي عائم على شكل كبسولة زجاجية</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

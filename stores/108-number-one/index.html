@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #07111E;
-      --bg-surface: #0E1E33;
-      --bg-card: #152A45;
-      --primary: #84CC16;
-      --primary-fg: #07111E;
-      --accent: #06B6D4;
-      --text-main: #F1F5F9;
-      --text-muted: #94A3B8;
-      --border: #213D61;
+      --bg-base: #FCF8FB;
+      --bg-surface: #F4E6F1;
+      --bg-card: #FFFFFF;
+      --primary: #A9198A;
+      --primary-fg: #FFFFFF;
+      --accent: #C81927;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --border: #E2CADD;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -120,13 +120,18 @@
         .bento-span-12 { grid-column: span 12; }
         @media (max-width: 900px) { .bento-span-8, .bento-span-4, .bento-span-6 { grid-column: span 12; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: repeating-linear-gradient(90deg, transparent, transparent 36px, var(--bg-surface) 36px, var(--bg-surface) 38px); }
+    header { background: linear-gradient(90deg, var(--bg-surface), var(--bg-card)) !important; border-bottom: 2px solid var(--primary) !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 48px 14px 56px 20px !important; border-width: 2px !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🍱 لوحة بينتو معيارية متعددة الخلايا (Apple-Style Modular Bento Grid)</strong> | الميزة: <strong>🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #108: 🍱 لوحة بينتو معيارية متعددة الخلايا × بطاقات (خلية عضوية غير متماثلة (Blob A)) × شريط بتدرج لوني كامل (Full Gradient Bar)</strong> | الميزة: <strong>🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

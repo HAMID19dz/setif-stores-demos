@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #F8FAFC;
-      --bg-surface: #E0F2FE;
-      --bg-card: #FFFFFF;
-      --primary: #0284C7;
-      --primary-fg: #FFFFFF;
-      --accent: #F43F5E;
-      --text-main: #0F172A;
-      --text-muted: #475569;
-      --border: #BAE6FD;
+      --bg-base: #0E0C18;
+      --bg-surface: #191627;
+      --bg-card: #221E33;
+      --primary: #5C40E7;
+      --primary-fg: #090D16;
+      --accent: #D645ED;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: #332E4D;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -127,13 +127,18 @@
         .products-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important; }
         @media (max-width: 920px) { .split-screen-wrap { grid-template-columns: 1fr; } .split-poster { position: static; height: 420px; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(circle at 95% 10%, var(--bg-surface) 0%, transparent 35%); }
+    header { max-width: 1200px; margin: 14px auto; border: 3px solid var(--text-main) !important; box-shadow: 6px 6px 0 var(--primary); }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 14px 90px 90px 14px !important; border: 2px solid var(--primary) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🎬 شاشة مزدوجة: بوستر ثابت وكتالوج متحرك (Split Sticky Billboard)</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #029: 🎬 شاشة مزدوجة: بوستر ثابت وكتالوج متحرك × بطاقات (نافذة فندقية مقوسة من اليسار) × بطاقة ترويسة مؤطرة بحدود 3px وظل صلب</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

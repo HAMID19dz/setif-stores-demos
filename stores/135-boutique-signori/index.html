@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #081410;
-      --bg-surface: #0F241D;
-      --bg-card: #163329;
-      --primary: #D97736;
-      --primary-fg: #FFFFFF;
-      --accent: #34D399;
-      --text-main: #ECFDF5;
-      --text-muted: #99B8AD;
-      --border: #234B3E;
+      --bg-base: #16180C;
+      --bg-surface: #252716;
+      --bg-card: #31331E;
+      --primary: #D7E740;
+      --primary-fg: #090D16;
+      --accent: #67ED45;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: #494D2E;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -128,13 +128,18 @@
         }
         .btn-order, .btn-hero { border-radius: 999px !important; }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(circle at 100% 100%, var(--bg-surface) 0%, var(--bg-base) 65%); }
+    header { position: fixed !important; top: auto !important; bottom: 16px !important; left: 50%; transform: translateX(-50%); width: max-content; max-width: 95vw; border-radius: 999px; border: 2px solid var(--primary); box-shadow: 0 20px 50px rgba(0,0,0,0.45); }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 30px !important; border: 2px dashed var(--primary) !important; outline: 4px solid var(--bg-surface); }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🔮 جزر زجاجية عائمة وشريط أوامر سفلي (Spatial Glass Floating Dock)</strong> | الميزة: <strong>📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #135: 🔮 جزر زجاجية عائمة وشريط أوامر سفلي × بطاقات (خياطة كوتور متقطعة بارزة) × شريط أوامر سفلي عائم (Bottom Apple Dock)</strong> | الميزة: <strong>📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>

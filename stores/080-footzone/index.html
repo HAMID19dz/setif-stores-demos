@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #FFFFFF;
-      --bg-surface: #F4F4F5;
+      --bg-base: #FCFCF8;
+      --bg-surface: #F3F4E6;
       --bg-card: #FFFFFF;
-      --primary: #18181B;
+      --primary: #A1A919;
       --primary-fg: #FFFFFF;
-      --accent: #B45309;
-      --text-main: #09090B;
-      --text-muted: #52525B;
-      --border: #E4E4E7;
+      --accent: #44C819;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --border: #E1E2CA;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -119,13 +119,18 @@
         .product-card { border-radius: 24px !important; border: 1px solid var(--primary) !important; }
         @media (max-width: 900px) { .salon-layout { grid-template-columns: 1fr; } .salon-sidebar { height: auto; position: static; } }
       
+
+    /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
+    body { background-image: radial-gradient(circle at 95% 10%, var(--bg-surface) 0%, transparent 35%); }
+    header { border-bottom: 3px solid var(--text-main) !important; } .btn-nav { border-radius: 0 !important; border: 2px solid var(--text-main) !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 20px !important; box-shadow: 0 6px 0 -2px var(--bg-surface), 0 12px 0 -4px var(--primary), 0 20px 30px rgba(0,0,0,0.25) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>💎 صالون VIP بقائمة جانبية ثابتة (Private Concierge Sidebar Salon)</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
-    <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #080: 💎 صالون VIP بقائمة جانبية ثابتة × بطاقات (بطاقة طبقات ثلاثية متراكبة) × شريط هندسي مقسم بخطوط شبكية بارزة</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
+    <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
   <header>
