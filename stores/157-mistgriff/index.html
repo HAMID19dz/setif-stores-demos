@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MistGriff | 👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)</title>
+  <title>MistGriff | 🪗 ستائر أكورديون تفاعلية متمددة (Interactive Expanding Accordion Deck)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Amiri', serif;
+      font-family: 'Cairo', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,26 +112,19 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .product-card, .sig-widget {
-          border-radius: 32px 4px 32px 4px !important;
-          border: 2px double var(--primary) !important;
-          position: relative;
-        }
-        .arch-arabesque {
-          border: 3px double var(--primary);
-          border-radius: 40px 8px 40px 8px;
-          padding: 36px;
-          margin: 24px auto;
-          max-width: 1180px;
-          background: linear-gradient(135deg, var(--bg-surface), var(--bg-card));
-        }
+        .accordion-gallery { max-width: 1240px; margin: 20px auto; padding: 0 20px; display: flex; gap: 12px; height: 480px; }
+        .acc-panel { flex: 1; position: relative; border-radius: 24px; overflow: hidden; cursor: pointer; transition: flex 0.45s cubic-bezier(0.25, 1, 0.5, 1); border: 2px solid var(--border); display: flex; align-items: flex-end; }
+        .acc-panel:hover, .acc-panel.active { flex: 3.2; border-color: var(--primary); }
+        .acc-panel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .acc-caption { position: relative; z-index: 2; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.92), transparent); color: #fff; padding: 20px; }
+        @media (max-width: 860px) { .accordion-gallery { flex-direction: column; height: auto; } .acc-panel { min-height: 260px; } }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)</strong> | الميزة: <strong>🧵 خدمة التعديل والتفصيل على المقاس (Custom Fit)</strong></span>
+    <span>✨ شكل الموقع: <strong>🪗 ستائر أكورديون تفاعلية متمددة (Interactive Expanding Accordion Deck)</strong> | الميزة: <strong>🧵 خدمة التعديل والتفصيل على المقاس (Custom Fit)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -153,11 +146,61 @@
   </header>
 
   
-    <div class="arch-arabesque">
-      <span class="hero-badge">👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)</span>
-      <h1 style="font-size:2.6rem;font-weight:900;margin-bottom:12px">MistGriff — الأصالة والفخامة في سطيف</h1>
-      <p style="color:var(--text-muted);margin-bottom:20px">رواق الأناقة في (سطيف‎) مزود بميزة <strong>🧵 خدمة التعديل والتفصيل على المقاس (Custom Fit)</strong>.</p>
-      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213550025148?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20MistGriff%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+    <section class="section" style="padding-bottom:10px">
+      <span class="hero-badge">🪗 ستائر أكورديون تفاعلية متمددة (Interactive Expanding Accordion Deck)</span>
+      <h1 style="font-size:2.3rem;font-weight:900">🪗 الستائر المتمددة التفاعلية — MistGriff</h1>
+      <p style="color:var(--text-muted)">مرّر الفأرة أو اضغط على أي ستارة لتوسيع الموديل ورؤية التفاصيل كاملة</p>
+    </section>
+    <div class="accordion-gallery">
+      <div class="acc-panel active" onclick="document.querySelectorAll('.acc-panel').forEach(p=>p.classList.remove('active'));this.classList.add('active')">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)" />
+        <div class="acc-caption">
+          <span class="product-tag" style="position:static;display:inline-block;margin-bottom:6px">الأكثر مبيعاً 👔</span>
+          <h3 style="font-size:1.2rem;font-weight:900">بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)</h3>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--primary);margin:6px 0">18 600 د.ج</div>
+          <button type="button" class="sig-btn" onclick="event.stopPropagation();openOrderModal('بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)', 18600)">🛒 اطلب الآن</button>
+        </div>
+      </div>
+    
+      <div class="acc-panel " onclick="document.querySelectorAll('.acc-panel').forEach(p=>p.classList.remove('active'));this.classList.add('active')">
+        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)" />
+        <div class="acc-caption">
+          <span class="product-tag" style="position:static;display:inline-block;margin-bottom:6px">قصة إيطالية ✨</span>
+          <h3 style="font-size:1.2rem;font-weight:900">قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)</h3>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--primary);margin:6px 0">3 900 د.ج</div>
+          <button type="button" class="sig-btn" onclick="event.stopPropagation();openOrderModal('قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)', 3900)">🛒 اطلب الآن</button>
+        </div>
+      </div>
+    
+      <div class="acc-panel " onclick="document.querySelectorAll('.acc-panel').forEach(p=>p.classList.remove('active'));this.classList.add('active')">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="بليزر كاجوال أنيق (Blazer Casual Chic)" />
+        <div class="acc-caption">
+          <span class="product-tag" style="position:static;display:inline-block;margin-bottom:6px">جديد الموسم</span>
+          <h3 style="font-size:1.2rem;font-weight:900">بليزر كاجوال أنيق (Blazer Casual Chic)</h3>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--primary);margin:6px 0">9 600 د.ج</div>
+          <button type="button" class="sig-btn" onclick="event.stopPropagation();openOrderModal('بليزر كاجوال أنيق (Blazer Casual Chic)', 9600)">🛒 اطلب الآن</button>
+        </div>
+      </div>
+    
+      <div class="acc-panel " onclick="document.querySelectorAll('.acc-panel').forEach(p=>p.classList.remove('active'));this.classList.add('active')">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80" alt="بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)" />
+        <div class="acc-caption">
+          <span class="product-tag" style="position:static;display:inline-block;margin-bottom:6px">خامة تركية</span>
+          <h3 style="font-size:1.2rem;font-weight:900">بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)</h3>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--primary);margin:6px 0">4 300 د.ج</div>
+          <button type="button" class="sig-btn" onclick="event.stopPropagation();openOrderModal('بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)', 4300)">🛒 اطلب الآن</button>
+        </div>
+      </div>
+    
+      <div class="acc-panel " onclick="document.querySelectorAll('.acc-panel').forEach(p=>p.classList.remove('active'));this.classList.add('active')">
+        <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=600&q=80" alt="طقم بولو رجالي صيفي فاخر (Ensemble Polo)" />
+        <div class="acc-caption">
+          <span class="product-tag" style="position:static;display:inline-block;margin-bottom:6px">عرض خاص</span>
+          <h3 style="font-size:1.2rem;font-weight:900">طقم بولو رجالي صيفي فاخر (Ensemble Polo)</h3>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--primary);margin:6px 0">5 500 د.ج</div>
+          <button type="button" class="sig-btn" onclick="event.stopPropagation();openOrderModal('طقم بولو رجالي صيفي فاخر (Ensemble Polo)', 5500)">🛒 اطلب الآن</button>
+        </div>
+      </div>
     </div>
     <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
@@ -173,8 +216,8 @@
         <div class="sig-result">🪡 يتم التعديل باحترافية مجاناً قبل تسليم الطرد لشركة التوصيل!</div>
       </div></section>
     <section id="catalog" class="section">
-      <h2 class="section-title">👑 الرواق الملكي للموديلات</h2>
-      <div class="products-grid" style="margin-top:20px">
+      <h2 class="section-title">🛍️ القائمة الكاملة للموديلات</h2>
+      <div class="products-grid">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">الأكثر مبيعاً 👔</span>
@@ -384,7 +427,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>MistGriff</strong> — الشكل المعماري: 👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)
+    جميع الحقوق محفوظة © 2026 <strong>MistGriff</strong> — الشكل المعماري: 🪗 ستائر أكورديون تفاعلية متمددة (Interactive Expanding Accordion Deck)
   </footer>
 
   <script>

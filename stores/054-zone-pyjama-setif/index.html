@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zone Pyjama Setif | 📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</title>
+  <title>Zone Pyjama Setif | 📰 صحيفة موضة باريسية متعددة الأعمدة (Le Monde Broadsheet Gazette)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'Amiri', 'IBM Plex Sans Arabic', serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,27 +112,22 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .products-grid { gap: 36px !important; padding: 20px 10px; }
-        .product-card {
-          background: #FFFFFF !important;
-          color: #111827 !important;
-          padding: 16px 16px 26px 16px !important;
-          border-radius: 6px !important;
-          border: 1px solid #E5E7EB !important;
-          box-shadow: 0 20px 38px rgba(0,0,0,0.22) !important;
+        .gazette-masthead {
+          max-width: 1220px; margin: 20px auto; padding: 20px;
+          border-top: 4px double var(--text-main); border-bottom: 4px double var(--text-main);
+          text-align: center;
         }
-        .product-card:nth-child(odd) { transform: rotate(-1.8deg); }
-        .product-card:nth-child(even) { transform: rotate(1.8deg); }
-        .product-card:hover { transform: rotate(0deg) scale(1.03) !important; z-index: 5; }
-        .product-img-wrap { border-radius: 2px; height: 280px !important; border: 1px solid #f3f4f6; }
-        .product-cat, .size-label { color: #4B5563 !important; }
+        .gazette-masthead h1 { font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 900; letter-spacing: -1px; }
+        .gazette-meta { display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; font-size: 0.85rem; font-weight: 700; flex-wrap: wrap; gap: 10px; }
+        .products-grid { gap: 0 !important; border: 1px solid var(--text-main); }
+        .product-card { border-radius: 0 !important; border: 1px solid var(--border) !important; }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</strong> | الميزة: <strong>📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</strong></span>
+    <span>✨ شكل الموقع: <strong>📰 صحيفة موضة باريسية متعددة الأعمدة (Le Monde Broadsheet Gazette)</strong> | الميزة: <strong>📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -154,16 +149,16 @@
   </header>
 
   
-  <section class="hero">
-    <div>
-      <span class="hero-badge">📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</span>
-      <h1><span>Zone Pyjama Setif</span> — ملابس نسائية + ملابس داخلية وبيجامات</h1>
-      <p>أهلاً بكم في متجرنا بسطيف (سطيف‎). اكتشفوا تصميم <strong>📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</strong> وميزة <strong>📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</strong>.</p>
-      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213771109813?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Zone%20Pyjama%20Setif%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+    <div class="gazette-masthead">
+      <div style="font-size:0.85rem;letter-spacing:2px;color:var(--primary);font-weight:800">ÉDITION SPÉCIALE SÉTIF • ملابس نسائية + ملابس داخلية وبيجامات</div>
+      <h1>Zone Pyjama Setif</h1>
+      <div class="gazette-meta">
+        <span>📍 العنوان: سطيف‎</span>
+        <span>✨ 📹 طلب معاينة فيديو حية للسلعة (Live Video Preview)</span>
+        <span>📞 0771 10 98 13</span>
+      </div>
     </div>
-    <div class="hero-visual"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="Zone Pyjama Setif" /></div>
-  </section>
-  <section id="feature-sec" class="sig-section">
+    <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">شفافية وثقة 100%</span>
@@ -176,10 +171,8 @@
         </div>
         <div class="sig-result">✨ خدمة مجانية وفورية من 09:00 صباحاً حتى 21:00 مساءً.</div>
       </div></section>
-  <section id="catalog" class="section">
-    <h2 class="section-title">✨ كتالوج Zone Pyjama Setif (📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery))</h2>
-    <p class="section-sub">الدفع عند الاستلام والتوصيل السريع لـ 58 ولاية</p>
-    <div class="products-grid">
+    <section id="catalog" class="section">
+      <div class="products-grid">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">تكمل إطلالتك</span>
@@ -341,7 +334,7 @@
       </div>
     </div>
   </div>
-  </section>
+    </section>
 
   <div class="info-box">
     <div>
@@ -389,7 +382,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Zone Pyjama Setif</strong> — الشكل المعماري: 📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)
+    جميع الحقوق محفوظة © 2026 <strong>Zone Pyjama Setif</strong> — الشكل المعماري: 📰 صحيفة موضة باريسية متعددة الأعمدة (Le Monde Broadsheet Gazette)
   </footer>
 
   <script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bazar Blue Nerissa | 🌿 بساطة إسكندنافية فائقة النقاء بدون إطارات (Nordic Pure Minimal)</title>
+  <title>Bazar Blue Nerissa | 💎 صالون VIP بقائمة جانبية ثابتة (Private Concierge Sidebar Salon)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'Readex Pro', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,23 +112,19 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .product-card {
-          background: transparent !important;
-          border: none !important;
-          border-radius: 0 !important;
-          box-shadow: none !important;
-        }
-        .product-img-wrap { border-radius: 16px; height: 340px !important; }
-        .product-body { padding: 14px 4px !important; }
-        .btn-order { background: transparent !important; color: var(--text-main) !important; border: 2px solid var(--text-main) !important; border-radius: 999px !important; }
-        .btn-order:hover { background: var(--primary) !important; color: var(--primary-fg) !important; border-color: var(--primary) !important; }
+        .salon-layout { display: grid; grid-template-columns: 310px 1fr; min-height: 100vh; }
+        .salon-sidebar { background: var(--bg-surface); border-left: 2px solid var(--primary); padding: 36px 24px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
+        .salon-main { padding: 32px 40px; }
+        header { display: none !important; }
+        .product-card { border-radius: 24px !important; border: 1px solid var(--primary) !important; }
+        @media (max-width: 900px) { .salon-layout { grid-template-columns: 1fr; } .salon-sidebar { height: auto; position: static; } }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🌿 بساطة إسكندنافية فائقة النقاء بدون إطارات (Nordic Pure Minimal)</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
+    <span>✨ شكل الموقع: <strong>💎 صالون VIP بقائمة جانبية ثابتة (Private Concierge Sidebar Salon)</strong> | الميزة: <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -150,16 +146,23 @@
   </header>
 
   
-  <section class="hero">
-    <div>
-      <span class="hero-badge">🌿 بساطة إسكندنافية فائقة النقاء بدون إطارات (Nordic Pure Minimal)</span>
-      <h1><span>Bazar Blue Nerissa</span> — ملابس نسائية</h1>
-      <p>أهلاً بكم في متجرنا بسطيف (Rue Mekes Seddik, سطيف‎). اكتشفوا تصميم <strong>🌿 بساطة إسكندنافية فائقة النقاء بدون إطارات (Nordic Pure Minimal)</strong> وميزة <strong>⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</strong>.</p>
-      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213796010209?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Bazar%20Blue%20Nerissa%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
-    </div>
-    <div class="hero-visual"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="Bazar Blue Nerissa" /></div>
-  </section>
-  <section id="feature-sec" class="sig-section">
+    <div class="salon-layout">
+      <aside class="salon-sidebar">
+        <div>
+          <div class="brand-monogram" style="width:64px;height:64px;font-size:1.5rem;margin-bottom:16px">BA</div>
+          <span class="hero-badge">💎 صالون VIP بقائمة جانبية ثابتة (Private Concierge Sidebar Salon)</span>
+          <h1 style="font-size:2rem;font-weight:900;margin-bottom:10px">Bazar Blue Nerissa</h1>
+          <p style="color:var(--text-muted);font-size:0.92rem;margin-bottom:20px">📍 Rue Mekes Seddik, سطيف‎ — ملابس نسائية</p>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a href="#feature-sec" class="btn-nav">⚡ رادار التوصيل السريع لـ 58 ولاية (Express Radar)</a>
+            <a href="#catalog" class="btn-nav">🛍️ الكتالوج الحصري</a>
+            <a href="tel:0796010209" class="btn-nav primary">📞 0796 01 02 09</a>
+          </div>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-muted)">توصيل 58 ولاية • الدفع عند الاستلام</div>
+      </aside>
+      <main class="salon-main">
+        <div id="feature-sec">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">تتبع الشحن الفوري</span>
@@ -175,11 +178,11 @@
           <button type="button" class="sig-btn" onclick="openOrderModal('طلب شحن سريع (' + document.getElementById('radarWilaya').value + ')', 4500)">🚀 اطلب بشحن سريع الآن</button>
         </div>
         <div id="radarResult" class="sig-result">📍 الموعد المتوقع للاستلام: <strong>اليوم خلال 3 ساعات داخل سطيف (300 د.ج فقط)</strong></div>
-      </div></section>
-  <section id="catalog" class="section">
-    <h2 class="section-title">✨ كتالوج Bazar Blue Nerissa (🌿 بساطة إسكندنافية فائقة النقاء بدون إطارات (Nordic Pure Minimal))</h2>
-    <p class="section-sub">الدفع عند الاستلام والتوصيل السريع لـ 58 ولاية</p>
-    <div class="products-grid">
+      </div></div>
+        <section id="catalog" style="margin-top:32px">
+          <h2 class="section-title">✨ تشكيلة صالون Bazar Blue Nerissa</h2>
+          <p class="section-sub">تصميم القائمة الجانبية الفاخرة مع الطلب الفوري</p>
+          <div class="products-grid">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">تكمل إطلالتك</span>
@@ -341,7 +344,9 @@
       </div>
     </div>
   </div>
-  </section>
+        </section>
+      </main>
+    </div>
 
   <div class="info-box">
     <div>
@@ -389,7 +394,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Bazar Blue Nerissa</strong> — الشكل المعماري: 🌿 بساطة إسكندنافية فائقة النقاء بدون إطارات (Nordic Pure Minimal)
+    جميع الحقوق محفوظة © 2026 <strong>Bazar Blue Nerissa</strong> — الشكل المعماري: 💎 صالون VIP بقائمة جانبية ثابتة (Private Concierge Sidebar Salon)
   </footer>
 
   <script>

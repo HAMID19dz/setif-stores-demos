@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paris mode anes | 📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</title>
+  <title>Paris mode anes | 📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,27 +112,21 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .products-grid { gap: 36px !important; padding: 20px 10px; }
-        .product-card {
-          background: #FFFFFF !important;
-          color: #111827 !important;
-          padding: 16px 16px 26px 16px !important;
-          border-radius: 6px !important;
-          border: 1px solid #E5E7EB !important;
-          box-shadow: 0 20px 38px rgba(0,0,0,0.22) !important;
-        }
-        .product-card:nth-child(odd) { transform: rotate(-1.8deg); }
-        .product-card:nth-child(even) { transform: rotate(1.8deg); }
-        .product-card:hover { transform: rotate(0deg) scale(1.03) !important; z-index: 5; }
-        .product-img-wrap { border-radius: 2px; height: 280px !important; border: 1px solid #f3f4f6; }
-        .product-cat, .size-label { color: #4B5563 !important; }
+        .ledger-wrap { max-width: 1220px; margin: 24px auto; padding: 0 20px; }
+        .ledger-table { width: 100%; border-collapse: collapse; border-top: 3px solid var(--text-main); border-bottom: 3px solid var(--text-main); }
+        .ledger-row { border-bottom: 1px solid var(--border); transition: background 0.2s; }
+        .ledger-row:hover { background: var(--bg-surface); }
+        .ledger-cell { padding: 18px 14px; vertical-align: middle; }
+        .ledger-thumb { width: 92px; height: 92px; border-radius: 14px; object-fit: cover; border: 2px solid var(--primary); }
+        .ledger-idx { font-family: monospace; font-size: 1.15rem; font-weight: 900; color: var(--primary); }
+        @media (max-width: 780px) { .ledger-hide-sm { display: none; } }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</strong> | الميزة: <strong>🎡 عجلة الحظ وكوبون التخفيض الفوري (Spin &amp; Win)</strong></span>
+    <span>✨ شكل الموقع: <strong>📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)</strong> | الميزة: <strong>🎡 عجلة الحظ وكوبون التخفيض الفوري (Spin &amp; Win)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -154,16 +148,16 @@
   </header>
 
   
-  <section class="hero">
-    <div>
-      <span class="hero-badge">📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</span>
-      <h1><span>Paris mode anes</span> — أحذية</h1>
-      <p>أهلاً بكم في متجرنا بسطيف (سطيف‎). اكتشفوا تصميم <strong>📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</strong> وميزة <strong>🎡 عجلة الحظ وكوبون التخفيض الفوري (Spin &amp; Win)</strong>.</p>
-      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213770457733?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Paris%20mode%20anes%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
-    </div>
-    <div class="hero-visual"><img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1000&q=80" alt="Paris mode anes" /></div>
-  </section>
-  <section id="feature-sec" class="sig-section">
+    <div class="ledger-wrap">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid var(--border)">
+        <div>
+          <span class="hero-badge">📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)</span>
+          <h1 style="font-size:2.3rem;font-weight:900">📑 السجل الرسمي لمجموعة Paris mode anes</h1>
+          <p style="color:var(--text-muted)">كتالوج جدولي تفاعلي مباشر بدون بطاقات تقليدية • 📍 سطيف‎</p>
+        </div>
+        <div class="hero-ctas"><a href="https://wa.me/213770457733?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Paris%20mode%20anes%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+      </div>
+      <div id="feature-sec" style="margin-bottom:24px">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">هدية زوار الموقع</span>
@@ -174,173 +168,147 @@
           <button type="button" class="sig-btn" onclick="spinWheelPrize()">🎰 أدر عجلة الحظ الآن!</button>
         </div>
         <div id="wheelResult" class="sig-result">اضغط لاكتشاف هديتك (توصيل مجاني / خصم 800 د.ج / خصم 1,000 د.ج) 🎁</div>
-      </div></section>
-  <section id="catalog" class="section">
-    <h2 class="section-title">✨ كتالوج Paris mode anes (📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery))</h2>
-    <p class="section-sub">الدفع عند الاستلام والتوصيل السريع لـ 58 ولاية</p>
-    <div class="products-grid">
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">الأكثر مبيعاً ✨</span>
-        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" alt="سنيكرز كاجوال يومي (Sneakers Confort)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">سنيكرز كاجوال يومي (Sneakers Confort)</h3>
-          <div class="product-price-row">
-            <span class="price-current">5 200 د.ج</span>
-            <span class="price-old">6 300 د.ج</span>
+      </div></div>
+      <table id="catalog" class="ledger-table">
+        <thead>
+          <tr style="border-bottom:2px solid var(--text-main);text-align:right;font-size:0.85rem;color:var(--text-muted)">
+            <th class="ledger-cell">الرمز</th>
+            <th class="ledger-cell">المعاينة</th>
+            <th class="ledger-cell">اسم القطعة والمواصفات</th>
+            <th class="ledger-cell ledger-hide-sm">المقاسات المتوفرة</th>
+            <th class="ledger-cell">السعر الرسمي</th>
+            <th class="ledger-cell">الحجز الفوري</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#01</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" alt="سنيكرز كاجوال يومي (Sneakers Confort)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">سنيكرز كاجوال يومي (Sneakers Confort)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">أحذية • الأكثر مبيعاً ✨</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">5 200 د.ج</div>
+          <div class="price-old">6 300 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('سنيكرز كاجوال يومي (Sneakers Confort)', 5200)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#02</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80" alt="حذاء نسائي أنيق بكعب مريح (Escarpin Chic)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">حذاء نسائي أنيق بكعب مريح (Escarpin Chic)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">أحذية • أناقة وراحة</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
           </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('سنيكرز كاجوال يومي (Sneakers Confort)', 5200)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">4 600 د.ج</div>
+          <div class="price-old">5 700 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('حذاء نسائي أنيق بكعب مريح (Escarpin Chic)', 4600)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#03</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="حذاء رياضي خفيف للمشي (Running Shoes)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">حذاء رياضي خفيف للمشي (Running Shoes)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">أحذية • نعل طبي</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">4 700 د.ج</div>
+          <div class="price-old">5 600 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('حذاء رياضي خفيف للمشي (Running Shoes)', 4700)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#04</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=600&q=80" alt="بوت جلد شتوي فاخر (Chelsea Boots Cuir)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">بوت جلد شتوي فاخر (Chelsea Boots Cuir)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">أحذية • مقاوم للماء</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">7 700 د.ج</div>
+          <div class="price-old">9 000 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('بوت جلد شتوي فاخر (Chelsea Boots Cuir)', 7700)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#05</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">أحذية • عرض خاص</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">7 000 د.ج</div>
+          <div class="price-old">8 600 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)', 7000)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#06</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80" alt="حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">أحذية • جلد حر 100% 🔥</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">6 300 د.ج</div>
+          <div class="price-old">7 600 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)', 6300)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    </tbody>
+      </table>
     </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">أناقة وراحة</span>
-        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80" alt="حذاء نسائي أنيق بكعب مريح (Escarpin Chic)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">حذاء نسائي أنيق بكعب مريح (Escarpin Chic)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 600 د.ج</span>
-            <span class="price-old">5 700 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('حذاء نسائي أنيق بكعب مريح (Escarpin Chic)', 4600)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">نعل طبي</span>
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="حذاء رياضي خفيف للمشي (Running Shoes)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">حذاء رياضي خفيف للمشي (Running Shoes)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 700 د.ج</span>
-            <span class="price-old">5 600 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('حذاء رياضي خفيف للمشي (Running Shoes)', 4700)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">مقاوم للماء</span>
-        <img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=600&q=80" alt="بوت جلد شتوي فاخر (Chelsea Boots Cuir)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">بوت جلد شتوي فاخر (Chelsea Boots Cuir)</h3>
-          <div class="product-price-row">
-            <span class="price-current">7 700 د.ج</span>
-            <span class="price-old">9 000 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بوت جلد شتوي فاخر (Chelsea Boots Cuir)', 7700)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">عرض خاص</span>
-        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)</h3>
-          <div class="product-price-row">
-            <span class="price-current">7 000 د.ج</span>
-            <span class="price-old">8 600 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)', 7000)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">جلد حر 100% 🔥</span>
-        <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80" alt="حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)</h3>
-          <div class="product-price-row">
-            <span class="price-current">6 300 د.ج</span>
-            <span class="price-old">7 600 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)', 6300)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  </div>
-  </section>
 
   <div class="info-box">
     <div>
@@ -388,7 +356,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Paris mode anes</strong> — الشكل المعماري: 📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)
+    جميع الحقوق محفوظة © 2026 <strong>Paris mode anes</strong> — الشكل المعماري: 📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)
   </footer>
 
   <script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Doudi kids | 👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)</title>
+  <title>Doudi kids | 🖥️ شرائح شاشة كاملة متتالية 100vh (Zara Fullscreen Snap Monograph)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Amiri', serif;
+      font-family: 'Cairo', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,26 +112,17 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .product-card, .sig-widget {
-          border-radius: 32px 4px 32px 4px !important;
-          border: 2px double var(--primary) !important;
-          position: relative;
-        }
-        .arch-arabesque {
-          border: 3px double var(--primary);
-          border-radius: 40px 8px 40px 8px;
-          padding: 36px;
-          margin: 24px auto;
-          max-width: 1180px;
-          background: linear-gradient(135deg, var(--bg-surface), var(--bg-card));
-        }
+        .snap-deck { max-width: 1240px; margin: 0 auto; padding: 10px 20px; display: flex; flex-direction: column; gap: 28px; }
+        .snap-slide { position: relative; height: 520px; border-radius: 30px; overflow: hidden; border: 2px solid var(--border); display: flex; align-items: flex-end; box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+        .snap-slide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .snap-overlay { position: relative; z-index: 2; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.92) 15%, rgba(0,0,0,0.35) 75%, transparent); padding: 36px; color: #fff; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)</strong> | الميزة: <strong>🧵 خدمة التعديل والتفصيل على المقاس (Custom Fit)</strong></span>
+    <span>✨ شكل الموقع: <strong>🖥️ شرائح شاشة كاملة متتالية 100vh (Zara Fullscreen Snap Monograph)</strong> | الميزة: <strong>🧵 خدمة التعديل والتفصيل على المقاس (Custom Fit)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -153,12 +144,6 @@
   </header>
 
   
-    <div class="arch-arabesque">
-      <span class="hero-badge">👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)</span>
-      <h1 style="font-size:2.6rem;font-weight:900;margin-bottom:12px">Doudi kids — الأصالة والفخامة في سطيف</h1>
-      <p style="color:var(--text-muted);margin-bottom:20px">رواق الأناقة في (سطيف‎ 19000) مزود بميزة <strong>🧵 خدمة التعديل والتفصيل على المقاس (Custom Fit)</strong>.</p>
-      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213771678665?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Doudi%20kids%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
-    </div>
     <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
@@ -172,170 +157,96 @@
         </div>
         <div class="sig-result">🪡 يتم التعديل باحترافية مجاناً قبل تسليم الطرد لشركة التوصيل!</div>
       </div></section>
-    <section id="catalog" class="section">
-      <h2 class="section-title">👑 الرواق الملكي للموديلات</h2>
-      <div class="products-grid" style="margin-top:20px">
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">الأكثر طلباً 🎈</span>
+    <section id="catalog" class="snap-deck">
+      <div class="snap-slide">
         <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80" alt="طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس أطفال</div>
-          <h3 class="product-title">طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 800 د.ج</span>
-            <span class="price-old">5 700 د.ج</span>
+        <div class="snap-overlay">
+          <div>
+            <span class="hero-badge">لوحة عرض 01 / 06 • الأكثر طلباً 🎈</span>
+            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)</h2>
+            <p style="opacity:0.9">Doudi kids — ملابس أطفال</p>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
-            </div>
+          <div style="text-align:left">
+            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">4 800 د.ج</div>
+            <button type="button" class="sig-btn" onclick="openOrderModal('طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)', 4800)">🛒 اطلب هذه اللوحة الآن</button>
           </div>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)', 4800)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">جديد العيد ✨</span>
+    
+      <div class="snap-slide">
         <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=600&q=80" alt="فستان أميرات للبنات (Robe Princesse Fille)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس أطفال</div>
-          <h3 class="product-title">فستان أميرات للبنات (Robe Princesse Fille)</h3>
-          <div class="product-price-row">
-            <span class="price-current">5 000 د.ج</span>
-            <span class="price-old">6 000 د.ج</span>
+        <div class="snap-overlay">
+          <div>
+            <span class="hero-badge">لوحة عرض 02 / 06 • جديد العيد ✨</span>
+            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">فستان أميرات للبنات (Robe Princesse Fille)</h2>
+            <p style="opacity:0.9">Doudi kids — ملابس أطفال</p>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
-            </div>
+          <div style="text-align:left">
+            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">5 000 د.ج</div>
+            <button type="button" class="sig-btn" onclick="openOrderModal('فستان أميرات للبنات (Robe Princesse Fille)', 5000)">🛒 اطلب هذه اللوحة الآن</button>
           </div>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('فستان أميرات للبنات (Robe Princesse Fille)', 5000)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">قطن طبيعي</span>
+    
+      <div class="snap-slide">
         <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=600&q=80" alt="طقم استقبال مواليد قطن 100% (Pack Nouveau-né)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس أطفال</div>
-          <h3 class="product-title">طقم استقبال مواليد قطن 100% (Pack Nouveau-né)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 100 د.ج</span>
-            <span class="price-old">4 900 د.ج</span>
+        <div class="snap-overlay">
+          <div>
+            <span class="hero-badge">لوحة عرض 03 / 06 • قطن طبيعي</span>
+            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">طقم استقبال مواليد قطن 100% (Pack Nouveau-né)</h2>
+            <p style="opacity:0.9">Doudi kids — ملابس أطفال</p>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
-            </div>
+          <div style="text-align:left">
+            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">4 100 د.ج</div>
+            <button type="button" class="sig-btn" onclick="openOrderModal('طقم استقبال مواليد قطن 100% (Pack Nouveau-né)', 4100)">🛒 اطلب هذه اللوحة الآن</button>
           </div>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('طقم استقبال مواليد قطن 100% (Pack Nouveau-né)', 4100)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">مريح للعب</span>
+    
+      <div class="snap-slide">
         <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80" alt="طقم رياضي مريح للأطفال (Survêtement Kids)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس أطفال</div>
-          <h3 class="product-title">طقم رياضي مريح للأطفال (Survêtement Kids)</h3>
-          <div class="product-price-row">
-            <span class="price-current">3 400 د.ج</span>
-            <span class="price-old">4 100 د.ج</span>
+        <div class="snap-overlay">
+          <div>
+            <span class="hero-badge">لوحة عرض 04 / 06 • مريح للعب</span>
+            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">طقم رياضي مريح للأطفال (Survêtement Kids)</h2>
+            <p style="opacity:0.9">Doudi kids — ملابس أطفال</p>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
-            </div>
+          <div style="text-align:left">
+            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">3 400 د.ج</div>
+            <button type="button" class="sig-btn" onclick="openOrderModal('طقم رياضي مريح للأطفال (Survêtement Kids)', 3400)">🛒 اطلب هذه اللوحة الآن</button>
           </div>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('طقم رياضي مريح للأطفال (Survêtement Kids)', 3400)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">جودة عالية</span>
+    
+      <div class="snap-slide">
         <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=600&q=80" alt="جاكيت دافئ مبطن للأطفال (Doudoune Enfant)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس أطفال</div>
-          <h3 class="product-title">جاكيت دافئ مبطن للأطفال (Doudoune Enfant)</h3>
-          <div class="product-price-row">
-            <span class="price-current">5 400 د.ج</span>
-            <span class="price-old">6 400 د.ج</span>
+        <div class="snap-overlay">
+          <div>
+            <span class="hero-badge">لوحة عرض 05 / 06 • جودة عالية</span>
+            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">جاكيت دافئ مبطن للأطفال (Doudoune Enfant)</h2>
+            <p style="opacity:0.9">Doudi kids — ملابس أطفال</p>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
-            </div>
+          <div style="text-align:left">
+            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">5 400 د.ج</div>
+            <button type="button" class="sig-btn" onclick="openOrderModal('جاكيت دافئ مبطن للأطفال (Doudoune Enfant)', 5400)">🛒 اطلب هذه اللوحة الآن</button>
           </div>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('جاكيت دافئ مبطن للأطفال (Doudoune Enfant)', 5400)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">طبي ومريح</span>
+    
+      <div class="snap-slide">
         <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80" alt="حذاء أطفال طبي خفيف (Chaussures Kids)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس أطفال</div>
-          <h3 class="product-title">حذاء أطفال طبي خفيف (Chaussures Kids)</h3>
-          <div class="product-price-row">
-            <span class="price-current">3 100 د.ج</span>
-            <span class="price-old">3 700 د.ج</span>
+        <div class="snap-overlay">
+          <div>
+            <span class="hero-badge">لوحة عرض 06 / 06 • طبي ومريح</span>
+            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">حذاء أطفال طبي خفيف (Chaussures Kids)</h2>
+            <p style="opacity:0.9">Doudi kids — ملابس أطفال</p>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
-            </div>
+          <div style="text-align:left">
+            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">3 100 د.ج</div>
+            <button type="button" class="sig-btn" onclick="openOrderModal('حذاء أطفال طبي خفيف (Chaussures Kids)', 3100)">🛒 اطلب هذه اللوحة الآن</button>
           </div>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('حذاء أطفال طبي خفيف (Chaussures Kids)', 3100)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  </div>
     </section>
 
   <div class="info-box">
@@ -384,7 +295,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Doudi kids</strong> — الشكل المعماري: 👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)
+    جميع الحقوق محفوظة © 2026 <strong>Doudi kids</strong> — الشكل المعماري: 🖥️ شرائح شاشة كاملة متتالية 100vh (Zara Fullscreen Snap Monograph)
   </footer>
 
   <script>

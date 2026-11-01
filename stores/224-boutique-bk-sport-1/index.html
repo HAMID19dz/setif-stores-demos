@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boutique BK SPORT 1 | 📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</title>
+  <title>Boutique BK SPORT 1 | 📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,27 +112,21 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .products-grid { gap: 36px !important; padding: 20px 10px; }
-        .product-card {
-          background: #FFFFFF !important;
-          color: #111827 !important;
-          padding: 16px 16px 26px 16px !important;
-          border-radius: 6px !important;
-          border: 1px solid #E5E7EB !important;
-          box-shadow: 0 20px 38px rgba(0,0,0,0.22) !important;
-        }
-        .product-card:nth-child(odd) { transform: rotate(-1.8deg); }
-        .product-card:nth-child(even) { transform: rotate(1.8deg); }
-        .product-card:hover { transform: rotate(0deg) scale(1.03) !important; z-index: 5; }
-        .product-img-wrap { border-radius: 2px; height: 280px !important; border: 1px solid #f3f4f6; }
-        .product-cat, .size-label { color: #4B5563 !important; }
+        .ledger-wrap { max-width: 1220px; margin: 24px auto; padding: 0 20px; }
+        .ledger-table { width: 100%; border-collapse: collapse; border-top: 3px solid var(--text-main); border-bottom: 3px solid var(--text-main); }
+        .ledger-row { border-bottom: 1px solid var(--border); transition: background 0.2s; }
+        .ledger-row:hover { background: var(--bg-surface); }
+        .ledger-cell { padding: 18px 14px; vertical-align: middle; }
+        .ledger-thumb { width: 92px; height: 92px; border-radius: 14px; object-fit: cover; border: 2px solid var(--primary); }
+        .ledger-idx { font-family: monospace; font-size: 1.15rem; font-weight: 900; color: var(--primary); }
+        @media (max-width: 780px) { .ledger-hide-sm { display: none; } }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</strong> | الميزة: <strong>📦 حاسبة أسعار الجملة والكميات (Tiered Pricing)</strong></span>
+    <span>✨ شكل الموقع: <strong>📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)</strong> | الميزة: <strong>📦 حاسبة أسعار الجملة والكميات (Tiered Pricing)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -154,16 +148,16 @@
   </header>
 
   
-  <section class="hero">
-    <div>
-      <span class="hero-badge">📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</span>
-      <h1><span>Boutique BK SPORT 1</span> — ملابس وأحذية رياضية + أحذية</h1>
-      <p>أهلاً بكم في متجرنا بسطيف (En face parck d'attraction, Sétif). اكتشفوا تصميم <strong>📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</strong> وميزة <strong>📦 حاسبة أسعار الجملة والكميات (Tiered Pricing)</strong>.</p>
-      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213550987994?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Boutique%20BK%20SPORT%201%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
-    </div>
-    <div class="hero-visual"><img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1000&q=80" alt="Boutique BK SPORT 1" /></div>
-  </section>
-  <section id="feature-sec" class="sig-section">
+    <div class="ledger-wrap">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid var(--border)">
+        <div>
+          <span class="hero-badge">📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)</span>
+          <h1 style="font-size:2.3rem;font-weight:900">📑 السجل الرسمي لمجموعة Boutique BK SPORT 1</h1>
+          <p style="color:var(--text-muted)">كتالوج جدولي تفاعلي مباشر بدون بطاقات تقليدية • 📍 En face parck d'attraction, Sétif</p>
+        </div>
+        <div class="hero-ctas"><a href="https://wa.me/213550987994?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Boutique%20BK%20SPORT%201%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+      </div>
+      <div id="feature-sec" style="margin-bottom:24px">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">ميزة التوفير العائلي والتجاري</span>
@@ -180,173 +174,147 @@
           <button type="button" class="sig-btn" onclick="orderTierQty()">🛒 اطلب بالكمية المخفّضة</button>
         </div>
         <div id="tierResult" class="sig-result">الإجمالي لقطعتين: <strong>7,900 د.ج</strong> بدلاً من 9,000 د.ج!</div>
-      </div></section>
-  <section id="catalog" class="section">
-    <h2 class="section-title">✨ كتالوج Boutique BK SPORT 1 (📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery))</h2>
-    <p class="section-sub">الدفع عند الاستلام والتوصيل السريع لـ 58 ولاية</p>
-    <div class="products-grid">
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">ترند 2026 ✨</span>
-        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="طقم ستريت وير كاجوال (Street Tracksuit)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
-          <h3 class="product-title">طقم ستريت وير كاجوال (Street Tracksuit)</h3>
-          <div class="product-price-row">
-            <span class="price-current">7 000 د.ج</span>
-            <span class="price-old">8 100 د.ج</span>
+      </div></div>
+      <table id="catalog" class="ledger-table">
+        <thead>
+          <tr style="border-bottom:2px solid var(--text-main);text-align:right;font-size:0.85rem;color:var(--text-muted)">
+            <th class="ledger-cell">الرمز</th>
+            <th class="ledger-cell">المعاينة</th>
+            <th class="ledger-cell">اسم القطعة والمواصفات</th>
+            <th class="ledger-cell ledger-hide-sm">المقاسات المتوفرة</th>
+            <th class="ledger-cell">السعر الرسمي</th>
+            <th class="ledger-cell">الحجز الفوري</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#01</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="طقم ستريت وير كاجوال (Street Tracksuit)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">طقم ستريت وير كاجوال (Street Tracksuit)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس وأحذية رياضية + أحذية • ترند 2026 ✨</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">7 000 د.ج</div>
+          <div class="price-old">8 100 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('طقم ستريت وير كاجوال (Street Tracksuit)', 7000)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#02</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=600&q=80" alt="بنطال كارغو بجيوب متعددة (Cargo Parachute)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">بنطال كارغو بجيوب متعددة (Cargo Parachute)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس وأحذية رياضية + أحذية • ستايل شبابي</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
           </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('طقم ستريت وير كاجوال (Street Tracksuit)', 7000)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">4 100 د.ج</div>
+          <div class="price-old">4 700 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('بنطال كارغو بجيوب متعددة (Cargo Parachute)', 4100)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#03</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=600&q=80" alt="جاكيت بومبر كوليدج (Varsity Jacket)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">جاكيت بومبر كوليدج (Varsity Jacket)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس وأحذية رياضية + أحذية • إصدار خاص</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">7 700 د.ج</div>
+          <div class="price-old">9 000 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('جاكيت بومبر كوليدج (Varsity Jacket)', 7700)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#04</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="تيشيرت مطبوع أوفرسايز (Graphic Tee)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">تيشيرت مطبوع أوفرسايز (Graphic Tee)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس وأحذية رياضية + أحذية • قطن 100%</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">2 600 د.ج</div>
+          <div class="price-old">3 200 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('تيشيرت مطبوع أوفرسايز (Graphic Tee)', 2600)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#05</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="سنيكرز رياضي مريح (Urban Sneakers)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">سنيكرز رياضي مريح (Urban Sneakers)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس وأحذية رياضية + أحذية • نعل مريح</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">6 100 د.ج</div>
+          <div class="price-old">7 100 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('سنيكرز رياضي مريح (Urban Sneakers)', 6100)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#06</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80" alt="هودي أوفرسايز قطن ثقيل (Heavyweight Hoodie)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">هودي أوفرسايز قطن ثقيل (Heavyweight Hoodie)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس وأحذية رياضية + أحذية • الأكثر مبيعاً 🔥</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">4 400 د.ج</div>
+          <div class="price-old">5 400 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('هودي أوفرسايز قطن ثقيل (Heavyweight Hoodie)', 4400)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    </tbody>
+      </table>
     </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">ستايل شبابي</span>
-        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=600&q=80" alt="بنطال كارغو بجيوب متعددة (Cargo Parachute)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
-          <h3 class="product-title">بنطال كارغو بجيوب متعددة (Cargo Parachute)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 100 د.ج</span>
-            <span class="price-old">4 700 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بنطال كارغو بجيوب متعددة (Cargo Parachute)', 4100)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">إصدار خاص</span>
-        <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=600&q=80" alt="جاكيت بومبر كوليدج (Varsity Jacket)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
-          <h3 class="product-title">جاكيت بومبر كوليدج (Varsity Jacket)</h3>
-          <div class="product-price-row">
-            <span class="price-current">7 700 د.ج</span>
-            <span class="price-old">9 000 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('جاكيت بومبر كوليدج (Varsity Jacket)', 7700)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">قطن 100%</span>
-        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="تيشيرت مطبوع أوفرسايز (Graphic Tee)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
-          <h3 class="product-title">تيشيرت مطبوع أوفرسايز (Graphic Tee)</h3>
-          <div class="product-price-row">
-            <span class="price-current">2 600 د.ج</span>
-            <span class="price-old">3 200 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('تيشيرت مطبوع أوفرسايز (Graphic Tee)', 2600)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">نعل مريح</span>
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="سنيكرز رياضي مريح (Urban Sneakers)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
-          <h3 class="product-title">سنيكرز رياضي مريح (Urban Sneakers)</h3>
-          <div class="product-price-row">
-            <span class="price-current">6 100 د.ج</span>
-            <span class="price-old">7 100 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('سنيكرز رياضي مريح (Urban Sneakers)', 6100)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">الأكثر مبيعاً 🔥</span>
-        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80" alt="هودي أوفرسايز قطن ثقيل (Heavyweight Hoodie)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس وأحذية رياضية + أحذية</div>
-          <h3 class="product-title">هودي أوفرسايز قطن ثقيل (Heavyweight Hoodie)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 400 د.ج</span>
-            <span class="price-old">5 400 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('هودي أوفرسايز قطن ثقيل (Heavyweight Hoodie)', 4400)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  </div>
-  </section>
 
   <div class="info-box">
     <div>
@@ -394,7 +362,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Boutique BK SPORT 1</strong> — الشكل المعماري: 📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)
+    جميع الحقوق محفوظة © 2026 <strong>Boutique BK SPORT 1</strong> — الشكل المعماري: 📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)
   </footer>
 
   <script>

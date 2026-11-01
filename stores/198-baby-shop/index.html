@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baby shop | 📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)</title>
+  <title>Baby shop | 📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Amiri', 'IBM Plex Sans Arabic', serif;
+      font-family: 'Readex Pro', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,22 +112,18 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .gazette-masthead {
-          max-width: 1220px; margin: 20px auto; padding: 20px;
-          border-top: 4px double var(--text-main); border-bottom: 4px double var(--text-main);
-          text-align: center;
-        }
-        .gazette-masthead h1 { font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 900; letter-spacing: -1px; }
-        .gazette-meta { display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; font-size: 0.85rem; font-weight: 700; }
-        .products-grid { gap: 0 !important; border: 1px solid var(--text-main); }
-        .product-card { border-radius: 0 !important; border: 1px solid var(--border) !important; }
+        .story-bar { max-width: 960px; margin: 20px auto; padding: 16px 20px; display: flex; gap: 18px; overflow-x: auto; background: var(--bg-surface); border-radius: 24px; border: 1px solid var(--border); }
+        .story-ring { flex: 0 0 84px; text-align: center; cursor: pointer; }
+        .story-avatar { width: 72px; height: 72px; border-radius: 50%; padding: 3px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); margin: 0 auto 6px; }
+        .story-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg-base); }
+        .social-feed { max-width: 960px; margin: 0 auto; padding: 10px 20px 50px; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
+    <span>✨ شكل الموقع: <strong>📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -149,16 +145,38 @@
   </header>
 
   
-    <div class="gazette-masthead">
-      <div style="font-size:0.85rem;letter-spacing:2px;color:var(--primary);font-weight:800">ÉDITION SPÉCIALE SÉTIF • ملابس أطفال</div>
-      <h1>Baby shop</h1>
-      <div class="gazette-meta">
-        <span>📍 العنوان: 21 Rue Saoud Belgssem, Sétif</span>
-        <span>✨ 💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</span>
-        <span>📞 0560 19 88 08</span>
+    <div class="story-bar">
+      <div class="story-ring" onclick="openOrderModal('حذاء أطفال طبي خفيف (Chaussures Kids)', 2800)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80" alt="حذاء أطفال طبي خفيف (Chaussures Kids)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">طبي ومريح</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)', 4500)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80" alt="طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">الأكثر طلباً 🎈</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('فستان أميرات للبنات (Robe Princesse Fille)', 4700)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=600&q=80" alt="فستان أميرات للبنات (Robe Princesse Fille)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">جديد العيد ✨</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('طقم استقبال مواليد قطن 100% (Pack Nouveau-né)', 3800)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=600&q=80" alt="طقم استقبال مواليد قطن 100% (Pack Nouveau-né)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">قطن طبيعي</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('طقم رياضي مريح للأطفال (Survêtement Kids)', 3100)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80" alt="طقم رياضي مريح للأطفال (Survêtement Kids)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">مريح للعب</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('جاكيت دافئ مبطن للأطفال (Doudoune Enfant)', 5100)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=600&q=80" alt="جاكيت دافئ مبطن للأطفال (Doudoune Enfant)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">جودة عالية</div>
       </div>
     </div>
-    <section id="feature-sec" class="sig-section">
+    <section id="feature-sec" class="sig-section" style="max-width:960px">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">نادي زبائن Baby shop</span>
@@ -171,8 +189,7 @@
         </div>
         <div id="loyalResult" class="sig-result">رصيدك الترحيبي الجاهز: <strong>500 نقطة = تخفيض 500 د.ج فوري!</strong></div>
       </div></section>
-    <section id="catalog" class="section">
-      <div class="products-grid">
+    <section id="catalog" class="social-feed">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">طبي ومريح</span>
@@ -333,8 +350,7 @@
         </button>
       </div>
     </div>
-  </div>
-    </section>
+  </section>
 
   <div class="info-box">
     <div>
@@ -382,7 +398,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Baby shop</strong> — الشكل المعماري: 📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)
+    جميع الحقوق محفوظة © 2026 <strong>Baby shop</strong> — الشكل المعماري: 📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)
   </footer>
 
   <script>

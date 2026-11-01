@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mister Tn | 👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)</title>
+  <title>Mister Tn | 🪗 ستائر أكورديون تفاعلية متمددة (Interactive Expanding Accordion Deck)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Amiri', serif;
+      font-family: 'Cairo', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,26 +112,19 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .product-card, .sig-widget {
-          border-radius: 32px 4px 32px 4px !important;
-          border: 2px double var(--primary) !important;
-          position: relative;
-        }
-        .arch-arabesque {
-          border: 3px double var(--primary);
-          border-radius: 40px 8px 40px 8px;
-          padding: 36px;
-          margin: 24px auto;
-          max-width: 1180px;
-          background: linear-gradient(135deg, var(--bg-surface), var(--bg-card));
-        }
+        .accordion-gallery { max-width: 1240px; margin: 20px auto; padding: 0 20px; display: flex; gap: 12px; height: 480px; }
+        .acc-panel { flex: 1; position: relative; border-radius: 24px; overflow: hidden; cursor: pointer; transition: flex 0.45s cubic-bezier(0.25, 1, 0.5, 1); border: 2px solid var(--border); display: flex; align-items: flex-end; }
+        .acc-panel:hover, .acc-panel.active { flex: 3.2; border-color: var(--primary); }
+        .acc-panel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .acc-caption { position: relative; z-index: 2; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.92), transparent); color: #fff; padding: 20px; }
+        @media (max-width: 860px) { .accordion-gallery { flex-direction: column; height: auto; } .acc-panel { min-height: 260px; } }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
+    <span>✨ شكل الموقع: <strong>🪗 ستائر أكورديون تفاعلية متمددة (Interactive Expanding Accordion Deck)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -153,11 +146,61 @@
   </header>
 
   
-    <div class="arch-arabesque">
-      <span class="hero-badge">👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)</span>
-      <h1 style="font-size:2.6rem;font-weight:900;margin-bottom:12px">Mister Tn — الأصالة والفخامة في سطيف</h1>
-      <p style="color:var(--text-muted);margin-bottom:20px">رواق الأناقة في (Sétif 19000) مزود بميزة <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong>.</p>
-      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213559519684?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Mister%20Tn%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+    <section class="section" style="padding-bottom:10px">
+      <span class="hero-badge">🪗 ستائر أكورديون تفاعلية متمددة (Interactive Expanding Accordion Deck)</span>
+      <h1 style="font-size:2.3rem;font-weight:900">🪗 الستائر المتمددة التفاعلية — Mister Tn</h1>
+      <p style="color:var(--text-muted)">مرّر الفأرة أو اضغط على أي ستارة لتوسيع الموديل ورؤية التفاصيل كاملة</p>
+    </section>
+    <div class="accordion-gallery">
+      <div class="acc-panel active" onclick="document.querySelectorAll('.acc-panel').forEach(p=>p.classList.remove('active'));this.classList.add('active')">
+        <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80" alt="حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)" />
+        <div class="acc-caption">
+          <span class="product-tag" style="position:static;display:inline-block;margin-bottom:6px">جلد حر 100% 🔥</span>
+          <h3 style="font-size:1.2rem;font-weight:900">حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)</h3>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--primary);margin:6px 0">6 300 د.ج</div>
+          <button type="button" class="sig-btn" onclick="event.stopPropagation();openOrderModal('حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)', 6300)">🛒 اطلب الآن</button>
+        </div>
+      </div>
+    
+      <div class="acc-panel " onclick="document.querySelectorAll('.acc-panel').forEach(p=>p.classList.remove('active'));this.classList.add('active')">
+        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" alt="سنيكرز كاجوال يومي (Sneakers Confort)" />
+        <div class="acc-caption">
+          <span class="product-tag" style="position:static;display:inline-block;margin-bottom:6px">الأكثر مبيعاً ✨</span>
+          <h3 style="font-size:1.2rem;font-weight:900">سنيكرز كاجوال يومي (Sneakers Confort)</h3>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--primary);margin:6px 0">5 200 د.ج</div>
+          <button type="button" class="sig-btn" onclick="event.stopPropagation();openOrderModal('سنيكرز كاجوال يومي (Sneakers Confort)', 5200)">🛒 اطلب الآن</button>
+        </div>
+      </div>
+    
+      <div class="acc-panel " onclick="document.querySelectorAll('.acc-panel').forEach(p=>p.classList.remove('active'));this.classList.add('active')">
+        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80" alt="حذاء نسائي أنيق بكعب مريح (Escarpin Chic)" />
+        <div class="acc-caption">
+          <span class="product-tag" style="position:static;display:inline-block;margin-bottom:6px">أناقة وراحة</span>
+          <h3 style="font-size:1.2rem;font-weight:900">حذاء نسائي أنيق بكعب مريح (Escarpin Chic)</h3>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--primary);margin:6px 0">4 600 د.ج</div>
+          <button type="button" class="sig-btn" onclick="event.stopPropagation();openOrderModal('حذاء نسائي أنيق بكعب مريح (Escarpin Chic)', 4600)">🛒 اطلب الآن</button>
+        </div>
+      </div>
+    
+      <div class="acc-panel " onclick="document.querySelectorAll('.acc-panel').forEach(p=>p.classList.remove('active'));this.classList.add('active')">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="حذاء رياضي خفيف للمشي (Running Shoes)" />
+        <div class="acc-caption">
+          <span class="product-tag" style="position:static;display:inline-block;margin-bottom:6px">نعل طبي</span>
+          <h3 style="font-size:1.2rem;font-weight:900">حذاء رياضي خفيف للمشي (Running Shoes)</h3>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--primary);margin:6px 0">4 700 د.ج</div>
+          <button type="button" class="sig-btn" onclick="event.stopPropagation();openOrderModal('حذاء رياضي خفيف للمشي (Running Shoes)', 4700)">🛒 اطلب الآن</button>
+        </div>
+      </div>
+    
+      <div class="acc-panel " onclick="document.querySelectorAll('.acc-panel').forEach(p=>p.classList.remove('active'));this.classList.add('active')">
+        <img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=600&q=80" alt="بوت جلد شتوي فاخر (Chelsea Boots Cuir)" />
+        <div class="acc-caption">
+          <span class="product-tag" style="position:static;display:inline-block;margin-bottom:6px">مقاوم للماء</span>
+          <h3 style="font-size:1.2rem;font-weight:900">بوت جلد شتوي فاخر (Chelsea Boots Cuir)</h3>
+          <div style="font-size:1.15rem;font-weight:900;color:var(--primary);margin:6px 0">7 700 د.ج</div>
+          <button type="button" class="sig-btn" onclick="event.stopPropagation();openOrderModal('بوت جلد شتوي فاخر (Chelsea Boots Cuir)', 7700)">🛒 اطلب الآن</button>
+        </div>
+      </div>
     </div>
     <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
@@ -173,8 +216,8 @@
         <div id="loyalResult" class="sig-result">رصيدك الترحيبي الجاهز: <strong>500 نقطة = تخفيض 500 د.ج فوري!</strong></div>
       </div></section>
     <section id="catalog" class="section">
-      <h2 class="section-title">👑 الرواق الملكي للموديلات</h2>
-      <div class="products-grid" style="margin-top:20px">
+      <h2 class="section-title">🛍️ القائمة الكاملة للموديلات</h2>
+      <div class="products-grid">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">جلد حر 100% 🔥</span>
@@ -384,7 +427,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Mister Tn</strong> — الشكل المعماري: 👑 رواق أندلسي ملكي بزوايا مزخرفة (Andalusian Royal Riwaq)
+    جميع الحقوق محفوظة © 2026 <strong>Mister Tn</strong> — الشكل المعماري: 🪗 ستائر أكورديون تفاعلية متمددة (Interactive Expanding Accordion Deck)
   </footer>
 
   <script>

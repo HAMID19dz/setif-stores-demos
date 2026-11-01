@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>المختار للزي الاسلامي | ⚡ نيو-بروتاليسم بحدود هندسية جريئة (Neo-Brutalist Street)</title>
+  <title>المختار للزي الاسلامي | 🎞️ شريط سينمائي أفقي متحرك (Awwwards Horizontal Filmstrip Runway)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Changa', sans-serif;
+      font-family: 'Cairo', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,27 +112,19 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        body { background-image: radial-gradient(var(--border) 1px, transparent 1px); background-size: 20px 20px; }
-        header { border-bottom: 4px solid var(--text-main) !important; }
-        .brutal-marquee { background: var(--primary); color: var(--primary-fg); padding: 12px; font-weight: 900; font-size: 1.05rem; border-bottom: 4px solid var(--text-main); text-transform: uppercase; letter-spacing: 1px; text-align: center; }
-        .product-card, .sig-widget, .info-box, .btn-hero, .btn-order {
-          border-radius: 0px !important;
-          border: 3px solid var(--text-main) !important;
-          box-shadow: 8px 8px 0px var(--primary) !important;
-          transition: transform 0.15s, box-shadow 0.15s !important;
-        }
-        .product-card:hover, .btn-order:hover {
-          transform: translate(-4px, -4px) !important;
-          box-shadow: 12px 12px 0px var(--accent) !important;
-        }
-        .product-tag { border-radius: 0 !important; border: 2px solid #000; font-weight: 900; }
+        header { display: none !important; }
+        .floating-bottom-dock { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 90; background: rgba(15,23,42,0.9); backdrop-filter: blur(16px); border: 1px solid var(--primary); padding: 10px 20px; border-radius: 999px; display: flex; gap: 14px; align-items: center; box-shadow: 0 20px 50px rgba(0,0,0,0.45); flex-wrap: wrap; justify-content: center; width: max-content; max-width: 94vw; }
+        .runway-header { max-width: 1240px; margin: 24px auto 10px; padding: 0 24px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
+        .runway-track { display: flex; gap: 26px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 24px 28px 40px; scrollbar-width: thin; }
+        .runway-slide { flex: 0 0 370px; scroll-snap-align: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: 26px; overflow: hidden; position: relative; display: flex; flex-direction: column; box-shadow: 0 18px 40px rgba(0,0,0,0.2); }
+        .runway-num { position: absolute; top: 14px; left: 16px; font-size: 2.4rem; font-weight: 900; color: rgba(255,255,255,0.85); text-shadow: 0 4px 14px rgba(0,0,0,0.6); z-index: 2; font-family: monospace; }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>⚡ نيو-بروتاليسم بحدود هندسية جريئة (Neo-Brutalist Street)</strong> | الميزة: <strong>🎁 منسّق الأطقم بخصم 20% (Mix &amp; Match Bundle)</strong></span>
+    <span>✨ شكل الموقع: <strong>🎞️ شريط سينمائي أفقي متحرك (Awwwards Horizontal Filmstrip Runway)</strong> | الميزة: <strong>🎁 منسّق الأطقم بخصم 20% (Mix &amp; Match Bundle)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -154,15 +146,116 @@
   </header>
 
   
-    <div class="brutal-marquee">⚡ المختار للزي الاسلامي • متجر ملابس • توصيل سريع 58 ولاية • 🎁 منسّق الأطقم بخصم 20% (Mix &amp; Match Bundle) ⚡</div>
-    <section class="hero">
+    <div class="runway-header">
       <div>
-        <span class="hero-badge">⚡ نيو-بروتاليسم بحدود هندسية جريئة (Neo-Brutalist Street)</span>
-        <h1><span>المختار للزي الاسلامي</span> — تصميم هندسي جريء</h1>
-        <p>تجربة تسوق غير تقليدية في (سطيف‎) بحدود بارزة وظلال حادة مع ميزة <strong>🎁 منسّق الأطقم بخصم 20% (Mix &amp; Match Bundle)</strong>.</p>
-        <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213673570000?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%A7%D8%B1%20%D9%84%D9%84%D8%B2%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+        <span class="hero-badge">🎞️ شريط سينمائي أفقي متحرك (Awwwards Horizontal Filmstrip Runway)</span>
+        <h1 style="font-size:clamp(2rem,4vw,3.3rem);font-weight:900">المختار للزي الاسلامي — منصة العرض السينمائية</h1>
+        <p style="color:var(--text-muted)">📍 سطيف‎ • اسحب أفقياً لاستعراض الموديلات (01 إلى 06)</p>
       </div>
-      <div class="hero-visual" style="border-radius:0;border:4px solid var(--text-main);box-shadow:12px 12px 0 var(--primary)"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="المختار للزي الاسلامي" /></div>
+      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213673570000?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%A7%D8%B1%20%D9%84%D9%84%D8%B2%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+    </div>
+    <section id="catalog" class="runway-track">
+      <div class="runway-slide">
+        <span class="runway-num">01</span>
+        <div class="product-img-wrap" style="height:320px">
+          <span class="product-tag">تشكيلة جديدة ✨</span>
+          <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=600&q=80" alt="فستان ميدي تركي أنيق (Robe Midi Élégante)" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">فستان ميدي تركي أنيق (Robe Midi Élégante)</h3>
+          <div class="product-price-row">
+            <span class="price-current">6 100 د.ج</span>
+            <span class="price-old">7 200 د.ج</span>
+          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('فستان ميدي تركي أنيق (Robe Midi Élégante)', 6100)">🛒 اطلب القطعة 01</button>
+        </div>
+      </div>
+    
+      <div class="runway-slide">
+        <span class="runway-num">02</span>
+        <div class="product-img-wrap" style="height:320px">
+          <span class="product-tag">خامة ناعمة</span>
+          <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=600&q=80" alt="بلوزة حريرية ساتان فاخرة (Blouse Satinée)" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">بلوزة حريرية ساتان فاخرة (Blouse Satinée)</h3>
+          <div class="product-price-row">
+            <span class="price-current">3 800 د.ج</span>
+            <span class="price-old">4 600 د.ج</span>
+          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('بلوزة حريرية ساتان فاخرة (Blouse Satinée)', 3800)">🛒 اطلب القطعة 02</button>
+        </div>
+      </div>
+    
+      <div class="runway-slide">
+        <span class="runway-num">03</span>
+        <div class="product-img-wrap" style="height:320px">
+          <span class="product-tag">مريح وعصري</span>
+          <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=600&q=80" alt="طقم كاجوال يومي أنيق (Set Casual Tendance)" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">طقم كاجوال يومي أنيق (Set Casual Tendance)</h3>
+          <div class="product-price-row">
+            <span class="price-current">5 400 د.ج</span>
+            <span class="price-old">6 500 د.ج</span>
+          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('طقم كاجوال يومي أنيق (Set Casual Tendance)', 5400)">🛒 اطلب القطعة 03</button>
+        </div>
+      </div>
+    
+      <div class="runway-slide">
+        <span class="runway-num">04</span>
+        <div class="product-img-wrap" style="height:320px">
+          <span class="product-tag">إصدار محدود</span>
+          <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="معطف ترنش كلاسيكي (Trench Coat Parisien)" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">معطف ترنش كلاسيكي (Trench Coat Parisien)</h3>
+          <div class="product-price-row">
+            <span class="price-current">9 100 د.ج</span>
+            <span class="price-old">11 000 د.ج</span>
+          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('معطف ترنش كلاسيكي (Trench Coat Parisien)', 9100)">🛒 اطلب القطعة 04</button>
+        </div>
+      </div>
+    
+      <div class="runway-slide">
+        <span class="runway-num">05</span>
+        <div class="product-img-wrap" style="height:320px">
+          <span class="product-tag">تكمل إطلالتك</span>
+          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة يد جلدية فاخرة (Sac à Main Couture)" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">حقيبة يد جلدية فاخرة (Sac à Main Couture)</h3>
+          <div class="product-price-row">
+            <span class="price-current">4 300 د.ج</span>
+            <span class="price-old">5 100 د.ج</span>
+          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('حقيبة يد جلدية فاخرة (Sac à Main Couture)', 4300)">🛒 اطلب القطعة 05</button>
+        </div>
+      </div>
+    
+      <div class="runway-slide">
+        <span class="runway-num">06</span>
+        <div class="product-img-wrap" style="height:320px">
+          <span class="product-tag">الأكثر طلباً 💖</span>
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <div class="product-cat">متجر ملابس</div>
+          <h3 class="product-title">طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)</h3>
+          <div class="product-price-row">
+            <span class="price-current">8 000 د.ج</span>
+            <span class="price-old">9 400 د.ج</span>
+          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)', 8000)">🛒 اطلب القطعة 06</button>
+        </div>
+      </div>
     </section>
     <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
@@ -179,171 +272,12 @@
         </div>
         <div id="bundleResult" class="sig-result">سعر الطقم بعد الخصم: <strong>6,800 د.ج</strong> بدلاً من 8,300 د.ج 🎉</div>
       </div></section>
-    <section id="catalog" class="section">
-      <h2 class="section-title">⚡ الكتالوج الهندسي الجريء</h2>
-      <div class="products-grid" style="margin-top:20px">
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">تشكيلة جديدة ✨</span>
-        <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=600&q=80" alt="فستان ميدي تركي أنيق (Robe Midi Élégante)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">متجر ملابس</div>
-          <h3 class="product-title">فستان ميدي تركي أنيق (Robe Midi Élégante)</h3>
-          <div class="product-price-row">
-            <span class="price-current">6 100 د.ج</span>
-            <span class="price-old">7 200 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('فستان ميدي تركي أنيق (Robe Midi Élégante)', 6100)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">خامة ناعمة</span>
-        <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=600&q=80" alt="بلوزة حريرية ساتان فاخرة (Blouse Satinée)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">متجر ملابس</div>
-          <h3 class="product-title">بلوزة حريرية ساتان فاخرة (Blouse Satinée)</h3>
-          <div class="product-price-row">
-            <span class="price-current">3 800 د.ج</span>
-            <span class="price-old">4 600 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بلوزة حريرية ساتان فاخرة (Blouse Satinée)', 3800)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">مريح وعصري</span>
-        <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=600&q=80" alt="طقم كاجوال يومي أنيق (Set Casual Tendance)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">متجر ملابس</div>
-          <h3 class="product-title">طقم كاجوال يومي أنيق (Set Casual Tendance)</h3>
-          <div class="product-price-row">
-            <span class="price-current">5 400 د.ج</span>
-            <span class="price-old">6 500 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('طقم كاجوال يومي أنيق (Set Casual Tendance)', 5400)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">إصدار محدود</span>
-        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="معطف ترنش كلاسيكي (Trench Coat Parisien)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">متجر ملابس</div>
-          <h3 class="product-title">معطف ترنش كلاسيكي (Trench Coat Parisien)</h3>
-          <div class="product-price-row">
-            <span class="price-current">9 100 د.ج</span>
-            <span class="price-old">11 000 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('معطف ترنش كلاسيكي (Trench Coat Parisien)', 9100)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">تكمل إطلالتك</span>
-        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة يد جلدية فاخرة (Sac à Main Couture)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">متجر ملابس</div>
-          <h3 class="product-title">حقيبة يد جلدية فاخرة (Sac à Main Couture)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 300 د.ج</span>
-            <span class="price-old">5 100 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('حقيبة يد جلدية فاخرة (Sac à Main Couture)', 4300)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">الأكثر طلباً 💖</span>
-        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">متجر ملابس</div>
-          <h3 class="product-title">طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)</h3>
-          <div class="product-price-row">
-            <span class="price-current">8 000 د.ج</span>
-            <span class="price-old">9 400 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S</button><button type="button" class="size-chip active" onclick="selectSize(this)">M</button><button type="button" class="size-chip " onclick="selectSize(this)">L</button><button type="button" class="size-chip " onclick="selectSize(this)">XL</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)', 8000)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  </div>
-    </section>
+    <nav class="floating-bottom-dock">
+      <strong style="color:#fff">🎞️ المختار للزي الاسلامي</strong>
+      <a href="#catalog" class="btn-nav">شريط الموديلات</a>
+      <a href="#feature-sec" class="btn-nav">🎁 منسّق الأطقم بخصم 20% (Mix &amp; Match Bundle)</a>
+      <button type="button" class="btn-nav primary" onclick="openOrderModal('طلب سريع من شريط العرض', 4500)">⚡ اطلب الآن</button>
+    </nav>
 
   <div class="info-box">
     <div>
@@ -391,7 +325,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>المختار للزي الاسلامي</strong> — الشكل المعماري: ⚡ نيو-بروتاليسم بحدود هندسية جريئة (Neo-Brutalist Street)
+    جميع الحقوق محفوظة © 2026 <strong>المختار للزي الاسلامي</strong> — الشكل المعماري: 🎞️ شريط سينمائي أفقي متحرك (Awwwards Horizontal Filmstrip Runway)
   </footer>
 
   <script>

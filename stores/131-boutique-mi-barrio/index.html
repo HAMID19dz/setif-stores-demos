@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boutique MI BARRIO | 🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)</title>
+  <title>Boutique MI BARRIO | 📸 حبل غسيل بولارويد واستوديو تصوير (Vintage Polaroid Studio Wall)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Amiri', 'Cairo', serif;
+      font-family: 'Tajawal', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,22 +112,27 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .arch-hero { max-width: 1180px; margin: 30px auto; padding: 20px; text-align: center; }
-        .arch-hero h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 900; letter-spacing: -0.02em; margin: 12px 0; }
-        .arch-dome-row { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 24px; align-items: end; margin-top: 28px; }
-        .arch-dome { border-radius: 220px 220px 16px 16px; overflow: hidden; border: 3px solid var(--primary); height: 420px; position: relative; box-shadow: 0 24px 48px rgba(0,0,0,0.2); }
-        .arch-dome.center { height: 500px; }
-        .arch-dome img { width: 100%; height: 100%; object-fit: cover; }
-        .product-card { border-radius: 180px 180px 18px 18px !important; border: 2px solid var(--primary) !important; text-align: center; }
-        .product-img-wrap { border-radius: 175px 175px 0 0; height: 310px !important; }
-        .size-row, .product-price-row { justify-content: center !important; }
+        .products-grid { gap: 36px !important; padding: 20px 10px; }
+        .product-card {
+          background: #FFFFFF !important;
+          color: #111827 !important;
+          padding: 16px 16px 26px 16px !important;
+          border-radius: 6px !important;
+          border: 1px solid #E5E7EB !important;
+          box-shadow: 0 20px 38px rgba(0,0,0,0.22) !important;
+        }
+        .product-card:nth-child(odd) { transform: rotate(-1.8deg); }
+        .product-card:nth-child(even) { transform: rotate(1.8deg); }
+        .product-card:hover { transform: rotate(0deg) scale(1.03) !important; z-index: 5; }
+        .product-img-wrap { border-radius: 2px; height: 280px !important; border: 1px solid #f3f4f6; }
+        .product-cat, .size-label { color: #4B5563 !important; }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)</strong> | الميزة: <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong></span>
+    <span>✨ شكل الموقع: <strong>📸 حبل غسيل بولارويد واستوديو تصوير (Vintage Polaroid Studio Wall)</strong> | الميزة: <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -149,18 +154,16 @@
   </header>
 
   
-    <section class="arch-hero">
-      <span class="hero-badge">🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)</span>
-      <h1>Boutique MI BARRIO</h1>
-      <p style="color:var(--text-muted);max-width:680px;margin:0 auto 20px">ملابس رجالية في قلب سطيف (Langar 19000) — تصميم الأقواس المعمارية الفاخرة</p>
-      <div class="hero-ctas" style="justify-content:center"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213777613100?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Boutique%20MI%20BARRIO%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
-      <div class="arch-dome-row">
-        <div class="arch-dome"><img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=600&q=80" alt="" /></div>
-        <div class="arch-dome center"><img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1000&q=80" alt="Boutique MI BARRIO" /></div>
-        <div class="arch-dome"><img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="" /></div>
-      </div>
-    </section>
-    <section id="feature-sec" class="sig-section">
+  <section class="hero">
+    <div>
+      <span class="hero-badge">📸 حبل غسيل بولارويد واستوديو تصوير (Vintage Polaroid Studio Wall)</span>
+      <h1><span>Boutique MI BARRIO</span> — ملابس رجالية</h1>
+      <p>أهلاً بكم في متجرنا بسطيف (Langar 19000). اكتشفوا تصميم <strong>📸 حبل غسيل بولارويد واستوديو تصوير (Vintage Polaroid Studio Wall)</strong> وميزة <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong>.</p>
+      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213777613100?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Boutique%20MI%20BARRIO%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+    </div>
+    <div class="hero-visual"><img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1000&q=80" alt="Boutique MI BARRIO" /></div>
+  </section>
+  <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">خدمة كبار الزبائن في سطيف</span>
@@ -178,10 +181,10 @@
         </div>
         <div class="sig-result">✅ تبقى القطعة محجوزة باسمك لمدة 24 ساعة في المحل مجاناً!</div>
       </div></section>
-    <section id="catalog" class="section">
-      <h2 class="section-title" style="text-align:center">🏛️ أروقة الموديلات المختارة</h2>
-      <p class="section-sub" style="text-align:center">نوافذ عرض مقوّسة مستوحاة من دور الأزياء الإيطالية</p>
-      <div class="products-grid">
+  <section id="catalog" class="section">
+    <h2 class="section-title">✨ كتالوج Boutique MI BARRIO (📸 حبل غسيل بولارويد واستوديو تصوير (Vintage Polaroid Studio Wall))</h2>
+    <p class="section-sub">الدفع عند الاستلام والتوصيل السريع لـ 58 ولاية</p>
+    <div class="products-grid">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">عرض خاص</span>
@@ -343,7 +346,7 @@
       </div>
     </div>
   </div>
-    </section>
+  </section>
 
   <div class="info-box">
     <div>
@@ -391,7 +394,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Boutique MI BARRIO</strong> — الشكل المعماري: 🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)
+    جميع الحقوق محفوظة © 2026 <strong>Boutique MI BARRIO</strong> — الشكل المعماري: 📸 حبل غسيل بولارويد واستوديو تصوير (Vintage Polaroid Studio Wall)
   </footer>
 
   <script>

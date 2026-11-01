@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boutique Sport | 🔮 كبسولات زجاجية عائمة ونيون (Futuristic Glassmorphism)</title>
+  <title>Boutique Sport | ⚡ زين ستريت-وير بروتاليسم بشريط متحرك (Brutalist Street Zine)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Readex Pro', sans-serif;
+      font-family: 'Changa', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,28 +112,27 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        body {
-          background: radial-gradient(circle at 15% 20%, var(--primary) 0%, transparent 32%),
-                      radial-gradient(circle at 85% 75%, var(--accent) 0%, transparent 35%),
-                      var(--bg-base) !important;
-          background-attachment: fixed !important;
+        body { background-image: radial-gradient(var(--border) 1px, transparent 1px); background-size: 20px 20px; }
+        header { border-bottom: 4px solid var(--text-main) !important; }
+        .brutal-marquee { background: var(--primary); color: var(--primary-fg); padding: 12px; font-weight: 900; font-size: 1.05rem; border-bottom: 4px solid var(--text-main); text-transform: uppercase; letter-spacing: 1px; text-align: center; }
+        .product-card, .sig-widget, .info-box, .btn-hero, .btn-order {
+          border-radius: 0px !important;
+          border: 3px solid var(--text-main) !important;
+          box-shadow: 8px 8px 0px var(--primary) !important;
+          transition: transform 0.15s, box-shadow 0.15s !important;
         }
-        .product-card, .sig-widget, .info-box {
-          background: rgba(255, 255, 255, 0.07) !important;
-          backdrop-filter: blur(20px) !important;
-          -webkit-backdrop-filter: blur(20px) !important;
-          border: 1px solid rgba(255, 255, 255, 0.25) !important;
-          border-radius: 36px !important;
-          box-shadow: 0 20px 50px rgba(0,0,0,0.25) !important;
+        .product-card:hover, .btn-order:hover {
+          transform: translate(-4px, -4px) !important;
+          box-shadow: 12px 12px 0px var(--accent) !important;
         }
-        .btn-order, .btn-hero { border-radius: 999px !important; }
+        .product-tag { border-radius: 0 !important; border: 2px solid #000; font-weight: 900; }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🔮 كبسولات زجاجية عائمة ونيون (Futuristic Glassmorphism)</strong> | الميزة: <strong>🧵 خدمة التعديل والتفصيل على المقاس (Custom Fit)</strong></span>
+    <span>✨ شكل الموقع: <strong>⚡ زين ستريت-وير بروتاليسم بشريط متحرك (Brutalist Street Zine)</strong> | الميزة: <strong>🧵 خدمة التعديل والتفصيل على المقاس (Custom Fit)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -155,16 +154,17 @@
   </header>
 
   
-  <section class="hero">
-    <div>
-      <span class="hero-badge">🔮 كبسولات زجاجية عائمة ونيون (Futuristic Glassmorphism)</span>
-      <h1><span>Boutique Sport</span> — ملابس وأحذية رياضية + أحذية</h1>
-      <p>أهلاً بكم في متجرنا بسطيف (Sétif). اكتشفوا تصميم <strong>🔮 كبسولات زجاجية عائمة ونيون (Futuristic Glassmorphism)</strong> وميزة <strong>🧵 خدمة التعديل والتفصيل على المقاس (Custom Fit)</strong>.</p>
-      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213696273464?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Boutique%20Sport%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
-    </div>
-    <div class="hero-visual"><img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1000&q=80" alt="Boutique Sport" /></div>
-  </section>
-  <section id="feature-sec" class="sig-section">
+    <div class="brutal-marquee">⚡ Boutique Sport • ملابس وأحذية رياضية + أحذية • توصيل سريع 58 ولاية • 🧵 خدمة التعديل والتفصيل على المقاس (Custom Fit) ⚡</div>
+    <section class="hero">
+      <div>
+        <span class="hero-badge">⚡ زين ستريت-وير بروتاليسم بشريط متحرك (Brutalist Street Zine)</span>
+        <h1><span>Boutique Sport</span> — تصميم هندسي جريء</h1>
+        <p>تجربة تسوق غير تقليدية في (Sétif) بحدود بارزة وظلال حادة مع ميزة <strong>🧵 خدمة التعديل والتفصيل على المقاس (Custom Fit)</strong>.</p>
+        <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213696273464?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Boutique%20Sport%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+      </div>
+      <div class="hero-visual" style="border-radius:0;border:4px solid var(--text-main);box-shadow:12px 12px 0 var(--primary)"><img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1000&q=80" alt="Boutique Sport" /></div>
+    </section>
+    <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">خدمة الخياطة والتعديل المجاني</span>
@@ -177,10 +177,9 @@
         </div>
         <div class="sig-result">🪡 يتم التعديل باحترافية مجاناً قبل تسليم الطرد لشركة التوصيل!</div>
       </div></section>
-  <section id="catalog" class="section">
-    <h2 class="section-title">✨ كتالوج Boutique Sport (🔮 كبسولات زجاجية عائمة ونيون (Futuristic Glassmorphism))</h2>
-    <p class="section-sub">الدفع عند الاستلام والتوصيل السريع لـ 58 ولاية</p>
-    <div class="products-grid">
+    <section id="catalog" class="section">
+      <h2 class="section-title">⚡ الكتالوج الهندسي الجريء</h2>
+      <div class="products-grid" style="margin-top:20px">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">إصدار خاص</span>
@@ -342,7 +341,7 @@
       </div>
     </div>
   </div>
-  </section>
+    </section>
 
   <div class="info-box">
     <div>
@@ -390,7 +389,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Boutique Sport</strong> — الشكل المعماري: 🔮 كبسولات زجاجية عائمة ونيون (Futuristic Glassmorphism)
+    جميع الحقوق محفوظة © 2026 <strong>Boutique Sport</strong> — الشكل المعماري: ⚡ زين ستريت-وير بروتاليسم بشريط متحرك (Brutalist Street Zine)
   </footer>
 
   <script>

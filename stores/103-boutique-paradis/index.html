@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boutique PARADIS | 💎 صالون كوتور بقائمة جانبية ثابتة (Luxury Sidebar Salon)</title>
+  <title>Boutique PARADIS | 🧱 شبكة شلال بينترست غير متماثلة (Pinterest Staggered Masonry)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Readex Pro', sans-serif;
+      font-family: 'Tajawal', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,19 +112,20 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .salon-layout { display: grid; grid-template-columns: 310px 1fr; min-height: 100vh; }
-        .salon-sidebar { background: var(--bg-surface); border-left: 2px solid var(--primary); padding: 36px 24px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
-        .salon-main { padding: 32px 40px; }
-        header { display: none !important; }
-        .product-card { border-radius: 24px !important; border: 1px solid var(--primary) !important; }
-        @media (max-width: 900px) { .salon-layout { grid-template-columns: 1fr; } .salon-sidebar { height: auto; position: static; } }
+        .pinterest-masonry { column-count: 3; column-gap: 22px; max-width: 1220px; margin: 0 auto; padding: 10px 20px 50px; }
+        .masonry-pin { break-inside: avoid; margin-bottom: 22px; background: var(--bg-card); border-radius: 26px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 12px 30px rgba(0,0,0,0.12); display: inline-block; width: 100%; }
+        .masonry-pin:nth-child(odd) .product-img-wrap { height: 380px !important; }
+        .masonry-pin:nth-child(even) .product-img-wrap { height: 250px !important; }
+        .pin-save-btn { position: absolute; top: 14px; left: 14px; background: #E60023; color: #fff; font-weight: 900; font-size: 0.78rem; padding: 6px 14px; border-radius: 999px; border: none; cursor: pointer; }
+        @media (max-width: 920px) { .pinterest-masonry { column-count: 2; } }
+        @media (max-width: 600px) { .pinterest-masonry { column-count: 1; } }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>💎 صالون كوتور بقائمة جانبية ثابتة (Luxury Sidebar Salon)</strong> | الميزة: <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong></span>
+    <span>✨ شكل الموقع: <strong>🧱 شبكة شلال بينترست غير متماثلة (Pinterest Staggered Masonry)</strong> | الميزة: <strong>👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -146,23 +147,12 @@
   </header>
 
   
-    <div class="salon-layout">
-      <aside class="salon-sidebar">
-        <div>
-          <div class="brand-monogram" style="width:64px;height:64px;font-size:1.5rem;margin-bottom:16px">BO</div>
-          <span class="hero-badge">💎 صالون كوتور بقائمة جانبية ثابتة (Luxury Sidebar Salon)</span>
-          <h1 style="font-size:2rem;font-weight:900;margin-bottom:10px">Boutique PARADIS</h1>
-          <p style="color:var(--text-muted);font-size:0.92rem;margin-bottom:20px">📍 19000, Sétif 19000 — ملابس رجالية</p>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <a href="#feature-sec" class="btn-nav">👑 حجز غرفة قياس VIP في المحل (Reserve &amp; Try)</a>
-            <a href="#catalog" class="btn-nav">🛍️ الكتالوج الحصري</a>
-            <a href="tel:0552402731" class="btn-nav primary">📞 0552 40 27 31</a>
-          </div>
-        </div>
-        <div style="font-size:0.8rem;color:var(--text-muted)">توصيل 58 ولاية • الدفع عند الاستلام</div>
-      </aside>
-      <main class="salon-main">
-        <div id="feature-sec">
+    <section class="section" style="text-align:center;padding-bottom:14px">
+      <span class="hero-badge">🧱 شبكة شلال بينترست غير متماثلة (Pinterest Staggered Masonry)</span>
+      <h1 style="font-size:clamp(2rem,3.8vw,3rem);font-weight:900;margin-bottom:8px">🧱 جدار إلهام وموديلات Boutique PARADIS</h1>
+      <p style="color:var(--text-muted);max-width:680px;margin:0 auto 18px">تصميم شلال غير متماثل مستوحى من Pinterest لعرض أحدث تشكيلة (ملابس رجالية) في 19000, Sétif 19000.</p>
+    </section>
+    <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">خدمة كبار الزبائن في سطيف</span>
@@ -179,175 +169,104 @@
           <button type="button" class="sig-btn" onclick="openOrderModal('حجز قياس VIP في المحل (' + document.getElementById('vipTime').value + ')', 0)">📅 تأكيد الحجز المجاني</button>
         </div>
         <div class="sig-result">✅ تبقى القطعة محجوزة باسمك لمدة 24 ساعة في المحل مجاناً!</div>
-      </div></div>
-        <section id="catalog" style="margin-top:32px">
-          <h2 class="section-title">✨ تشكيلة صالون Boutique PARADIS</h2>
-          <p class="section-sub">تصميم القائمة الجانبية الفاخرة مع الطلب الفوري</p>
-          <div class="products-grid">
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">الأكثر مبيعاً 👔</span>
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
+      </div></section>
+    <section id="catalog" class="pinterest-masonry">
+      <div class="masonry-pin">
+        <div class="product-img-wrap">
+          <button type="button" class="pin-save-btn" onclick="openOrderModal('بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)', 18700)">📌 احفظ واطلب</button>
+          <span class="product-tag">الأكثر مبيعاً 👔</span>
+          <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)" loading="lazy" />
+        </div>
+        <div class="product-body">
           <h3 class="product-title">بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)</h3>
           <div class="product-price-row">
             <span class="price-current">18 700 د.ج</span>
             <span class="price-old">22 200 د.ج</span>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)', 18700)">🛒 اطلب الآن</button>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)', 18700)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">قصة إيطالية ✨</span>
-        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
+    
+      <div class="masonry-pin">
+        <div class="product-img-wrap">
+          <button type="button" class="pin-save-btn" onclick="openOrderModal('قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)', 4000)">📌 احفظ واطلب</button>
+          <span class="product-tag">قصة إيطالية ✨</span>
+          <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)" loading="lazy" />
+        </div>
+        <div class="product-body">
           <h3 class="product-title">قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)</h3>
           <div class="product-price-row">
             <span class="price-current">4 000 د.ج</span>
             <span class="price-old">4 700 د.ج</span>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)', 4000)">🛒 اطلب الآن</button>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)', 4000)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">جديد الموسم</span>
-        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="بليزر كاجوال أنيق (Blazer Casual Chic)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
+    
+      <div class="masonry-pin">
+        <div class="product-img-wrap">
+          <button type="button" class="pin-save-btn" onclick="openOrderModal('بليزر كاجوال أنيق (Blazer Casual Chic)', 9700)">📌 احفظ واطلب</button>
+          <span class="product-tag">جديد الموسم</span>
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="بليزر كاجوال أنيق (Blazer Casual Chic)" loading="lazy" />
+        </div>
+        <div class="product-body">
           <h3 class="product-title">بليزر كاجوال أنيق (Blazer Casual Chic)</h3>
           <div class="product-price-row">
             <span class="price-current">9 700 د.ج</span>
             <span class="price-old">11 700 د.ج</span>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('بليزر كاجوال أنيق (Blazer Casual Chic)', 9700)">🛒 اطلب الآن</button>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بليزر كاجوال أنيق (Blazer Casual Chic)', 9700)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">خامة تركية</span>
-        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80" alt="بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
+    
+      <div class="masonry-pin">
+        <div class="product-img-wrap">
+          <button type="button" class="pin-save-btn" onclick="openOrderModal('بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)', 4400)">📌 احفظ واطلب</button>
+          <span class="product-tag">خامة تركية</span>
+          <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80" alt="بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)" loading="lazy" />
+        </div>
+        <div class="product-body">
           <h3 class="product-title">بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)</h3>
           <div class="product-price-row">
             <span class="price-current">4 400 د.ج</span>
             <span class="price-old">5 200 د.ج</span>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)', 4400)">🛒 اطلب الآن</button>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)', 4400)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">عرض خاص</span>
-        <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=600&q=80" alt="طقم بولو رجالي صيفي فاخر (Ensemble Polo)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
+    
+      <div class="masonry-pin">
+        <div class="product-img-wrap">
+          <button type="button" class="pin-save-btn" onclick="openOrderModal('طقم بولو رجالي صيفي فاخر (Ensemble Polo)', 5600)">📌 احفظ واطلب</button>
+          <span class="product-tag">عرض خاص</span>
+          <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=600&q=80" alt="طقم بولو رجالي صيفي فاخر (Ensemble Polo)" loading="lazy" />
+        </div>
+        <div class="product-body">
           <h3 class="product-title">طقم بولو رجالي صيفي فاخر (Ensemble Polo)</h3>
           <div class="product-price-row">
             <span class="price-current">5 600 د.ج</span>
             <span class="price-old">6 700 د.ج</span>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('طقم بولو رجالي صيفي فاخر (Ensemble Polo)', 5600)">🛒 اطلب الآن</button>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('طقم بولو رجالي صيفي فاخر (Ensemble Polo)', 5600)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">إصدار محدود</span>
-        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
+    
+      <div class="masonry-pin">
+        <div class="product-img-wrap">
+          <button type="button" class="pin-save-btn" onclick="openOrderModal('جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)', 13100)">📌 احفظ واطلب</button>
+          <span class="product-tag">إصدار محدود</span>
+          <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)" loading="lazy" />
+        </div>
+        <div class="product-body">
           <h3 class="product-title">جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)</h3>
           <div class="product-price-row">
             <span class="price-current">13 100 د.ج</span>
             <span class="price-old">15 700 د.ج</span>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
+          <button type="button" class="btn-order" onclick="openOrderModal('جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)', 13100)">🛒 اطلب الآن</button>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)', 13100)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
       </div>
-    </div>
-  </div>
-        </section>
-      </main>
-    </div>
+    </section>
 
   <div class="info-box">
     <div>
@@ -395,7 +314,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Boutique PARADIS</strong> — الشكل المعماري: 💎 صالون كوتور بقائمة جانبية ثابتة (Luxury Sidebar Salon)
+    جميع الحقوق محفوظة © 2026 <strong>Boutique PARADIS</strong> — الشكل المعماري: 🧱 شبكة شلال بينترست غير متماثلة (Pinterest Staggered Masonry)
   </footer>
 
   <script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boutique EL Bled Sétif | 🎬 شاشة مزدوجة: بوستر ثابت وكتالوج متحرك (Split Sticky Showcase)</title>
+  <title>Boutique EL Bled Sétif | 🌼 بوتيك ريترو السبعينات الدافئ (70s Retro Groove Capsule)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Changa', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,27 +112,17 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .split-screen-wrap {
-          max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 32px; padding: 24px 20px; align-items: start;
-        }
-        .split-poster {
-          position: sticky; top: 90px; height: calc(100vh - 120px); min-height: 520px;
-          border-radius: 28px; overflow: hidden; border: 2px solid var(--primary); position: relative;
-        }
-        .split-poster img { width: 100%; height: 100%; object-fit: cover; }
-        .split-poster-overlay {
-          position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.88) 10%, rgba(0,0,0,0.2) 60%);
-          display: flex; flex-direction: column; justify-content: flex-end; padding: 32px; color: #fff;
-        }
-        .products-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important; }
-        @media (max-width: 920px) { .split-screen-wrap { grid-template-columns: 1fr; } .split-poster { position: static; height: 420px; } }
+        .retro-banner { max-width: 1180px; margin: 24px auto; padding: 34px; border-radius: 44px; background: var(--bg-surface); border: 4px solid var(--text-main); box-shadow: 10px 10px 0 var(--primary); text-align: center; }
+        .product-card { border-radius: 36px !important; border: 3px solid var(--text-main) !important; box-shadow: 7px 7px 0 var(--primary) !important; }
+        .product-img-wrap { border-radius: 28px; margin: 12px; height: 250px !important; border: 2px solid var(--text-main); }
+        .btn-order { border-radius: 999px !important; border: 2px solid var(--text-main) !important; font-weight: 900 !important; }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🎬 شاشة مزدوجة: بوستر ثابت وكتالوج متحرك (Split Sticky Showcase)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
+    <span>✨ شكل الموقع: <strong>🌼 بوتيك ريترو السبعينات الدافئ (70s Retro Groove Capsule)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -154,18 +144,13 @@
   </header>
 
   
-    <div class="split-screen-wrap">
-      <div class="split-poster">
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="Boutique EL Bled Sétif" />
-        <div class="split-poster-overlay">
-          <span class="hero-badge">🎬 شاشة مزدوجة: بوستر ثابت وكتالوج متحرك (Split Sticky Showcase)</span>
-          <h1 style="font-size:2.3rem;font-weight:900;margin-bottom:10px">Boutique EL Bled Sétif</h1>
-          <p style="opacity:0.9;margin-bottom:18px">متجر ملابس • Rue chaaba elhadi 28, Sétif</p>
-          <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213772137217?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Boutique%20EL%20Bled%20S%C3%A9tif%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
-        </div>
-      </div>
-      <div>
-        <div id="feature-sec" style="margin-bottom:28px">
+    <div class="retro-banner">
+      <span class="hero-badge">🌼 بوتيك ريترو السبعينات الدافئ (70s Retro Groove Capsule)</span>
+      <h1 style="font-size:clamp(2.1rem,4vw,3.3rem);font-weight:900;margin:10px 0">🌼 Boutique EL Bled Sétif — ستايل ريترو دافئ ومميز</h1>
+      <p style="color:var(--text-muted);max-width:650px;margin:0 auto 20px">تجربة بصرية مبهجة بإطارات دائرية وظلال بارزة في (Rue chaaba elhadi 28, Sétif)</p>
+      <div class="hero-ctas" style="justify-content:center"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213772137217?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Boutique%20EL%20Bled%20S%C3%A9tif%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+    </div>
+    <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">نادي زبائن Boutique EL Bled Sétif</span>
@@ -177,11 +162,9 @@
           <button type="button" class="sig-btn" onclick="activateLoyalty()">🎉 تفعيل رصيد 500 د.ج</button>
         </div>
         <div id="loyalResult" class="sig-result">رصيدك الترحيبي الجاهز: <strong>500 نقطة = تخفيض 500 د.ج فوري!</strong></div>
-      </div></div>
-        <section id="catalog">
-          <h2 class="section-title">✨ الموديلات المتوفرة للطلب الفوري</h2>
-          <p class="section-sub">تصفح الكتالوج المتحرك على اليسار بينما يبقى البوستر ثابتاً</p>
-          <div class="products-grid">
+      </div></section>
+    <section id="catalog" class="section">
+      <div class="products-grid">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">خامة ناعمة</span>
@@ -343,9 +326,7 @@
       </div>
     </div>
   </div>
-        </section>
-      </div>
-    </div>
+    </section>
 
   <div class="info-box">
     <div>
@@ -393,7 +374,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Boutique EL Bled Sétif</strong> — الشكل المعماري: 🎬 شاشة مزدوجة: بوستر ثابت وكتالوج متحرك (Split Sticky Showcase)
+    جميع الحقوق محفوظة © 2026 <strong>Boutique EL Bled Sétif</strong> — الشكل المعماري: 🌼 بوتيك ريترو السبعينات الدافئ (70s Retro Groove Capsule)
   </footer>
 
   <script>

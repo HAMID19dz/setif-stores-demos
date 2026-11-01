@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>x.malak.x.fashion.x | 💎 صالون كوتور بقائمة جانبية ثابتة (Luxury Sidebar Salon)</title>
+  <title>x.malak.x.fashion.x | 👑 قصر أندلسي ملكي بزخارف هندسية (Andalusian Royal Couture Salon)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Readex Pro', sans-serif;
+      font-family: 'Amiri', serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,19 +112,26 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .salon-layout { display: grid; grid-template-columns: 310px 1fr; min-height: 100vh; }
-        .salon-sidebar { background: var(--bg-surface); border-left: 2px solid var(--primary); padding: 36px 24px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
-        .salon-main { padding: 32px 40px; }
-        header { display: none !important; }
-        .product-card { border-radius: 24px !important; border: 1px solid var(--primary) !important; }
-        @media (max-width: 900px) { .salon-layout { grid-template-columns: 1fr; } .salon-sidebar { height: auto; position: static; } }
+        .product-card, .sig-widget {
+          border-radius: 32px 4px 32px 4px !important;
+          border: 2px double var(--primary) !important;
+          position: relative;
+        }
+        .arch-arabesque {
+          border: 3px double var(--primary);
+          border-radius: 40px 8px 40px 8px;
+          padding: 36px;
+          margin: 24px auto;
+          max-width: 1180px;
+          background: linear-gradient(135deg, var(--bg-surface), var(--bg-card));
+        }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>💎 صالون كوتور بقائمة جانبية ثابتة (Luxury Sidebar Salon)</strong> | الميزة: <strong>📦 حاسبة أسعار الجملة والكميات (Tiered Pricing)</strong></span>
+    <span>✨ شكل الموقع: <strong>👑 قصر أندلسي ملكي بزخارف هندسية (Andalusian Royal Couture Salon)</strong> | الميزة: <strong>📦 حاسبة أسعار الجملة والكميات (Tiered Pricing)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -146,23 +153,13 @@
   </header>
 
   
-    <div class="salon-layout">
-      <aside class="salon-sidebar">
-        <div>
-          <div class="brand-monogram" style="width:64px;height:64px;font-size:1.5rem;margin-bottom:16px">X.</div>
-          <span class="hero-badge">💎 صالون كوتور بقائمة جانبية ثابتة (Luxury Sidebar Salon)</span>
-          <h1 style="font-size:2rem;font-weight:900;margin-bottom:10px">x.malak.x.fashion.x</h1>
-          <p style="color:var(--text-muted);font-size:0.92rem;margin-bottom:20px">📍 Rue Zehraoui Hocine، سطيف‎ 19000 — ملابس نسائية</p>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <a href="#feature-sec" class="btn-nav">📦 حاسبة أسعار الجملة والكميات (Tiered Pricing)</a>
-            <a href="#catalog" class="btn-nav">🛍️ الكتالوج الحصري</a>
-            <a href="tel:0669645063" class="btn-nav primary">📞 0669 64 50 63</a>
-          </div>
-        </div>
-        <div style="font-size:0.8rem;color:var(--text-muted)">توصيل 58 ولاية • الدفع عند الاستلام</div>
-      </aside>
-      <main class="salon-main">
-        <div id="feature-sec">
+    <div class="arch-arabesque">
+      <span class="hero-badge">👑 قصر أندلسي ملكي بزخارف هندسية (Andalusian Royal Couture Salon)</span>
+      <h1 style="font-size:2.6rem;font-weight:900;margin-bottom:12px">x.malak.x.fashion.x — الأصالة والفخامة في سطيف</h1>
+      <p style="color:var(--text-muted);margin-bottom:20px">رواق الأناقة في (Rue Zehraoui Hocine، سطيف‎ 19000) مزود بميزة <strong>📦 حاسبة أسعار الجملة والكميات (Tiered Pricing)</strong>.</p>
+      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213669645063?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20x.malak.x.fashion.x%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+    </div>
+    <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">ميزة التوفير العائلي والتجاري</span>
@@ -179,11 +176,10 @@
           <button type="button" class="sig-btn" onclick="orderTierQty()">🛒 اطلب بالكمية المخفّضة</button>
         </div>
         <div id="tierResult" class="sig-result">الإجمالي لقطعتين: <strong>7,900 د.ج</strong> بدلاً من 9,000 د.ج!</div>
-      </div></div>
-        <section id="catalog" style="margin-top:32px">
-          <h2 class="section-title">✨ تشكيلة صالون x.malak.x.fashion.x</h2>
-          <p class="section-sub">تصميم القائمة الجانبية الفاخرة مع الطلب الفوري</p>
-          <div class="products-grid">
+      </div></section>
+    <section id="catalog" class="section">
+      <h2 class="section-title">👑 الرواق الملكي للموديلات</h2>
+      <div class="products-grid" style="margin-top:20px">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">إصدار محدود</span>
@@ -345,9 +341,7 @@
       </div>
     </div>
   </div>
-        </section>
-      </main>
-    </div>
+    </section>
 
   <div class="info-box">
     <div>
@@ -395,7 +389,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>x.malak.x.fashion.x</strong> — الشكل المعماري: 💎 صالون كوتور بقائمة جانبية ثابتة (Luxury Sidebar Salon)
+    جميع الحقوق محفوظة © 2026 <strong>x.malak.x.fashion.x</strong> — الشكل المعماري: 👑 قصر أندلسي ملكي بزخارف هندسية (Andalusian Royal Couture Salon)
   </footer>
 
   <script>

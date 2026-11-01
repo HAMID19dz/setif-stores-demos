@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boutique boudjemaa Lacoste | 📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)</title>
+  <title>Boutique boudjemaa Lacoste | 📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Amiri', 'IBM Plex Sans Arabic', serif;
+      font-family: 'Readex Pro', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,22 +112,18 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .gazette-masthead {
-          max-width: 1220px; margin: 20px auto; padding: 20px;
-          border-top: 4px double var(--text-main); border-bottom: 4px double var(--text-main);
-          text-align: center;
-        }
-        .gazette-masthead h1 { font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 900; letter-spacing: -1px; }
-        .gazette-meta { display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; font-size: 0.85rem; font-weight: 700; }
-        .products-grid { gap: 0 !important; border: 1px solid var(--text-main); }
-        .product-card { border-radius: 0 !important; border: 1px solid var(--border) !important; }
+        .story-bar { max-width: 960px; margin: 20px auto; padding: 16px 20px; display: flex; gap: 18px; overflow-x: auto; background: var(--bg-surface); border-radius: 24px; border: 1px solid var(--border); }
+        .story-ring { flex: 0 0 84px; text-align: center; cursor: pointer; }
+        .story-avatar { width: 72px; height: 72px; border-radius: 50%; padding: 3px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); margin: 0 auto 6px; }
+        .story-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg-base); }
+        .social-feed { max-width: 960px; margin: 0 auto; padding: 10px 20px 50px; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
+    <span>✨ شكل الموقع: <strong>📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -149,16 +145,38 @@
   </header>
 
   
-    <div class="gazette-masthead">
-      <div style="font-size:0.85rem;letter-spacing:2px;color:var(--primary);font-weight:800">ÉDITION SPÉCIALE SÉTIF • ملابس وأحذية رياضية + أحذية</div>
-      <h1>Boutique boudjemaa Lacoste</h1>
-      <div class="gazette-meta">
-        <span>📍 العنوان: Rue Fellahi Said, Sétif</span>
-        <span>✨ 💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</span>
-        <span>📞 0770 95 74 78</span>
+    <div class="story-bar">
+      <div class="story-ring" onclick="openOrderModal('سنيكرز كاجوال يومي (Sneakers Confort)', 5200)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" alt="سنيكرز كاجوال يومي (Sneakers Confort)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">الأكثر مبيعاً ✨</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('حذاء نسائي أنيق بكعب مريح (Escarpin Chic)', 4600)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80" alt="حذاء نسائي أنيق بكعب مريح (Escarpin Chic)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">أناقة وراحة</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('حذاء رياضي خفيف للمشي (Running Shoes)', 4700)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="حذاء رياضي خفيف للمشي (Running Shoes)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">نعل طبي</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('بوت جلد شتوي فاخر (Chelsea Boots Cuir)', 7700)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=600&q=80" alt="بوت جلد شتوي فاخر (Chelsea Boots Cuir)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">مقاوم للماء</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)', 7000)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">عرض خاص</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)', 6300)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80" alt="حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">جلد حر 100% 🔥</div>
       </div>
     </div>
-    <section id="feature-sec" class="sig-section">
+    <section id="feature-sec" class="sig-section" style="max-width:960px">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">نادي زبائن Boutique boudjemaa Lacoste</span>
@@ -171,8 +189,7 @@
         </div>
         <div id="loyalResult" class="sig-result">رصيدك الترحيبي الجاهز: <strong>500 نقطة = تخفيض 500 د.ج فوري!</strong></div>
       </div></section>
-    <section id="catalog" class="section">
-      <div class="products-grid">
+    <section id="catalog" class="social-feed">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">الأكثر مبيعاً ✨</span>
@@ -333,8 +350,7 @@
         </button>
       </div>
     </div>
-  </div>
-    </section>
+  </section>
 
   <div class="info-box">
     <div>
@@ -382,7 +398,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Boutique boudjemaa Lacoste</strong> — الشكل المعماري: 📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)
+    جميع الحقوق محفوظة © 2026 <strong>Boutique boudjemaa Lacoste</strong> — الشكل المعماري: 📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)
   </footer>
 
   <script>

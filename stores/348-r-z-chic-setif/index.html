@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>R&amp;Z_chic_setif | 📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)</title>
+  <title>R&amp;Z_chic_setif | 🍱 لوحة بينتو معيارية متعددة الخلايا (Apple-Style Modular Bento Grid)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Amiri', 'IBM Plex Sans Arabic', serif;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,22 +112,20 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .gazette-masthead {
-          max-width: 1220px; margin: 20px auto; padding: 20px;
-          border-top: 4px double var(--text-main); border-bottom: 4px double var(--text-main);
-          text-align: center;
-        }
-        .gazette-masthead h1 { font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 900; letter-spacing: -1px; }
-        .gazette-meta { display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; font-size: 0.85rem; font-weight: 700; }
-        .products-grid { gap: 0 !important; border: 1px solid var(--text-main); }
-        .product-card { border-radius: 0 !important; border: 1px solid var(--border) !important; }
+        .bento-board { max-width: 1240px; margin: 24px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+        .bento-cell { background: var(--bg-card); border: 1px solid var(--border); border-radius: 28px; padding: 24px; overflow: hidden; position: relative; }
+        .bento-span-8 { grid-column: span 8; }
+        .bento-span-4 { grid-column: span 4; }
+        .bento-span-6 { grid-column: span 6; }
+        .bento-span-12 { grid-column: span 12; }
+        @media (max-width: 900px) { .bento-span-8, .bento-span-4, .bento-span-6 { grid-column: span 12; } }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)</strong> | الميزة: <strong>🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</strong></span>
+    <span>✨ شكل الموقع: <strong>🍱 لوحة بينتو معيارية متعددة الخلايا (Apple-Style Modular Bento Grid)</strong> | الميزة: <strong>🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -149,16 +147,19 @@
   </header>
 
   
-    <div class="gazette-masthead">
-      <div style="font-size:0.85rem;letter-spacing:2px;color:var(--primary);font-weight:800">ÉDITION SPÉCIALE SÉTIF • متجر ملابس</div>
-      <h1>R&amp;Z_chic_setif</h1>
-      <div class="gazette-meta">
-        <span>📍 العنوان: سطيف‎ 19000</span>
-        <span>✨ 🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</span>
-        <span>📞 0551 88 50 48</span>
+    <div class="bento-board">
+      <div class="bento-cell bento-span-8" style="display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,var(--bg-surface),var(--bg-card))">
+        <div>
+          <span class="hero-badge">🍱 لوحة بينتو معيارية متعددة الخلايا (Apple-Style Modular Bento Grid)</span>
+          <h1 style="font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:900;margin-bottom:12px">🍱 لوحة بينتو التفاعلية — R&amp;Z_chic_setif</h1>
+          <p style="color:var(--text-muted);margin-bottom:20px">تصميم مقسم إلى خلايا ذكية يجمع الكتالوج والميزة التفاعلية والعنوان (سطيف‎ 19000) في لوحة واحدة.</p>
+        </div>
+        <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213551885048?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20R%26Z_chic_setif%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
       </div>
-    </div>
-    <section id="feature-sec" class="sig-section">
+      <div class="bento-cell bento-span-4" style="padding:0;min-height:280px">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="R&amp;Z_chic_setif" style="width:100%;height:100%;object-fit:cover" />
+      </div>
+      <div id="feature-sec" class="bento-cell bento-span-12" style="padding:0;border:none">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">ميزة الهدايا والمناسبات</span>
@@ -170,8 +171,10 @@
           <button type="button" class="sig-btn" onclick="openOrderModal('طلب مغلف كهدية فاخرة (' + document.getElementById('giftMsg').value + ')', 5200)">🎁 اطلب مع تغليف الهدية</button>
         </div>
         <div class="sig-result">✨ التغليف الفاخر وبطاقة الإهداء مجاناً لجميع طلبات الموقع!</div>
-      </div></section>
+      </div></div>
+    </div>
     <section id="catalog" class="section">
+      <h2 class="section-title">🍱 خلايا المنتجات المختارة</h2>
       <div class="products-grid">
     <div class="product-card">
       <div class="product-img-wrap">
@@ -382,7 +385,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>R&amp;Z_chic_setif</strong> — الشكل المعماري: 📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)
+    جميع الحقوق محفوظة © 2026 <strong>R&amp;Z_chic_setif</strong> — الشكل المعماري: 🍱 لوحة بينتو معيارية متعددة الخلايا (Apple-Style Modular Bento Grid)
   </footer>
 
   <script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALaa MODE | 📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</title>
+  <title>ALaa MODE | 📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,27 +112,21 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .products-grid { gap: 36px !important; padding: 20px 10px; }
-        .product-card {
-          background: #FFFFFF !important;
-          color: #111827 !important;
-          padding: 16px 16px 26px 16px !important;
-          border-radius: 6px !important;
-          border: 1px solid #E5E7EB !important;
-          box-shadow: 0 20px 38px rgba(0,0,0,0.22) !important;
-        }
-        .product-card:nth-child(odd) { transform: rotate(-1.8deg); }
-        .product-card:nth-child(even) { transform: rotate(1.8deg); }
-        .product-card:hover { transform: rotate(0deg) scale(1.03) !important; z-index: 5; }
-        .product-img-wrap { border-radius: 2px; height: 280px !important; border: 1px solid #f3f4f6; }
-        .product-cat, .size-label { color: #4B5563 !important; }
+        .ledger-wrap { max-width: 1220px; margin: 24px auto; padding: 0 20px; }
+        .ledger-table { width: 100%; border-collapse: collapse; border-top: 3px solid var(--text-main); border-bottom: 3px solid var(--text-main); }
+        .ledger-row { border-bottom: 1px solid var(--border); transition: background 0.2s; }
+        .ledger-row:hover { background: var(--bg-surface); }
+        .ledger-cell { padding: 18px 14px; vertical-align: middle; }
+        .ledger-thumb { width: 92px; height: 92px; border-radius: 14px; object-fit: cover; border: 2px solid var(--primary); }
+        .ledger-idx { font-family: monospace; font-size: 1.15rem; font-weight: 900; color: var(--primary); }
+        @media (max-width: 780px) { .ledger-hide-sm { display: none; } }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</strong> | الميزة: <strong>🎡 عجلة الحظ وكوبون التخفيض الفوري (Spin &amp; Win)</strong></span>
+    <span>✨ شكل الموقع: <strong>📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)</strong> | الميزة: <strong>🎡 عجلة الحظ وكوبون التخفيض الفوري (Spin &amp; Win)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -154,16 +148,16 @@
   </header>
 
   
-  <section class="hero">
-    <div>
-      <span class="hero-badge">📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</span>
-      <h1><span>ALaa MODE</span> — ملابس رجالية</h1>
-      <p>أهلاً بكم في متجرنا بسطيف (600, Setif). اكتشفوا تصميم <strong>📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)</strong> وميزة <strong>🎡 عجلة الحظ وكوبون التخفيض الفوري (Spin &amp; Win)</strong>.</p>
-      <div class="hero-ctas"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213549728976?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20ALaa%20MODE%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
-    </div>
-    <div class="hero-visual"><img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1000&q=80" alt="ALaa MODE" /></div>
-  </section>
-  <section id="feature-sec" class="sig-section">
+    <div class="ledger-wrap">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid var(--border)">
+        <div>
+          <span class="hero-badge">📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)</span>
+          <h1 style="font-size:2.3rem;font-weight:900">📑 السجل الرسمي لمجموعة ALaa MODE</h1>
+          <p style="color:var(--text-muted)">كتالوج جدولي تفاعلي مباشر بدون بطاقات تقليدية • 📍 600, Setif</p>
+        </div>
+        <div class="hero-ctas"><a href="https://wa.me/213549728976?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20ALaa%20MODE%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+      </div>
+      <div id="feature-sec" style="margin-bottom:24px">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">هدية زوار الموقع</span>
@@ -174,173 +168,147 @@
           <button type="button" class="sig-btn" onclick="spinWheelPrize()">🎰 أدر عجلة الحظ الآن!</button>
         </div>
         <div id="wheelResult" class="sig-result">اضغط لاكتشاف هديتك (توصيل مجاني / خصم 800 د.ج / خصم 1,000 د.ج) 🎁</div>
-      </div></section>
-  <section id="catalog" class="section">
-    <h2 class="section-title">✨ كتالوج ALaa MODE (📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery))</h2>
-    <p class="section-sub">الدفع عند الاستلام والتوصيل السريع لـ 58 ولاية</p>
-    <div class="products-grid">
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">إصدار محدود</span>
-        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)</h3>
-          <div class="product-price-row">
-            <span class="price-current">12 700 د.ج</span>
-            <span class="price-old">15 300 د.ج</span>
+      </div></div>
+      <table id="catalog" class="ledger-table">
+        <thead>
+          <tr style="border-bottom:2px solid var(--text-main);text-align:right;font-size:0.85rem;color:var(--text-muted)">
+            <th class="ledger-cell">الرمز</th>
+            <th class="ledger-cell">المعاينة</th>
+            <th class="ledger-cell">اسم القطعة والمواصفات</th>
+            <th class="ledger-cell ledger-hide-sm">المقاسات المتوفرة</th>
+            <th class="ledger-cell">السعر الرسمي</th>
+            <th class="ledger-cell">الحجز الفوري</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#01</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس رجالية • إصدار محدود</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
           </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">12 700 د.ج</div>
+          <div class="price-old">15 300 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)', 12700)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#02</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس رجالية • الأكثر مبيعاً 👔</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
           </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)', 12700)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">18 300 د.ج</div>
+          <div class="price-old">21 800 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)', 18300)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#03</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس رجالية • قصة إيطالية ✨</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">3 600 د.ج</div>
+          <div class="price-old">4 300 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)', 3600)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#04</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="بليزر كاجوال أنيق (Blazer Casual Chic)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">بليزر كاجوال أنيق (Blazer Casual Chic)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس رجالية • جديد الموسم</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">9 300 د.ج</div>
+          <div class="price-old">11 300 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('بليزر كاجوال أنيق (Blazer Casual Chic)', 9300)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#05</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80" alt="بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس رجالية • خامة تركية</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">4 000 د.ج</div>
+          <div class="price-old">4 800 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)', 4000)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    
+      <tr class="ledger-row">
+        <td class="ledger-cell ledger-idx">#06</td>
+        <td class="ledger-cell"><img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=600&q=80" alt="طقم بولو رجالي صيفي فاخر (Ensemble Polo)" class="ledger-thumb" /></td>
+        <td class="ledger-cell">
+          <div style="font-weight:900;font-size:1.1rem">طقم بولو رجالي صيفي فاخر (Ensemble Polo)</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">ملابس رجالية • عرض خاص</div>
+        </td>
+        <td class="ledger-cell ledger-hide-sm">
+          <div class="size-chips">
+            <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
+          </div>
+        </td>
+        <td class="ledger-cell">
+          <div class="price-current">5 200 د.ج</div>
+          <div class="price-old">6 300 د.ج</div>
+        </td>
+        <td class="ledger-cell">
+          <button type="button" class="sig-btn" onclick="openOrderModal('طقم بولو رجالي صيفي فاخر (Ensemble Polo)', 5200)">🛒 اطلب القطعة</button>
+        </td>
+      </tr>
+    </tbody>
+      </table>
     </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">الأكثر مبيعاً 👔</span>
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)</h3>
-          <div class="product-price-row">
-            <span class="price-current">18 300 د.ج</span>
-            <span class="price-old">21 800 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)', 18300)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">قصة إيطالية ✨</span>
-        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)</h3>
-          <div class="product-price-row">
-            <span class="price-current">3 600 د.ج</span>
-            <span class="price-old">4 300 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)', 3600)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">جديد الموسم</span>
-        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="بليزر كاجوال أنيق (Blazer Casual Chic)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">بليزر كاجوال أنيق (Blazer Casual Chic)</h3>
-          <div class="product-price-row">
-            <span class="price-current">9 300 د.ج</span>
-            <span class="price-old">11 300 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بليزر كاجوال أنيق (Blazer Casual Chic)', 9300)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">خامة تركية</span>
-        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80" alt="بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 000 د.ج</span>
-            <span class="price-old">4 800 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)', 4000)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">عرض خاص</span>
-        <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=600&q=80" alt="طقم بولو رجالي صيفي فاخر (Ensemble Polo)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">طقم بولو رجالي صيفي فاخر (Ensemble Polo)</h3>
-          <div class="product-price-row">
-            <span class="price-current">5 200 د.ج</span>
-            <span class="price-old">6 300 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('طقم بولو رجالي صيفي فاخر (Ensemble Polo)', 5200)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  </div>
-  </section>
 
   <div class="info-box">
     <div>
@@ -388,7 +356,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>ALaa MODE</strong> — الشكل المعماري: 📸 معرض بولارويد وتصوير فني مائل (Polaroid Studio Gallery)
+    جميع الحقوق محفوظة © 2026 <strong>ALaa MODE</strong> — الشكل المعماري: 📑 سجل أتيليه جدولي تفاعلي بدون بطاقات (Bottega Archive Ledger)
   </footer>
 
   <script>

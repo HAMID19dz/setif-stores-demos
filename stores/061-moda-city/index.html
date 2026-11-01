@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moda city | 🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)</title>
+  <title>Moda city | 🎯 لوك-بوك تفاعلي بنقاط تسوق ذكية (Pinterest Shop-the-Look Hotspots)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Amiri', 'Cairo', serif;
+      font-family: 'Readex Pro', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,22 +112,21 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .arch-hero { max-width: 1180px; margin: 30px auto; padding: 20px; text-align: center; }
-        .arch-hero h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 900; letter-spacing: -0.02em; margin: 12px 0; }
-        .arch-dome-row { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 24px; align-items: end; margin-top: 28px; }
-        .arch-dome { border-radius: 220px 220px 16px 16px; overflow: hidden; border: 3px solid var(--primary); height: 420px; position: relative; box-shadow: 0 24px 48px rgba(0,0,0,0.2); }
-        .arch-dome.center { height: 500px; }
-        .arch-dome img { width: 100%; height: 100%; object-fit: cover; }
-        .product-card { border-radius: 180px 180px 18px 18px !important; border: 2px solid var(--primary) !important; text-align: center; }
-        .product-img-wrap { border-radius: 175px 175px 0 0; height: 310px !important; }
-        .size-row, .product-price-row { justify-content: center !important; }
+        .hotspot-stage { max-width: 1220px; margin: 24px auto; padding: 0 20px; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 28px; align-items: stretch; }
+        .hotspot-canvas { position: relative; border-radius: 28px; overflow: hidden; height: 560px; border: 2px solid var(--primary); box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
+        .hotspot-canvas img { width: 100%; height: 100%; object-fit: cover; }
+        .hotspot-pin { position: absolute; width: 42px; height: 42px; border-radius: 50%; background: var(--primary); color: var(--primary-fg); border: 3px solid #fff; font-weight: 900; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 0 8px rgba(255,255,255,0.22); animation: pulsePin 2s infinite; }
+        @keyframes pulsePin { 0%,100% { transform: scale(1); } 50% { transform: scale(1.14); } }
+        .hotspot-pin-card { position: absolute; bottom: 20px; right: 20px; left: 20px; background: rgba(15,23,42,0.92); backdrop-filter: blur(14px); color: #fff; padding: 18px 22px; border-radius: 18px; border: 1px solid var(--primary); display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+        .lookbook-strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+        @media (max-width: 900px) { .hotspot-stage { grid-template-columns: 1fr; } .hotspot-canvas { height: 430px; } }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)</strong> | الميزة: <strong>🎁 منسّق الأطقم بخصم 20% (Mix &amp; Match Bundle)</strong></span>
+    <span>✨ شكل الموقع: <strong>🎯 لوك-بوك تفاعلي بنقاط تسوق ذكية (Pinterest Shop-the-Look Hotspots)</strong> | الميزة: <strong>🎁 منسّق الأطقم بخصم 20% (Mix &amp; Match Bundle)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -149,18 +148,45 @@
   </header>
 
   
-    <section class="arch-hero">
-      <span class="hero-badge">🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)</span>
-      <h1>Moda city</h1>
-      <p style="color:var(--text-muted);max-width:680px;margin:0 auto 20px">ملابس رجالية في قلب سطيف (Sétif) — تصميم الأقواس المعمارية الفاخرة</p>
-      <div class="hero-ctas" style="justify-content:center"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="#feature-sec" class="btn-hero secondary">✨ جرّب الميزة التفاعلية</a></div>
-      <div class="arch-dome-row">
-        <div class="arch-dome"><img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="" /></div>
-        <div class="arch-dome center"><img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1000&q=80" alt="Moda city" /></div>
-        <div class="arch-dome"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="" /></div>
+    <div class="hotspot-stage">
+      <div class="hotspot-canvas">
+        <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1000&q=80" alt="Moda city" />
+        <button type="button" class="hotspot-pin" style="top:28%;right:38%" onclick="openOrderModal('بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)', 18600)" title="بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)">+1</button>
+        <button type="button" class="hotspot-pin" style="top:54%;right:56%" onclick="openOrderModal('قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)', 3900)" title="قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)">+2</button>
+        <button type="button" class="hotspot-pin" style="top:74%;right:34%" onclick="openOrderModal('بليزر كاجوال أنيق (Blazer Casual Chic)', 9600)" title="بليزر كاجوال أنيق (Blazer Casual Chic)">+3</button>
+        <div class="hotspot-pin-card">
+          <div>
+            <span style="font-size:0.76rem;color:var(--primary);font-weight:800">🎯 إطلالة تفاعلية قابلة للتسوق (Shop The Look)</span>
+            <h2 style="font-size:1.35rem;font-weight:900">Moda city — اضغط على النقاط المضيئة (+1 / +2 / +3) لطلب أي قطعة</h2>
+          </div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('الإطلالة الكاملة من Moda city', 21300)">✨ اطلب الإطلالة كاملة</button>
+        </div>
       </div>
-    </section>
-    <section id="feature-sec" class="sig-section">
+      <div style="display:flex;flex-direction:column;justify-content:space-between;gap:18px">
+        <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:24px;padding:24px">
+          <span class="hero-badge">🎯 لوك-بوك تفاعلي بنقاط تسوق ذكية (Pinterest Shop-the-Look Hotspots)</span>
+          <h1 style="font-size:1.85rem;font-weight:900;margin-bottom:8px">Moda city</h1>
+          <p style="color:var(--text-muted);font-size:0.92rem;margin-bottom:16px">📍 Sétif • ملابس رجالية</p>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            
+              <div style="display:flex;align-items:center;justify-content:space-between;background:var(--bg-card);padding:10px 14px;border-radius:14px;border:1px solid var(--border)">
+                <span><strong>+1</strong> بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)</span>
+                <button type="button" class="size-chip active" onclick="openOrderModal('بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)', 18600)">18 600 د.ج • اطلب</button>
+              </div>
+            
+              <div style="display:flex;align-items:center;justify-content:space-between;background:var(--bg-card);padding:10px 14px;border-radius:14px;border:1px solid var(--border)">
+                <span><strong>+2</strong> قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)</span>
+                <button type="button" class="size-chip active" onclick="openOrderModal('قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)', 3900)">3 900 د.ج • اطلب</button>
+              </div>
+            
+              <div style="display:flex;align-items:center;justify-content:space-between;background:var(--bg-card);padding:10px 14px;border-radius:14px;border:1px solid var(--border)">
+                <span><strong>+3</strong> بليزر كاجوال أنيق (Blazer Casual Chic)</span>
+                <button type="button" class="size-chip active" onclick="openOrderModal('بليزر كاجوال أنيق (Blazer Casual Chic)', 9600)">9 600 د.ج • اطلب</button>
+              </div>
+            
+          </div>
+        </div>
+        <div id="feature-sec">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">ميزة التوفير الذكي</span>
@@ -174,11 +200,12 @@
           <button type="button" class="sig-btn" onclick="openOrderModal('باقة الطقم المتكامل (Mix & Match)', window.bundleTotal || 6800)">🛒 اطلب الطقم بالتخفيض</button>
         </div>
         <div id="bundleResult" class="sig-result">سعر الطقم بعد الخصم: <strong>6,800 د.ج</strong> بدلاً من 8,300 د.ج 🎉</div>
-      </div></section>
+      </div></div>
+      </div>
+    </div>
     <section id="catalog" class="section">
-      <h2 class="section-title" style="text-align:center">🏛️ أروقة الموديلات المختارة</h2>
-      <p class="section-sub" style="text-align:center">نوافذ عرض مقوّسة مستوحاة من دور الأزياء الإيطالية</p>
-      <div class="products-grid">
+      <h2 class="section-title">🛍️ باقي قطع الإطلالة في Moda city</h2>
+      <div class="lookbook-strip">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">الأكثر مبيعاً 👔</span>
@@ -388,7 +415,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Moda city</strong> — الشكل المعماري: 🏛️ معمارية الأقواس الرومانية ومجلة فوغ (Vogue Archway Editorial)
+    جميع الحقوق محفوظة © 2026 <strong>Moda city</strong> — الشكل المعماري: 🎯 لوك-بوك تفاعلي بنقاط تسوق ذكية (Pinterest Shop-the-Look Hotspots)
   </footer>
 
   <script>

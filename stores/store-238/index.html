@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>أفروح الفردوس | 📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)</title>
+  <title>أفروح الفردوس | 📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Amiri', 'IBM Plex Sans Arabic', serif;
+      font-family: 'Readex Pro', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,22 +112,18 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .gazette-masthead {
-          max-width: 1220px; margin: 20px auto; padding: 20px;
-          border-top: 4px double var(--text-main); border-bottom: 4px double var(--text-main);
-          text-align: center;
-        }
-        .gazette-masthead h1 { font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 900; letter-spacing: -1px; }
-        .gazette-meta { display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; font-size: 0.85rem; font-weight: 700; }
-        .products-grid { gap: 0 !important; border: 1px solid var(--text-main); }
-        .product-card { border-radius: 0 !important; border: 1px solid var(--border) !important; }
+        .story-bar { max-width: 960px; margin: 20px auto; padding: 16px 20px; display: flex; gap: 18px; overflow-x: auto; background: var(--bg-surface); border-radius: 24px; border: 1px solid var(--border); }
+        .story-ring { flex: 0 0 84px; text-align: center; cursor: pointer; }
+        .story-avatar { width: 72px; height: 72px; border-radius: 50%; padding: 3px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); margin: 0 auto 6px; }
+        .story-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg-base); }
+        .social-feed { max-width: 960px; margin: 0 auto; padding: 10px 20px 50px; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
       
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>✨ شكل الموقع: <strong>📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)</strong> | الميزة: <strong>🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</strong></span>
+    <span>✨ شكل الموقع: <strong>📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)</strong> | الميزة: <strong>🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</strong></span>
     <a href="../../index.html">🔙 استعراض كل أشكال ومواقع سطيف 1 (372)</a>
   </div>
 
@@ -149,16 +145,38 @@
   </header>
 
   
-    <div class="gazette-masthead">
-      <div style="font-size:0.85rem;letter-spacing:2px;color:var(--primary);font-weight:800">ÉDITION SPÉCIALE SÉTIF • متجر ملابس</div>
-      <h1>أفروح الفردوس</h1>
-      <div class="gazette-meta">
-        <span>📍 العنوان: سطيف‎</span>
-        <span>✨ 🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</span>
-        <span>📞 0563 79 42 16</span>
+    <div class="story-bar">
+      <div class="story-ring" onclick="openOrderModal('طقم كاجوال يومي أنيق (Set Casual Tendance)', 5100)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=600&q=80" alt="طقم كاجوال يومي أنيق (Set Casual Tendance)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">مريح وعصري</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('معطف ترنش كلاسيكي (Trench Coat Parisien)', 8800)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="معطف ترنش كلاسيكي (Trench Coat Parisien)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">إصدار محدود</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('حقيبة يد جلدية فاخرة (Sac à Main Couture)', 4000)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة يد جلدية فاخرة (Sac à Main Couture)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">تكمل إطلالتك</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)', 7700)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="طقم كلاسيك نسائي قطعتين (Ensemble Tailleur Chic)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">الأكثر طلباً 💖</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('فستان ميدي تركي أنيق (Robe Midi Élégante)', 5800)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=600&q=80" alt="فستان ميدي تركي أنيق (Robe Midi Élégante)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">تشكيلة جديدة ✨</div>
+      </div>
+    
+      <div class="story-ring" onclick="openOrderModal('بلوزة حريرية ساتان فاخرة (Blouse Satinée)', 3500)">
+        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=600&q=80" alt="بلوزة حريرية ساتان فاخرة (Blouse Satinée)" /></div>
+        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">خامة ناعمة</div>
       </div>
     </div>
-    <section id="feature-sec" class="sig-section">
+    <section id="feature-sec" class="sig-section" style="max-width:960px">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">ميزة الهدايا والمناسبات</span>
@@ -171,8 +189,7 @@
         </div>
         <div class="sig-result">✨ التغليف الفاخر وبطاقة الإهداء مجاناً لجميع طلبات الموقع!</div>
       </div></section>
-    <section id="catalog" class="section">
-      <div class="products-grid">
+    <section id="catalog" class="social-feed">
     <div class="product-card">
       <div class="product-img-wrap">
         <span class="product-tag">مريح وعصري</span>
@@ -333,8 +350,7 @@
         </button>
       </div>
     </div>
-  </div>
-    </section>
+  </section>
 
   <div class="info-box">
     <div>
@@ -382,7 +398,7 @@
   </div>
 
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>أفروح الفردوس</strong> — الشكل المعماري: 📰 صحيفة موضة باريسية متعددة الأعمدة (Broadsheet Fashion Gazette)
+    جميع الحقوق محفوظة © 2026 <strong>أفروح الفردوس</strong> — الشكل المعماري: 📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)
   </footer>
 
   <script>
