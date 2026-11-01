@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Le Gaté Bébé | 🖥️ شرائح شاشة كاملة متتالية 100vh (Zara Fullscreen Snap Monograph)</title>
+  <title>Le Gaté Bébé | 🏪 واجهة متجر فرنسي بمظلة مقلمة ونوافذ عرض (Parisian Awning Storefront)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Amiri', 'Tajawal', serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,22 +112,20 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .snap-deck { max-width: 1240px; margin: 0 auto; padding: 10px 20px; display: flex; flex-direction: column; gap: 28px; }
-        .snap-slide { position: relative; height: 520px; border-radius: 30px; overflow: hidden; border: 2px solid var(--border); display: flex; align-items: flex-end; box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
-        .snap-slide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-        .snap-overlay { position: relative; z-index: 2; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.92) 15%, rgba(0,0,0,0.35) 75%, transparent); padding: 36px; color: #fff; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
+        .awning-canopy { height: 54px; background: repeating-linear-gradient(90deg, var(--primary) 0, var(--primary) 42px, #FFFFFF 42px, #FFFFFF 84px); border-bottom: 8px scalloped var(--accent); border-radius: 0 0 28px 28px; box-shadow: 0 12px 28px rgba(0,0,0,0.28); margin-bottom: 20px; }
+        .vitrine-window { max-width: 1180px; margin: 0 auto 24px; padding: 30px; border: 4px double var(--primary); border-radius: 40px 40px 12px 12px; background: var(--bg-surface); text-align: center; }
       
 
     /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
-    body { background-image: none; }
-    header { border-top: 3px double var(--text-main); border-bottom: 3px double var(--text-main) !important; }
-    .product-card, .runway-slide, .masonry-pin { border-radius: 170px 170px 16px 16px !important; border-width: 2px !important; }
+    body { background-image: radial-gradient(circle at 12% 15%, var(--bg-surface) 0%, transparent 40%), radial-gradient(circle at 88% 85%, var(--bg-card) 0%, transparent 40%); }
+    header { background: linear-gradient(90deg, var(--bg-surface), var(--bg-card)) !important; border-bottom: 2px solid var(--primary) !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 90px 14px 14px 90px !important; border: 2px solid var(--primary) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #187: 🖥️ شرائح شاشة كاملة متتالية 100vh × بطاقات (قوس روماني كلاسيكي) × ترويسة صحيفة يومية بخطوط مزدوجة</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #187: 🏪 واجهة متجر فرنسي بمظلة مقلمة ونوافذ عرض × بطاقات (نافذة فندقية مقوسة من اليمين) × شريط بتدرج لوني كامل (Full Gradient Bar)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
     <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
@@ -149,6 +147,13 @@
   </header>
 
   
+    <div class="awning-canopy"></div>
+    <div class="vitrine-window">
+      <span class="hero-badge">🏪 واجهة متجر فرنسي بمظلة مقلمة ونوافذ عرض (Parisian Awning Storefront)</span>
+      <h1 style="font-size:2.5rem;font-weight:900;margin-bottom:8px">🏪 فترينة متجر Le Gaté Bébé</h1>
+      <p style="color:var(--text-muted);margin-bottom:16px">واجهة بوتيك بمظلة مقلمة كلاسيكية في (1014, Sétif)</p>
+      <div class="hero-ctas" style="justify-content:center"><a href="#catalog" class="btn-hero main">🛒 تصفح الموديلات</a> <a href="https://wa.me/213774335157?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Le%20Gat%C3%A9%20B%C3%A9b%C3%A9%D8%8C%20%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%D9%85" target="_blank" class="btn-hero secondary">💬 تواصل عبر واتساب</a></div>
+    </div>
     <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
@@ -162,97 +167,168 @@
         </div>
         <div id="loyalResult" class="sig-result">رصيدك الترحيبي الجاهز: <strong>500 نقطة = تخفيض 500 د.ج فوري!</strong></div>
       </div></section>
-    <section id="catalog" class="snap-deck">
-      <div class="snap-slide">
+    <section id="catalog" class="section"><div class="products-grid">
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">الأكثر طلباً 🎈</span>
         <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80" alt="طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)" loading="lazy" />
-        <div class="snap-overlay">
-          <div>
-            <span class="hero-badge">لوحة عرض 01 / 06 • الأكثر طلباً 🎈</span>
-            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)</h2>
-            <p style="opacity:0.9">Le Gaté Bébé — ملابس أطفال</p>
+      </div>
+      <div class="product-body">
+        <div>
+          <div class="product-cat">ملابس أطفال</div>
+          <h3 class="product-title">طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)</h3>
+          <div class="product-price-row">
+            <span class="price-current">4 600 د.ج</span>
+            <span class="price-old">5 500 د.ج</span>
           </div>
-          <div style="text-align:left">
-            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">4 600 د.ج</div>
-            <button type="button" class="sig-btn" onclick="openOrderModal('طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)', 4600)">🛒 اطلب هذه اللوحة الآن</button>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+            </div>
           </div>
         </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('طقم عيد فاخر للأولاد 3 قطع (Ensemble Garçon)', 4600)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
       </div>
-    
-      <div class="snap-slide">
+    </div>
+  
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">جديد العيد ✨</span>
         <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=600&q=80" alt="فستان أميرات للبنات (Robe Princesse Fille)" loading="lazy" />
-        <div class="snap-overlay">
-          <div>
-            <span class="hero-badge">لوحة عرض 02 / 06 • جديد العيد ✨</span>
-            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">فستان أميرات للبنات (Robe Princesse Fille)</h2>
-            <p style="opacity:0.9">Le Gaté Bébé — ملابس أطفال</p>
+      </div>
+      <div class="product-body">
+        <div>
+          <div class="product-cat">ملابس أطفال</div>
+          <h3 class="product-title">فستان أميرات للبنات (Robe Princesse Fille)</h3>
+          <div class="product-price-row">
+            <span class="price-current">4 800 د.ج</span>
+            <span class="price-old">5 800 د.ج</span>
           </div>
-          <div style="text-align:left">
-            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">4 800 د.ج</div>
-            <button type="button" class="sig-btn" onclick="openOrderModal('فستان أميرات للبنات (Robe Princesse Fille)', 4800)">🛒 اطلب هذه اللوحة الآن</button>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+            </div>
           </div>
         </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('فستان أميرات للبنات (Robe Princesse Fille)', 4800)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
       </div>
-    
-      <div class="snap-slide">
+    </div>
+  
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">قطن طبيعي</span>
         <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=600&q=80" alt="طقم استقبال مواليد قطن 100% (Pack Nouveau-né)" loading="lazy" />
-        <div class="snap-overlay">
-          <div>
-            <span class="hero-badge">لوحة عرض 03 / 06 • قطن طبيعي</span>
-            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">طقم استقبال مواليد قطن 100% (Pack Nouveau-né)</h2>
-            <p style="opacity:0.9">Le Gaté Bébé — ملابس أطفال</p>
+      </div>
+      <div class="product-body">
+        <div>
+          <div class="product-cat">ملابس أطفال</div>
+          <h3 class="product-title">طقم استقبال مواليد قطن 100% (Pack Nouveau-né)</h3>
+          <div class="product-price-row">
+            <span class="price-current">3 900 د.ج</span>
+            <span class="price-old">4 700 د.ج</span>
           </div>
-          <div style="text-align:left">
-            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">3 900 د.ج</div>
-            <button type="button" class="sig-btn" onclick="openOrderModal('طقم استقبال مواليد قطن 100% (Pack Nouveau-né)', 3900)">🛒 اطلب هذه اللوحة الآن</button>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+            </div>
           </div>
         </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('طقم استقبال مواليد قطن 100% (Pack Nouveau-né)', 3900)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
       </div>
-    
-      <div class="snap-slide">
+    </div>
+  
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">مريح للعب</span>
         <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80" alt="طقم رياضي مريح للأطفال (Survêtement Kids)" loading="lazy" />
-        <div class="snap-overlay">
-          <div>
-            <span class="hero-badge">لوحة عرض 04 / 06 • مريح للعب</span>
-            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">طقم رياضي مريح للأطفال (Survêtement Kids)</h2>
-            <p style="opacity:0.9">Le Gaté Bébé — ملابس أطفال</p>
+      </div>
+      <div class="product-body">
+        <div>
+          <div class="product-cat">ملابس أطفال</div>
+          <h3 class="product-title">طقم رياضي مريح للأطفال (Survêtement Kids)</h3>
+          <div class="product-price-row">
+            <span class="price-current">3 200 د.ج</span>
+            <span class="price-old">3 900 د.ج</span>
           </div>
-          <div style="text-align:left">
-            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">3 200 د.ج</div>
-            <button type="button" class="sig-btn" onclick="openOrderModal('طقم رياضي مريح للأطفال (Survêtement Kids)', 3200)">🛒 اطلب هذه اللوحة الآن</button>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+            </div>
           </div>
         </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('طقم رياضي مريح للأطفال (Survêtement Kids)', 3200)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
       </div>
-    
-      <div class="snap-slide">
+    </div>
+  
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">جودة عالية</span>
         <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=600&q=80" alt="جاكيت دافئ مبطن للأطفال (Doudoune Enfant)" loading="lazy" />
-        <div class="snap-overlay">
-          <div>
-            <span class="hero-badge">لوحة عرض 05 / 06 • جودة عالية</span>
-            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">جاكيت دافئ مبطن للأطفال (Doudoune Enfant)</h2>
-            <p style="opacity:0.9">Le Gaté Bébé — ملابس أطفال</p>
+      </div>
+      <div class="product-body">
+        <div>
+          <div class="product-cat">ملابس أطفال</div>
+          <h3 class="product-title">جاكيت دافئ مبطن للأطفال (Doudoune Enfant)</h3>
+          <div class="product-price-row">
+            <span class="price-current">5 200 د.ج</span>
+            <span class="price-old">6 200 د.ج</span>
           </div>
-          <div style="text-align:left">
-            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">5 200 د.ج</div>
-            <button type="button" class="sig-btn" onclick="openOrderModal('جاكيت دافئ مبطن للأطفال (Doudoune Enfant)', 5200)">🛒 اطلب هذه اللوحة الآن</button>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+            </div>
           </div>
         </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('جاكيت دافئ مبطن للأطفال (Doudoune Enfant)', 5200)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
       </div>
-    
-      <div class="snap-slide">
+    </div>
+  
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-tag">طبي ومريح</span>
         <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80" alt="حذاء أطفال طبي خفيف (Chaussures Kids)" loading="lazy" />
-        <div class="snap-overlay">
-          <div>
-            <span class="hero-badge">لوحة عرض 06 / 06 • طبي ومريح</span>
-            <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:6px">حذاء أطفال طبي خفيف (Chaussures Kids)</h2>
-            <p style="opacity:0.9">Le Gaté Bébé — ملابس أطفال</p>
+      </div>
+      <div class="product-body">
+        <div>
+          <div class="product-cat">ملابس أطفال</div>
+          <h3 class="product-title">حذاء أطفال طبي خفيف (Chaussures Kids)</h3>
+          <div class="product-price-row">
+            <span class="price-current">2 900 د.ج</span>
+            <span class="price-old">3 500 د.ج</span>
           </div>
-          <div style="text-align:left">
-            <div style="font-size:1.8rem;font-weight:900;color:var(--primary);margin-bottom:8px">2 900 د.ج</div>
-            <button type="button" class="sig-btn" onclick="openOrderModal('حذاء أطفال طبي خفيف (Chaussures Kids)', 2900)">🛒 اطلب هذه اللوحة الآن</button>
+          <div class="size-row">
+            <span class="size-label">المقاس:</span>
+            <div class="size-chips">
+              <button type="button" class="size-chip " onclick="selectSize(this)">0-12 شهر</button><button type="button" class="size-chip active" onclick="selectSize(this)">2-3 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">4-5 سنوات</button><button type="button" class="size-chip " onclick="selectSize(this)">6-8 سنوات</button>
+            </div>
           </div>
         </div>
+        <button type="button" class="btn-order" onclick="openOrderModal('حذاء أطفال طبي خفيف (Chaussures Kids)', 2900)">
+          🛒 اطلب الآن — الدفع عند الاستلام
+        </button>
       </div>
-    </section>
+    </div>
+  </div></section>
 
   <div class="info-box">
     <div>
@@ -299,8 +375,39 @@
     </div>
   </div>
 
+  <!-- Live Shape & Theme Morphing Studio (مختبر تبديل الأشكال الحي) -->
+  <div id="shapeStudioBar" style="position:fixed;bottom:18px;left:18px;z-index:990;">
+    <button onclick="document.getElementById('studioPanel').style.display = document.getElementById('studioPanel').style.display === 'block' ? 'none' : 'block'" style="background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border:2px solid var(--surface);border-radius:999px;padding:10px 18px;font-family:inherit;font-weight:900;font-size:0.82rem;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,0.35);display:flex;align-items:center;gap:8px;">
+      🎛️ مختبر الأشكال الحي (جرّب +50 شكلاً فوراً)
+    </button>
+    <div id="studioPanel" style="display:none;position:absolute;bottom:54px;left:0;width:320px;background:var(--surface);color:var(--text);border:2px solid var(--primary);border-radius:18px;padding:16px;box-shadow:0 24px 50px rgba(0,0,0,0.45);text-align:right;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid var(--border);padding-bottom:8px;">
+        <strong style="font-size:0.9rem;color:var(--primary)">🧬 مختبر التحويل الهندسي الفوري</strong>
+        <button onclick="document.getElementById('studioPanel').style.display='none'" style="background:none;border:none;color:var(--muted);cursor:pointer;font-weight:900">✕</button>
+      </div>
+      <div style="font-size:0.76rem;color:var(--muted);margin-bottom:6px;font-weight:700">1. غيّر شكل البطاقات الهندسي (53 شكلاً):</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;">
+        <button onclick="morphCardShape('arch')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🏛️ قوس أندلسي</button>
+        <button onclick="morphCardShape('octagon')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🛑 مثمّن</button>
+        <button onclick="morphCardShape('leaf')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🍃 ورقة</button>
+        <button onclick="morphCardShape('brutal')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🧱 بوب آرت</button>
+        <button onclick="morphCardShape('3d')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🧊 منظور 3D</button>
+        <button onclick="morphCardShape('clay')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">☁️ كلاي ناعم</button>
+        <button onclick="morphCardShape('cyber')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">⚡ سايبر</button>
+        <button onclick="morphCardShape('circle')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">💿 كبسولة</button>
+      </div>
+      <div style="font-size:0.76rem;color:var(--muted);margin-bottom:6px;font-weight:700">2. غيّر الطيف اللوني والوضع البصري:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;">
+        <button onclick="morphTheme('#0A0E17','#111827','#38BDF8','#F43F5E','#F8FAFC')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#0A0E17;color:#38BDF8;cursor:pointer;font-family:inherit;font-weight:700">🌌 نيون ليلي</button>
+        <button onclick="morphTheme('#FAF6F0','#FFFFFF','#9A6B3B','#C89D66','#1E1610')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#FAF6F0;color:#9A6B3B;cursor:pointer;font-family:inherit;font-weight:700">🏛️ فخامة ذهبية</button>
+        <button onclick="morphTheme('#061A14','#0C2920','#10B981','#F59E0B','#ECFDF5')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#061A14;color:#10B981;cursor:pointer;font-family:inherit;font-weight:700">💎 زمردي ملكي</button>
+        <button onclick="morphTheme('#FFF0F5','#FFFFFF','#E11D48','#8B5CF6','#310B19')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#FFF0F5;color:#E11D48;cursor:pointer;font-family:inherit;font-weight:700">🌸 باريسي وردي</button>
+      </div>
+    </div>
+  </div>
+
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Le Gaté Bébé</strong> — الشكل المعماري: 🖥️ شرائح شاشة كاملة متتالية 100vh (Zara Fullscreen Snap Monograph)
+    جميع الحقوق محفوظة © 2026 <strong>Le Gaté Bébé</strong> — الشكل المعماري: 🏪 واجهة متجر فرنسي بمظلة مقلمة ونوافذ عرض (Parisian Awning Storefront)
   </footer>
 
   <script>
@@ -382,6 +489,29 @@
       if (storeWhatsApp) window.open('https://wa.me/' + storeWhatsApp + '?text=' + encodeURIComponent(msg), '_blank');
       else alert('تم تسجيل طلبك بنجاح!\n\n' + msg);
       closeOrderModal();
+    }
+    function morphCardShape(mode) {
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach((c, idx) => {
+        c.style.clipPath = 'none';
+        c.style.transform = 'none';
+        if (mode === 'arch') { c.style.borderRadius = '140px 140px 16px 16px'; }
+        else if (mode === 'octagon') { c.style.clipPath = 'polygon(24px 0, calc(100% - 24px) 0, 100% 24px, 100% calc(100% - 24px), calc(100% - 24px) 100%, 24px 100%, 0 calc(100% - 24px), 0 24px)'; c.style.borderRadius = '0'; }
+        else if (mode === 'leaf') { c.style.borderRadius = '72px 8px 72px 8px'; }
+        else if (mode === 'brutal') { c.style.borderRadius = '0'; c.style.border = '3px solid var(--text)'; c.style.boxShadow = '8px 8px 0 var(--primary)'; }
+        else if (mode === '3d') { c.style.borderRadius = '22px'; c.style.transform = idx % 2 === 0 ? 'perspective(800px) rotateY(-8deg) rotateX(4deg)' : 'perspective(800px) rotateY(8deg) rotateX(-4deg)'; }
+        else if (mode === 'clay') { c.style.borderRadius = '38px'; c.style.boxShadow = '14px 14px 28px rgba(0,0,0,0.18), inset -6px -6px 14px rgba(0,0,0,0.08), inset 6px 6px 14px rgba(255,255,255,0.5)'; }
+        else if (mode === 'cyber') { c.style.clipPath = 'polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px))'; c.style.border = '2px solid var(--primary)'; }
+        else if (mode === 'circle') { c.style.borderRadius = '56px'; }
+      });
+    }
+    function morphTheme(bg, surface, primary, accent, text) {
+      const r = document.documentElement.style;
+      r.setProperty('--bg', bg);
+      r.setProperty('--surface', surface);
+      r.setProperty('--primary', primary);
+      r.setProperty('--accent', accent);
+      r.setProperty('--text', text);
     }
   </script>
 </body>

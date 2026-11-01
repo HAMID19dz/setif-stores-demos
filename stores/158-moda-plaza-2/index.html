@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MODA PLAZA 2 | 📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)</title>
+  <title>MODA PLAZA 2 | ✈️ تذاكر سفر الدرجة الأولى المخرمة (First-Class Perforated Boarding Passes)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Readex Pro', sans-serif;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,23 +112,22 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .story-bar { max-width: 960px; margin: 20px auto; padding: 16px 20px; display: flex; gap: 18px; overflow-x: auto; background: var(--bg-surface); border-radius: 24px; border: 1px solid var(--border); }
-        .story-ring { flex: 0 0 84px; text-align: center; cursor: pointer; }
-        .story-avatar { width: 72px; height: 72px; border-radius: 50%; padding: 3px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); margin: 0 auto 6px; }
-        .story-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg-base); }
-        .social-feed { max-width: 960px; margin: 0 auto; padding: 10px 20px 50px; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
+        .ticket-list { max-width: 1180px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+        .ticket-card { display: grid; grid-template-columns: 220px 1fr 220px; background: var(--bg-card); border: 2px solid var(--primary); border-radius: 24px; overflow: hidden; position: relative; }
+        .ticket-stub { border-right: 3px dashed var(--primary); padding: 22px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: var(--bg-surface); }
+        @media (max-width: 820px) { .ticket-card { grid-template-columns: 1fr; } .ticket-stub { border-right: none; border-top: 3px dashed var(--primary); } }
       
 
     /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
-    body { background-image: repeating-linear-gradient(-45deg, transparent, transparent 22px, var(--bg-surface) 22px, var(--bg-surface) 24px); }
-    header { max-width: 1180px; margin: 12px auto; clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px)); border: 2px solid var(--primary); }
-    .product-card, .runway-slide, .masonry-pin { border-radius: 68px 8px 68px 8px !important; border-width: 2px !important; }
+    body { background-image: linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 80px 100%; }
+    header { background: linear-gradient(90deg, var(--bg-surface), var(--bg-card)) !important; border-bottom: 2px solid var(--primary) !important; }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 26px !important; border-top: 3px dashed var(--primary) !important; border-bottom: 3px dashed var(--primary) !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #158: 📱 تطبيق ستوري وموجز تسوق اجتماعي × بطاقات (ورقة نباتية قطرية يمنى) × كبسولة علوية مضغوطة بحواف مشطوفة</strong> | الميزة: <strong>🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</strong></span>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #158: ✈️ تذاكر سفر الدرجة الأولى المخرمة × بطاقات (بطاقة تذكرة طيران بحواف مقوسة) × شريط بتدرج لوني كامل (Full Gradient Bar)</strong> | الميزة: <strong>🎀 تغليف هدايا فاخر مع بطاقة إهداء (Luxury Gift Box)</strong></span>
     <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
@@ -150,38 +149,7 @@
   </header>
 
   
-    <div class="story-bar">
-      <div class="story-ring" onclick="openOrderModal('قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)', 3600)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">قصة إيطالية ✨</div>
-      </div>
-    
-      <div class="story-ring" onclick="openOrderModal('بليزر كاجوال أنيق (Blazer Casual Chic)', 9300)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="بليزر كاجوال أنيق (Blazer Casual Chic)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">جديد الموسم</div>
-      </div>
-    
-      <div class="story-ring" onclick="openOrderModal('بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)', 4000)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80" alt="بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">خامة تركية</div>
-      </div>
-    
-      <div class="story-ring" onclick="openOrderModal('طقم بولو رجالي صيفي فاخر (Ensemble Polo)', 5200)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=600&q=80" alt="طقم بولو رجالي صيفي فاخر (Ensemble Polo)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">عرض خاص</div>
-      </div>
-    
-      <div class="story-ring" onclick="openOrderModal('جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)', 12700)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">إصدار محدود</div>
-      </div>
-    
-      <div class="story-ring" onclick="openOrderModal('بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)', 18300)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">الأكثر مبيعاً 👔</div>
-      </div>
-    </div>
-    <section id="feature-sec" class="sig-section" style="max-width:960px">
+    <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">ميزة الهدايا والمناسبات</span>
@@ -194,168 +162,85 @@
         </div>
         <div class="sig-result">✨ التغليف الفاخر وبطاقة الإهداء مجاناً لجميع طلبات الموقع!</div>
       </div></section>
-    <section id="catalog" class="social-feed">
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">قصة إيطالية ✨</span>
-        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)</h3>
-          <div class="product-price-row">
-            <span class="price-current">3 600 د.ج</span>
-            <span class="price-old">4 300 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
+    <div id="catalog" class="ticket-list">
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #01</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: MODA PLAZA 2 (سطيف‎) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)', 3600)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">3 600 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('قميص أوكسفورد قطن مصري فاخر (Chemise Prestige)', 3600)">✈️ قص التذكرة واطلب</button>
+        </div>
+      </div>
+    
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="بليزر كاجوال أنيق (Blazer Casual Chic)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #02</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">بليزر كاجوال أنيق (Blazer Casual Chic)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: MODA PLAZA 2 (سطيف‎) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
+        </div>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">9 300 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('بليزر كاجوال أنيق (Blazer Casual Chic)', 9300)">✈️ قص التذكرة واطلب</button>
+        </div>
+      </div>
+    
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80" alt="بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #03</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: MODA PLAZA 2 (سطيف‎) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
+        </div>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">4 000 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)', 4000)">✈️ قص التذكرة واطلب</button>
+        </div>
+      </div>
+    
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=600&q=80" alt="طقم بولو رجالي صيفي فاخر (Ensemble Polo)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #04</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">طقم بولو رجالي صيفي فاخر (Ensemble Polo)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: MODA PLAZA 2 (سطيف‎) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
+        </div>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">5 200 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('طقم بولو رجالي صيفي فاخر (Ensemble Polo)', 5200)">✈️ قص التذكرة واطلب</button>
+        </div>
+      </div>
+    
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #05</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: MODA PLAZA 2 (سطيف‎) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
+        </div>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">12 700 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)', 12700)">✈️ قص التذكرة واطلب</button>
+        </div>
+      </div>
+    
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #06</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: MODA PLAZA 2 (سطيف‎) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
+        </div>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">18 300 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)', 18300)">✈️ قص التذكرة واطلب</button>
+        </div>
       </div>
     </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">جديد الموسم</span>
-        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="بليزر كاجوال أنيق (Blazer Casual Chic)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">بليزر كاجوال أنيق (Blazer Casual Chic)</h3>
-          <div class="product-price-row">
-            <span class="price-current">9 300 د.ج</span>
-            <span class="price-old">11 300 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بليزر كاجوال أنيق (Blazer Casual Chic)', 9300)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">خامة تركية</span>
-        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80" alt="بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 000 د.ج</span>
-            <span class="price-old">4 800 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بنطال شينو / جينز ممتاز (Pantalon Coupe Droite)', 4000)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">عرض خاص</span>
-        <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=600&q=80" alt="طقم بولو رجالي صيفي فاخر (Ensemble Polo)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">طقم بولو رجالي صيفي فاخر (Ensemble Polo)</h3>
-          <div class="product-price-row">
-            <span class="price-current">5 200 د.ج</span>
-            <span class="price-old">6 300 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('طقم بولو رجالي صيفي فاخر (Ensemble Polo)', 5200)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">إصدار محدود</span>
-        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)</h3>
-          <div class="product-price-row">
-            <span class="price-current">12 700 د.ج</span>
-            <span class="price-old">15 300 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('جاكيت جلد طبيعي كلاسيك (Veste Cuir Homme)', 12700)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">الأكثر مبيعاً 👔</span>
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">ملابس رجالية</div>
-          <h3 class="product-title">بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)</h3>
-          <div class="product-price-row">
-            <span class="price-current">18 300 د.ج</span>
-            <span class="price-old">21 800 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">S (38)</button><button type="button" class="size-chip active" onclick="selectSize(this)">M (40)</button><button type="button" class="size-chip " onclick="selectSize(this)">L (42)</button><button type="button" class="size-chip " onclick="selectSize(this)">XL (44)</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بدلة إيطالية سليم فيت فاخرة (Costume Slim Fit)', 18300)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  </section>
 
   <div class="info-box">
     <div>
@@ -402,8 +287,39 @@
     </div>
   </div>
 
+  <!-- Live Shape & Theme Morphing Studio (مختبر تبديل الأشكال الحي) -->
+  <div id="shapeStudioBar" style="position:fixed;bottom:18px;left:18px;z-index:990;">
+    <button onclick="document.getElementById('studioPanel').style.display = document.getElementById('studioPanel').style.display === 'block' ? 'none' : 'block'" style="background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border:2px solid var(--surface);border-radius:999px;padding:10px 18px;font-family:inherit;font-weight:900;font-size:0.82rem;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,0.35);display:flex;align-items:center;gap:8px;">
+      🎛️ مختبر الأشكال الحي (جرّب +50 شكلاً فوراً)
+    </button>
+    <div id="studioPanel" style="display:none;position:absolute;bottom:54px;left:0;width:320px;background:var(--surface);color:var(--text);border:2px solid var(--primary);border-radius:18px;padding:16px;box-shadow:0 24px 50px rgba(0,0,0,0.45);text-align:right;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid var(--border);padding-bottom:8px;">
+        <strong style="font-size:0.9rem;color:var(--primary)">🧬 مختبر التحويل الهندسي الفوري</strong>
+        <button onclick="document.getElementById('studioPanel').style.display='none'" style="background:none;border:none;color:var(--muted);cursor:pointer;font-weight:900">✕</button>
+      </div>
+      <div style="font-size:0.76rem;color:var(--muted);margin-bottom:6px;font-weight:700">1. غيّر شكل البطاقات الهندسي (53 شكلاً):</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;">
+        <button onclick="morphCardShape('arch')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🏛️ قوس أندلسي</button>
+        <button onclick="morphCardShape('octagon')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🛑 مثمّن</button>
+        <button onclick="morphCardShape('leaf')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🍃 ورقة</button>
+        <button onclick="morphCardShape('brutal')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🧱 بوب آرت</button>
+        <button onclick="morphCardShape('3d')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🧊 منظور 3D</button>
+        <button onclick="morphCardShape('clay')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">☁️ كلاي ناعم</button>
+        <button onclick="morphCardShape('cyber')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">⚡ سايبر</button>
+        <button onclick="morphCardShape('circle')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">💿 كبسولة</button>
+      </div>
+      <div style="font-size:0.76rem;color:var(--muted);margin-bottom:6px;font-weight:700">2. غيّر الطيف اللوني والوضع البصري:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;">
+        <button onclick="morphTheme('#0A0E17','#111827','#38BDF8','#F43F5E','#F8FAFC')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#0A0E17;color:#38BDF8;cursor:pointer;font-family:inherit;font-weight:700">🌌 نيون ليلي</button>
+        <button onclick="morphTheme('#FAF6F0','#FFFFFF','#9A6B3B','#C89D66','#1E1610')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#FAF6F0;color:#9A6B3B;cursor:pointer;font-family:inherit;font-weight:700">🏛️ فخامة ذهبية</button>
+        <button onclick="morphTheme('#061A14','#0C2920','#10B981','#F59E0B','#ECFDF5')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#061A14;color:#10B981;cursor:pointer;font-family:inherit;font-weight:700">💎 زمردي ملكي</button>
+        <button onclick="morphTheme('#FFF0F5','#FFFFFF','#E11D48','#8B5CF6','#310B19')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#FFF0F5;color:#E11D48;cursor:pointer;font-family:inherit;font-weight:700">🌸 باريسي وردي</button>
+      </div>
+    </div>
+  </div>
+
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>MODA PLAZA 2</strong> — الشكل المعماري: 📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)
+    جميع الحقوق محفوظة © 2026 <strong>MODA PLAZA 2</strong> — الشكل المعماري: ✈️ تذاكر سفر الدرجة الأولى المخرمة (First-Class Perforated Boarding Passes)
   </footer>
 
   <script>
@@ -485,6 +401,29 @@
       if (storeWhatsApp) window.open('https://wa.me/' + storeWhatsApp + '?text=' + encodeURIComponent(msg), '_blank');
       else alert('تم تسجيل طلبك بنجاح!\n\n' + msg);
       closeOrderModal();
+    }
+    function morphCardShape(mode) {
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach((c, idx) => {
+        c.style.clipPath = 'none';
+        c.style.transform = 'none';
+        if (mode === 'arch') { c.style.borderRadius = '140px 140px 16px 16px'; }
+        else if (mode === 'octagon') { c.style.clipPath = 'polygon(24px 0, calc(100% - 24px) 0, 100% 24px, 100% calc(100% - 24px), calc(100% - 24px) 100%, 24px 100%, 0 calc(100% - 24px), 0 24px)'; c.style.borderRadius = '0'; }
+        else if (mode === 'leaf') { c.style.borderRadius = '72px 8px 72px 8px'; }
+        else if (mode === 'brutal') { c.style.borderRadius = '0'; c.style.border = '3px solid var(--text)'; c.style.boxShadow = '8px 8px 0 var(--primary)'; }
+        else if (mode === '3d') { c.style.borderRadius = '22px'; c.style.transform = idx % 2 === 0 ? 'perspective(800px) rotateY(-8deg) rotateX(4deg)' : 'perspective(800px) rotateY(8deg) rotateX(-4deg)'; }
+        else if (mode === 'clay') { c.style.borderRadius = '38px'; c.style.boxShadow = '14px 14px 28px rgba(0,0,0,0.18), inset -6px -6px 14px rgba(0,0,0,0.08), inset 6px 6px 14px rgba(255,255,255,0.5)'; }
+        else if (mode === 'cyber') { c.style.clipPath = 'polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px))'; c.style.border = '2px solid var(--primary)'; }
+        else if (mode === 'circle') { c.style.borderRadius = '56px'; }
+      });
+    }
+    function morphTheme(bg, surface, primary, accent, text) {
+      const r = document.documentElement.style;
+      r.setProperty('--bg', bg);
+      r.setProperty('--surface', surface);
+      r.setProperty('--primary', primary);
+      r.setProperty('--accent', accent);
+      r.setProperty('--text', text);
     }
   </script>
 </body>

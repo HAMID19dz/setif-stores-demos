@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stepmode Sétif | 📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)</title>
+  <title>Stepmode Sétif | ✈️ تذاكر سفر الدرجة الأولى المخرمة (First-Class Perforated Boarding Passes)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700;900&family=Changa:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Readex+Pro:wght@500;800&family=Tajawal:wght@500;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Readex Pro', sans-serif;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
       background-color: var(--bg-base);
       color: var(--text-main);
       line-height: 1.6;
@@ -112,23 +112,22 @@
 
     /* Archetype-Specific Structural Overrides */
     
-        .story-bar { max-width: 960px; margin: 20px auto; padding: 16px 20px; display: flex; gap: 18px; overflow-x: auto; background: var(--bg-surface); border-radius: 24px; border: 1px solid var(--border); }
-        .story-ring { flex: 0 0 84px; text-align: center; cursor: pointer; }
-        .story-avatar { width: 72px; height: 72px; border-radius: 50%; padding: 3px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); margin: 0 auto 6px; }
-        .story-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg-base); }
-        .social-feed { max-width: 960px; margin: 0 auto; padding: 10px 20px 50px; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
+        .ticket-list { max-width: 1180px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+        .ticket-card { display: grid; grid-template-columns: 220px 1fr 220px; background: var(--bg-card); border: 2px solid var(--primary); border-radius: 24px; overflow: hidden; position: relative; }
+        .ticket-stub { border-right: 3px dashed var(--primary); padding: 22px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: var(--bg-surface); }
+        @media (max-width: 820px) { .ticket-card { grid-template-columns: 1fr; } .ticket-stub { border-right: none; border-top: 3px dashed var(--primary); } }
       
 
     /* 1-of-1 Unique Shape Blueprint (#001 to #372): Canvas + Navigation Posture + Card Silhouette */
-    body { background-image: radial-gradient(var(--primary) 0.9px, transparent 0.9px); background-size: 38px 38px; }
-    header { position: fixed !important; top: auto !important; bottom: 16px !important; left: 50%; transform: translateX(-50%); width: max-content; max-width: 95vw; border-radius: 999px; border: 2px solid var(--primary); box-shadow: 0 20px 50px rgba(0,0,0,0.45); }
-    .product-card, .runway-slide, .masonry-pin { border-radius: 14px 52px 18px 46px !important; border-width: 2px !important; }
+    body { background-image: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-surface) 50%, var(--bg-base) 100%); }
+    header { max-width: 1180px; margin: 12px auto; border-radius: 40px 8px 40px 8px; border: 2px solid var(--primary); }
+    .product-card, .runway-slide, .masonry-pin { border-radius: 38px !important; text-align: center !important; }
   </style>
 </head>
 <body>
 
   <div class="demo-banner">
-    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #078: 📱 تطبيق ستوري وموجز تسوق اجتماعي × بطاقات (خلية عضوية معكوسة (Blob B)) × شريط أوامر سفلي عائم (Bottom Apple Dock)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
+    <span>🧬 بصمة التصميم الفريدة: <strong>شكل #078: ✈️ تذاكر سفر الدرجة الأولى المخرمة × بطاقات (ميدالية بصورة دائرية مركزية) × جناح علوي مقوس الطرفين (Winged Header)</strong> | الميزة: <strong>💳 بطاقة الوفاء الرقمية (Cashback &amp; Points)</strong></span>
     <a href="../../index.html">🔙 استعراض الـ 372 شكلاً الفريدة</a>
   </div>
 
@@ -150,38 +149,7 @@
   </header>
 
   
-    <div class="story-bar">
-      <div class="story-ring" onclick="openOrderModal('حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)', 7200)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">عرض خاص</div>
-      </div>
-    
-      <div class="story-ring" onclick="openOrderModal('حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)', 6500)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80" alt="حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">جلد حر 100% 🔥</div>
-      </div>
-    
-      <div class="story-ring" onclick="openOrderModal('سنيكرز كاجوال يومي (Sneakers Confort)', 5400)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" alt="سنيكرز كاجوال يومي (Sneakers Confort)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">الأكثر مبيعاً ✨</div>
-      </div>
-    
-      <div class="story-ring" onclick="openOrderModal('حذاء نسائي أنيق بكعب مريح (Escarpin Chic)', 4800)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80" alt="حذاء نسائي أنيق بكعب مريح (Escarpin Chic)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">أناقة وراحة</div>
-      </div>
-    
-      <div class="story-ring" onclick="openOrderModal('حذاء رياضي خفيف للمشي (Running Shoes)', 4900)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="حذاء رياضي خفيف للمشي (Running Shoes)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">نعل طبي</div>
-      </div>
-    
-      <div class="story-ring" onclick="openOrderModal('بوت جلد شتوي فاخر (Chelsea Boots Cuir)', 7900)">
-        <div class="story-avatar"><img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=600&q=80" alt="بوت جلد شتوي فاخر (Chelsea Boots Cuir)" /></div>
-        <div style="font-size:0.74rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">مقاوم للماء</div>
-      </div>
-    </div>
-    <section id="feature-sec" class="sig-section" style="max-width:960px">
+    <section id="feature-sec" class="sig-section">
       <div class="sig-widget">
         <div class="sig-head">
           <span class="sig-badge">نادي زبائن Stepmode Sétif</span>
@@ -194,168 +162,85 @@
         </div>
         <div id="loyalResult" class="sig-result">رصيدك الترحيبي الجاهز: <strong>500 نقطة = تخفيض 500 د.ج فوري!</strong></div>
       </div></section>
-    <section id="catalog" class="social-feed">
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">عرض خاص</span>
-        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)</h3>
-          <div class="product-price-row">
-            <span class="price-current">7 200 د.ج</span>
-            <span class="price-old">8 800 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
-          </div>
+    <div id="catalog" class="ticket-list">
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #01</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: Stepmode Sétif (Sétif 19000) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
         </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)', 7200)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">7 200 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('حقيبة وحذاء متناسق (Pack Sac &amp; Chaussure)', 7200)">✈️ قص التذكرة واطلب</button>
+        </div>
+      </div>
+    
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80" alt="حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #02</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: Stepmode Sétif (Sétif 19000) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
+        </div>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">6 500 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)', 6500)">✈️ قص التذكرة واطلب</button>
+        </div>
+      </div>
+    
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" alt="سنيكرز كاجوال يومي (Sneakers Confort)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #03</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">سنيكرز كاجوال يومي (Sneakers Confort)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: Stepmode Sétif (Sétif 19000) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
+        </div>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">5 400 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('سنيكرز كاجوال يومي (Sneakers Confort)', 5400)">✈️ قص التذكرة واطلب</button>
+        </div>
+      </div>
+    
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80" alt="حذاء نسائي أنيق بكعب مريح (Escarpin Chic)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #04</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">حذاء نسائي أنيق بكعب مريح (Escarpin Chic)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: Stepmode Sétif (Sétif 19000) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
+        </div>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">4 800 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('حذاء نسائي أنيق بكعب مريح (Escarpin Chic)', 4800)">✈️ قص التذكرة واطلب</button>
+        </div>
+      </div>
+    
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="حذاء رياضي خفيف للمشي (Running Shoes)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #05</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">حذاء رياضي خفيف للمشي (Running Shoes)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: Stepmode Sétif (Sétif 19000) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
+        </div>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">4 900 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('حذاء رياضي خفيف للمشي (Running Shoes)', 4900)">✈️ قص التذكرة واطلب</button>
+        </div>
+      </div>
+    
+      <div class="ticket-card">
+        <img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=600&q=80" alt="بوت جلد شتوي فاخر (Chelsea Boots Cuir)" style="width:100%;height:220px;object-fit:cover" />
+        <div style="padding:22px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:monospace;font-size:0.8rem;color:var(--primary);font-weight:900">BOARDING PASS // GATE 19-SETIF // FLIGHT #06</div>
+          <h3 style="font-size:1.35rem;font-weight:900;margin:6px 0">بوت جلد شتوي فاخر (Chelsea Boots Cuir)</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem">من: Stepmode Sétif (Sétif 19000) ✈️ إلى: جميع ولايات الوطن (58 ولاية)</p>
+        </div>
+        <div class="ticket-stub">
+          <div class="price-current" style="font-size:1.45rem;margin-bottom:10px">7 900 د.ج</div>
+          <button type="button" class="sig-btn" onclick="openOrderModal('بوت جلد شتوي فاخر (Chelsea Boots Cuir)', 7900)">✈️ قص التذكرة واطلب</button>
+        </div>
       </div>
     </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">جلد حر 100% 🔥</span>
-        <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80" alt="حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)</h3>
-          <div class="product-price-row">
-            <span class="price-current">6 500 د.ج</span>
-            <span class="price-old">7 800 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('حذاء جلد طبيعي كلاسيك (Mocassin Cuir Véritable)', 6500)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">الأكثر مبيعاً ✨</span>
-        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" alt="سنيكرز كاجوال يومي (Sneakers Confort)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">سنيكرز كاجوال يومي (Sneakers Confort)</h3>
-          <div class="product-price-row">
-            <span class="price-current">5 400 د.ج</span>
-            <span class="price-old">6 500 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('سنيكرز كاجوال يومي (Sneakers Confort)', 5400)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">أناقة وراحة</span>
-        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80" alt="حذاء نسائي أنيق بكعب مريح (Escarpin Chic)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">حذاء نسائي أنيق بكعب مريح (Escarpin Chic)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 800 د.ج</span>
-            <span class="price-old">5 900 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('حذاء نسائي أنيق بكعب مريح (Escarpin Chic)', 4800)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">نعل طبي</span>
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="حذاء رياضي خفيف للمشي (Running Shoes)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">حذاء رياضي خفيف للمشي (Running Shoes)</h3>
-          <div class="product-price-row">
-            <span class="price-current">4 900 د.ج</span>
-            <span class="price-old">5 800 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('حذاء رياضي خفيف للمشي (Running Shoes)', 4900)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  
-
-    <div class="product-card">
-      <div class="product-img-wrap">
-        <span class="product-tag">مقاوم للماء</span>
-        <img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=600&q=80" alt="بوت جلد شتوي فاخر (Chelsea Boots Cuir)" loading="lazy" />
-      </div>
-      <div class="product-body">
-        <div>
-          <div class="product-cat">أحذية</div>
-          <h3 class="product-title">بوت جلد شتوي فاخر (Chelsea Boots Cuir)</h3>
-          <div class="product-price-row">
-            <span class="price-current">7 900 د.ج</span>
-            <span class="price-old">9 200 د.ج</span>
-          </div>
-          <div class="size-row">
-            <span class="size-label">المقاس:</span>
-            <div class="size-chips">
-              <button type="button" class="size-chip " onclick="selectSize(this)">37</button><button type="button" class="size-chip active" onclick="selectSize(this)">38</button><button type="button" class="size-chip " onclick="selectSize(this)">39</button><button type="button" class="size-chip " onclick="selectSize(this)">40</button>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-order" onclick="openOrderModal('بوت جلد شتوي فاخر (Chelsea Boots Cuir)', 7900)">
-          🛒 اطلب الآن — الدفع عند الاستلام
-        </button>
-      </div>
-    </div>
-  </section>
 
   <div class="info-box">
     <div>
@@ -402,8 +287,39 @@
     </div>
   </div>
 
+  <!-- Live Shape & Theme Morphing Studio (مختبر تبديل الأشكال الحي) -->
+  <div id="shapeStudioBar" style="position:fixed;bottom:18px;left:18px;z-index:990;">
+    <button onclick="document.getElementById('studioPanel').style.display = document.getElementById('studioPanel').style.display === 'block' ? 'none' : 'block'" style="background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border:2px solid var(--surface);border-radius:999px;padding:10px 18px;font-family:inherit;font-weight:900;font-size:0.82rem;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,0.35);display:flex;align-items:center;gap:8px;">
+      🎛️ مختبر الأشكال الحي (جرّب +50 شكلاً فوراً)
+    </button>
+    <div id="studioPanel" style="display:none;position:absolute;bottom:54px;left:0;width:320px;background:var(--surface);color:var(--text);border:2px solid var(--primary);border-radius:18px;padding:16px;box-shadow:0 24px 50px rgba(0,0,0,0.45);text-align:right;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid var(--border);padding-bottom:8px;">
+        <strong style="font-size:0.9rem;color:var(--primary)">🧬 مختبر التحويل الهندسي الفوري</strong>
+        <button onclick="document.getElementById('studioPanel').style.display='none'" style="background:none;border:none;color:var(--muted);cursor:pointer;font-weight:900">✕</button>
+      </div>
+      <div style="font-size:0.76rem;color:var(--muted);margin-bottom:6px;font-weight:700">1. غيّر شكل البطاقات الهندسي (53 شكلاً):</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;">
+        <button onclick="morphCardShape('arch')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🏛️ قوس أندلسي</button>
+        <button onclick="morphCardShape('octagon')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🛑 مثمّن</button>
+        <button onclick="morphCardShape('leaf')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🍃 ورقة</button>
+        <button onclick="morphCardShape('brutal')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🧱 بوب آرت</button>
+        <button onclick="morphCardShape('3d')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">🧊 منظور 3D</button>
+        <button onclick="morphCardShape('clay')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">☁️ كلاي ناعم</button>
+        <button onclick="morphCardShape('cyber')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">⚡ سايبر</button>
+        <button onclick="morphCardShape('circle')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-weight:700">💿 كبسولة</button>
+      </div>
+      <div style="font-size:0.76rem;color:var(--muted);margin-bottom:6px;font-weight:700">2. غيّر الطيف اللوني والوضع البصري:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;">
+        <button onclick="morphTheme('#0A0E17','#111827','#38BDF8','#F43F5E','#F8FAFC')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#0A0E17;color:#38BDF8;cursor:pointer;font-family:inherit;font-weight:700">🌌 نيون ليلي</button>
+        <button onclick="morphTheme('#FAF6F0','#FFFFFF','#9A6B3B','#C89D66','#1E1610')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#FAF6F0;color:#9A6B3B;cursor:pointer;font-family:inherit;font-weight:700">🏛️ فخامة ذهبية</button>
+        <button onclick="morphTheme('#061A14','#0C2920','#10B981','#F59E0B','#ECFDF5')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#061A14;color:#10B981;cursor:pointer;font-family:inherit;font-weight:700">💎 زمردي ملكي</button>
+        <button onclick="morphTheme('#FFF0F5','#FFFFFF','#E11D48','#8B5CF6','#310B19')" style="padding:4px 9px;font-size:0.72rem;border-radius:6px;border:1px solid var(--border);background:#FFF0F5;color:#E11D48;cursor:pointer;font-family:inherit;font-weight:700">🌸 باريسي وردي</button>
+      </div>
+    </div>
+  </div>
+
   <footer>
-    جميع الحقوق محفوظة © 2026 <strong>Stepmode Sétif</strong> — الشكل المعماري: 📱 تطبيق ستوري وموجز تسوق اجتماعي (Social Commerce Story Feed App)
+    جميع الحقوق محفوظة © 2026 <strong>Stepmode Sétif</strong> — الشكل المعماري: ✈️ تذاكر سفر الدرجة الأولى المخرمة (First-Class Perforated Boarding Passes)
   </footer>
 
   <script>
@@ -485,6 +401,29 @@
       if (storeWhatsApp) window.open('https://wa.me/' + storeWhatsApp + '?text=' + encodeURIComponent(msg), '_blank');
       else alert('تم تسجيل طلبك بنجاح!\n\n' + msg);
       closeOrderModal();
+    }
+    function morphCardShape(mode) {
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach((c, idx) => {
+        c.style.clipPath = 'none';
+        c.style.transform = 'none';
+        if (mode === 'arch') { c.style.borderRadius = '140px 140px 16px 16px'; }
+        else if (mode === 'octagon') { c.style.clipPath = 'polygon(24px 0, calc(100% - 24px) 0, 100% 24px, 100% calc(100% - 24px), calc(100% - 24px) 100%, 24px 100%, 0 calc(100% - 24px), 0 24px)'; c.style.borderRadius = '0'; }
+        else if (mode === 'leaf') { c.style.borderRadius = '72px 8px 72px 8px'; }
+        else if (mode === 'brutal') { c.style.borderRadius = '0'; c.style.border = '3px solid var(--text)'; c.style.boxShadow = '8px 8px 0 var(--primary)'; }
+        else if (mode === '3d') { c.style.borderRadius = '22px'; c.style.transform = idx % 2 === 0 ? 'perspective(800px) rotateY(-8deg) rotateX(4deg)' : 'perspective(800px) rotateY(8deg) rotateX(-4deg)'; }
+        else if (mode === 'clay') { c.style.borderRadius = '38px'; c.style.boxShadow = '14px 14px 28px rgba(0,0,0,0.18), inset -6px -6px 14px rgba(0,0,0,0.08), inset 6px 6px 14px rgba(255,255,255,0.5)'; }
+        else if (mode === 'cyber') { c.style.clipPath = 'polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px))'; c.style.border = '2px solid var(--primary)'; }
+        else if (mode === 'circle') { c.style.borderRadius = '56px'; }
+      });
+    }
+    function morphTheme(bg, surface, primary, accent, text) {
+      const r = document.documentElement.style;
+      r.setProperty('--bg', bg);
+      r.setProperty('--surface', surface);
+      r.setProperty('--primary', primary);
+      r.setProperty('--accent', accent);
+      r.setProperty('--text', text);
     }
   </script>
 </body>
